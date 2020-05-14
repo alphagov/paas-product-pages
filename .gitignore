@@ -8,4 +8,6 @@ platform-tests/src/results
 terraform/.terraform/
 org_usage.csv
 *.csv
-
+node_modules
+.next
+out
