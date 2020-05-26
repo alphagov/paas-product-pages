@@ -11,3 +11,4 @@ org_usage.csv
 node_modules
 .next
 out
+.DS_Store
