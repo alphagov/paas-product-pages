@@ -10,9 +10,11 @@
   "dependencies": {
     "@mdx-js/loader": "^1.5.1",
     "@next/mdx": "^9.1.1",
+    "govuk-frontend": "^3.6.0",
     "next": "latest",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "sass": "^1.26.5"
   },
   "license": "MIT",
   "devDependencies": {
