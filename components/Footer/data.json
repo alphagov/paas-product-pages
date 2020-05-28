@@ -1,0 +1,28 @@
+{
+  "navigation": [],
+  "meta": {
+    "visuallyHiddenTitle" : "Support links",
+    "items": [
+      { 
+        "text": "Built by Government Digital Service", 
+        "href": "https://www.gov.uk/government/organisations/government-digital-service"
+      },
+      { 
+        "text": "Cookies", 
+        "href": "/cookies"
+      },
+      { 
+        "text": "Privacy notice", 
+        "href": "/privacy-notice"
+      },
+      { 
+        "text": "Terms of use", 
+        "href": "/terms-of-use"
+      },
+      { 
+        "text": "System status", 
+        "href": "https://status.cloud.service.gov.uk/"
+      }
+    ]
+  } 
+}
