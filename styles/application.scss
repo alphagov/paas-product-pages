@@ -2,23 +2,28 @@ $govuk-global-styles: true;
 $govuk-assets-path: '/assets/';
 @import "govuk-frontend/govuk/all";
 
-h1 {
+// we only want to style content elements that don't have "govuk" classnames
+// so we don't affect component styles
+$notGOVUKClass: 'not([class^='govuk'])';
+
+h1:#{$notGOVUKClass} {
   @extend .govuk-heading-xl;
 }
 
-h2 {
+h2:#{$notGOVUKClass} {
   @extend .govuk-heading-l;
 }
 
-h3 {
+h3:#{$notGOVUKClass} {
   @extend .govuk-heading-m;
 }
 
-h4 {
+h4:#{$notGOVUKClass} {
   @extend .govuk-heading-s;
 }
 
-ol,ul {
+ol:#{$notGOVUKClass},
+ul:#{$notGOVUKClass} {
   @extend .govuk-list;
   @extend .govuk-list--bullet;
 }

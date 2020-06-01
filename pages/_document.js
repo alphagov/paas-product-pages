@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Footer from '../components/Footer'
 
 class GovukTemplate extends Document {
   static async getInitialProps(ctx) {
@@ -10,11 +11,11 @@ class GovukTemplate extends Document {
     return (
       <Html lang='en' className='govuk-template'>
         <Head>
-          <meta charset="utf-8" />
+          <meta charSet="utf-8" />
           <title>GOV.UK Platform as a Service</title>
           <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
           <meta name="theme-color" content="#0b0c0c" />
-          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/assets/images/favicon.ico" type="image/x-icon" />
           <link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c" />
           <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/govuk-apple-touch-icon-180x180.png" />
@@ -47,7 +48,7 @@ class GovukTemplate extends Document {
               <Main />
             </main>
           </div>
-          {/* footer goes here */}
+          <Footer />
           <NextScript />
         </body>
       </Html>
