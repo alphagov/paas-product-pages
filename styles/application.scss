@@ -1,6 +1,16 @@
 $govuk-global-styles: true;
 $govuk-assets-path: '/assets/';
+
+// values from GOV.UK Frontend with the added wide desktop breakpoint for the header navigation
+$govuk-breakpoints: (
+  mobile:  320px,
+  tablet:  641px,
+  desktop: 769px,
+  wideDesktop: 960px
+);
+
 @import "govuk-frontend/govuk/all";
+
 
 // we only want to style content elements that don't have "govuk" classnames
 // so we don't affect component styles
@@ -26,4 +36,28 @@ ol:#{$notGOVUKClass},
 ul:#{$notGOVUKClass} {
   @extend .govuk-list;
   @extend .govuk-list--bullet;
+}
+
+// PaaS spelled-out is a long name that GOV.UK Frontend doesn't account for
+// in the header logo + product name 33.33% width, so then name drops below the crown.
+//
+// To have the name always by the side of the crown and fit in the navaigation we need
+// to make styling tweaks below from tablet breakpoint and up
+
+@include govuk-media-query($from: tablet) {
+
+  .govuk-header__logo {
+    width: auto;
+  }
+
+  .govuk-header__content {
+    width: auto;
+    padding-left: 0;
+  }
+}
+
+@include govuk-media-query($from: wideDesktop) {
+  .govuk-header__content {
+    float: right;
+  }
 }
