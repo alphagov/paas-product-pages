@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+import Footer from '@components/Footer'
+import Header from '@components/Header'
 
 class GovukTemplate extends Document {
   static async getInitialProps(ctx) {
