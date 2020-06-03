@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import SectionNavigation from '@components/SectionNavigation'
 import config from '../../config/config.json'
 
 
@@ -17,7 +18,7 @@ const PageWithSideNav = ({ meta, children }) => (
     <main className="govuk-main-wrapper" id="main-content" role="main">
       <div className="govuk-grid-row">
         <div className="govuk-grid-column-one-third">
-          <p>navigation goes here</p>
+          <SectionNavigation />
         </div>
         <div className="govuk-grid-column-two-thirds">
           {meta && meta.title ? (
