@@ -1,0 +1,8 @@
+---
+applications:
+  - name: paas-product-pages
+    buildpacks:
+      - staticfile_buildpack
+    memory: 256M
+    instances: 2
+    stack: cflinuxfs3
