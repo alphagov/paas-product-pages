@@ -13,7 +13,6 @@ class GovukTemplate extends Document {
       <Html lang='en' className='govuk-template'>
         <Head>
           <meta charSet="utf-8" />
-          <title>GOV.UK Platform as a Service</title>
           <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
           <meta name="theme-color" content="#0b0c0c" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -28,11 +27,7 @@ class GovukTemplate extends Document {
         <body className="govuk-template__body">
           <a href="#main-content" className="govuk-skip-link">Skip to main content</a>
           <Header />
-          <div className="govuk-width-container">
-            <main className="govuk-main-wrapper" id="main-content" role="main">
-              <Main />
-            </main>
-          </div>
+          <Main />
           <Footer />
           <NextScript />
         </body>
