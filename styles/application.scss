@@ -10,6 +10,7 @@ $govuk-breakpoints: (
 );
 
 @import "govuk-frontend/govuk/all";
+@import "section-navigation";
 
 
 // we only want to style content elements that don't have "govuk" classnames

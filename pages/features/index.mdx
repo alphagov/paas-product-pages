@@ -1,0 +1,84 @@
+---
+section: "features"
+title: "Features"
+sectionNav: true
+---
+
+## Reliable cloud infrastructure for public sector services
+
+GOV.UK PaaS is a reliable and security-compliant application platform for running public sector services in the cloud. It is available for use by both Crown and non-Crown organisations.
+
+The platform is hosted on Amazon Web Services in the UK, with hosting in Ireland also available. Applications are automatically run across three independent availability zones to ensure resilience.
+
+[View our last 3 months performance on our service status page](https://status.cloud.service.gov.uk/)
+
+## Build services faster
+
+GOV.UK PaaS offers tools to help teams build and run cloud native applications in production without the need for specialist infrastructure skills. We maintain and secure the infrastructure, so your team can focus on improving your applications.
+
+GOV.UK PaaS provides:
+
+-   a self-service developer experience, based on open source Cloud Foundry
+-   [buildpack](https://docs.cloud.service.gov.uk/deploying_apps.html#buildpacks) support for writing applications in most major languages including:
+    -   Go
+    -   Java (and other JVM-based languages such as Scala)
+    -   Node.js,
+    -   PHP
+    -   Python
+    -   R
+    -   Ruby
+    -   .NET Core
+    -   a static HTML/CSS/Javascript site
+    -   a compiled binary
+-   [a marketplace of backing services](https://admin.london.cloud.service.gov.uk/marketplace) including PostgreSQL, Elasticsearch, MySQL, InfluxDB, Redis and Amazon S3.
+-   [observability for your apps](/observability) including support for logs, metrics and tracing.
+
+GOV.UK PaaS users can use the [Cloud Foundry command line interface](https://docs.cloud.service.gov.uk/get_started.html#set-up-the-cloud-foundry-command-line) (or API) to:
+
+-   manage applications
+-   attach backing services to applications
+-   scale applications up and down in seconds
+-   create private applications to deploy microservices that are not accessible from the public internet
+-   automate repeatable creation of environments
+-   perform zero-downtime application deployments
+
+## Manage user access, services and costs
+
+Our simple to use admin tool gives you an easy way to oversee your applications, services users and billing.
+
+We provide:
+
+-   simplified user account management and support for single sign-on with your organisationâ€™s Google and Microsoft accounts
+-   usage and billing summaries in real time
+-   monitoring for your backing services and application events â€œout of the boxâ€
+
+## Build services more securely
+
+GOV.UK PaaS is designed to meet the [NCSC Cloud Security Principles](/cloud-security-principles).
+
+The platform is assured for use at OFFICIAL. As the data owner for a service [you must ensure that appropriate controls are in place when handling Official data](https://www.gov.uk/guidance/official-sensitive-data-and-it).
+
+Security features we offer include:
+
+-   modern TLS standards enforced for all traffic entering the platform
+-   application isolation so that they canâ€™t read or change each other's code, data or logs
+-   private internal network communication between applications
+-   authenticated SSH access to application containers to debug problems
+-   single sign-on through your organisation's Microsoft or Google accounts
+-   ingress to the platform protected by AWS Shield
+
+[Read more about how we keep GOV.UK PaaS secure](/security)
+
+## Migrating to and from GOV.UK PaaS
+
+GOV.UK PaaS requires that your application is built to meet modern standards. Itâ€™s easier to migrate to GOV.UK PaaS if your application is â€œ[cloud native](https://thenewstack.io/10-key-attributes-of-cloud-native-applications/)â€ and built using [12 factor application principles](https://docs.cloud.service.gov.uk/architecture.html#12-factor-application-principles).
+
+This also makes it easier to move to other platforms if you decide you want to, especially if you move to another Cloud Foundry-based PaaS provider or container based platform.
+
+## Support and maintenance
+
+We monitor the infrastructure and manage the patching of the platformâ€™s operating systems and infrastructure components. When we update the platform, we use zero downtime deploys, so this won't interfere with the running of your application.
+
+We offer 24/7 platform support for live services
+
+[Read about the support we offer](/support-and-response-times)
