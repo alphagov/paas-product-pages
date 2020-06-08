@@ -3,7 +3,7 @@ import Head from 'next/head'
 import SectionNavigation from '@components/SectionNavigation'
 import config from '../../config/config.json'
 
-export default function PageWithSideNav(frontMatter) {
+export default function contentPage(frontMatter) {
   return ({ children: content }) => {
     return (
       <>
