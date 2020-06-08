@@ -16,11 +16,7 @@ export default function HomePage() {
         </div>
         <div className="govuk-width-container">
           <div className="govuk-main-wrapper govuk-main-wrapper--l">
-            <div className="govuk-grid-row">
-              <div className="govuk-grid-column-two-thirds">
-                {content}
-              </div>
-            </div>
+            {content}
           </div>
         </div>
       </main>
