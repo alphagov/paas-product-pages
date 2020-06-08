@@ -11,6 +11,7 @@ $govuk-breakpoints: (
 
 @import "govuk-frontend/govuk/all";
 @import "section-navigation";
+@import "masthead";
 
 
 // we only want to style content elements that don't have "govuk" classnames
@@ -37,6 +38,11 @@ ol:#{$notGOVUKClass},
 ul:#{$notGOVUKClass} {
   @extend .govuk-list;
   @extend .govuk-list--bullet;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 // PaaS spelled-out is a long name that GOV.UK Frontend doesn't account for
