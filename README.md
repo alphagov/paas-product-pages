@@ -22,4 +22,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Page content is written in Markdown and is located in `pages/**/<filename>.mdx`. 
 The page auto-updates as you edit the file.
 
+## Preview
+
+This repo is published to https://paas-product-pages.cloudapps.digital/ by [this pipeline](https://github.com/alphagov/paas-release-ci/blob/master/pipelines/plain_pipelines/paas-product-pages.yml)
+
 
