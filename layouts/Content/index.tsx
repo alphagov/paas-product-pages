@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import SectionNavigation from '@components/SectionNavigation'
+import { GridRow, GridColumn } from '@components/GridLayout'
 import config from '../../config/config.json'
 
 export default function contentPage(frontMatter) {
@@ -17,19 +18,19 @@ export default function contentPage(frontMatter) {
       </Head>
       <div className="govuk-width-container">
         <main className="govuk-main-wrapper" id="main-content" role="main">
-          <div className="govuk-grid-row">
+          <GridRow>
             { frontMatter.sectionNav ? ( 
-            <div className="govuk-grid-column-one-third">
+            <GridColumn width='one-third'>
               <SectionNavigation section={frontMatter.section} />
-            </div> ) : <></>
+            </GridColumn> ) : <></>
             }
-            <div className="govuk-grid-column-two-thirds">
+            <GridColumn width='two-thirds'>
               {frontMatter && frontMatter.title ? (
                 <h1 className="govuk-heading-xl">{frontMatter.title}</h1>
               ): <></>}
               {content}
-            </div>
-          </div>
+            </GridColumn>
+          </GridRow>
         </main>
       </div>
       </>
