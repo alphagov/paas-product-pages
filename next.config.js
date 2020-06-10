@@ -1,11 +1,16 @@
 const withMdxEnhanced = require('next-mdx-enhanced')
+const rehypeSlug = require('rehype-slug')
+const rehypeAutolinkHeadings = require('rehype-autolink-headings')
 
 module.exports = withMdxEnhanced({
   layoutPath: 'layouts/Content/',
   defaultLayout: true,
   fileExtensions: ['mdx'],
   remarkPlugins: [],
-  rehypePlugins: [],
+  rehypePlugins: [
+    rehypeSlug,
+    rehypeAutolinkHeadings
+  ],
   extendFrontMatter: {
     process: (mdxContent, frontMatter) => {},
     phase: 'prebuild|loader|both',
