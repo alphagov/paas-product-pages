@@ -78,3 +78,42 @@ img {
     float: right;
   }
 }
+
+
+// heading anchor link styles
+h2,
+h3,
+h4 {
+  position: relative;
+}
+
+h2 > a,
+h3 > a,
+h4 > a  {
+  position: absolute;
+  display: none;
+  left: -.75em;
+  width: .75em;
+
+  &:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: $govuk-focus-colour;
+    box-shadow: 0 -2px $govuk-focus-colour, 0 4px $govuk-text-colour;
+    text-decoration: none;
+  }
+  .icon-link {
+    width: 16px;
+    height: 16px;
+  }
+  .icon-link:after {
+    content: '#';
+    color: $govuk-text-colour;
+  }
+}
+
+h2:hover > a,
+h3:hover > a,
+h4:hover > a  {
+  display: block;
+}
