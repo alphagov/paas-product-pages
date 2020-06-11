@@ -2,13 +2,14 @@ import React from 'react'
 import DocumentMeta from '@components/DocumentMeta'
 import SectionNavigation from '@components/SectionNavigation'
 import { GridRow, GridColumn } from '@components/GridLayout'
+import GenericLayout from '@layouts/GenericLayout'
 
 export default function contentPage(frontMatter) {
   return ({ children: content }) => {
     return (
-      <>
-      <DocumentMeta title={frontMatter.title} />
-      <div className="govuk-width-container">
+      <GenericLayout>
+        <DocumentMeta title={frontMatter.title} />
+        <div className="govuk-width-container">
         <main className="govuk-main-wrapper" id="main-content" role="main">
           <GridRow>
             { frontMatter.sectionNav ? ( 
@@ -25,7 +26,7 @@ export default function contentPage(frontMatter) {
           </GridRow>
         </main>
       </div>
-      </>
+      </GenericLayout>
     )
   }
 }
