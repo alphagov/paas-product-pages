@@ -1,21 +1,13 @@
 import React from 'react'
-import Head from 'next/head'
+import DocumentMeta from '@components/DocumentMeta'
 import SectionNavigation from '@components/SectionNavigation'
 import { GridRow, GridColumn } from '@components/GridLayout'
-import config from '../../config/config.json'
 
 export default function contentPage(frontMatter) {
   return ({ children: content }) => {
     return (
       <>
-      <Head>
-        <title>
-          {frontMatter && frontMatter.title ? 
-            (`${frontMatter.title} - ${config.siteName}`)
-            : config.siteName
-          }
-        </title>
-      </Head>
+      <DocumentMeta title={frontMatter.title} />
       <div className="govuk-width-container">
         <main className="govuk-main-wrapper" id="main-content" role="main">
           <GridRow>

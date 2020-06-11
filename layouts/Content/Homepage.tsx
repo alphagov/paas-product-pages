@@ -1,5 +1,5 @@
 import React from 'react'
-import Head from 'next/head'
+import DocumentMeta from '@components/DocumentMeta'
 import config from '../../config/config.json'
 import Masthead from '@components/MastHead'
 
@@ -7,9 +7,7 @@ export default function HomePage() {
   return ({ children: content }) => {
     return (
       <>
-      <Head>
-        <title>{config.siteName}</title>
-      </Head>
+      <DocumentMeta />
       <main id="main-content" role="main">
         <div className="app-width-container">
           <Masthead />
