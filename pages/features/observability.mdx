@@ -1,0 +1,19 @@
+---
+section: "features"
+title: "Observability"
+sectionNav: true
+---
+
+## Logs
+
+The platform [aggregates logs for your application in a buffer of finite size](https://docs.cloud.service.gov.uk/monitoring_apps.html#logs). If you want to persist these you must ship your logs to an [external service](https://docs.cloud.service.gov.uk/monitoring_apps.html#logs).
+
+## Metrics
+
+The platform can be configured to [emit application metrics in standard statsd or prometheus format](https://docs.cloud.service.gov.uk/monitoring_apps.html#monitoring-apps). To persist these metrics, you must ship them to an external service.
+
+For most backing services, we provide metrics in the GOV.UK PaaS admin tool.
+
+## Tracing
+
+The platform [adds Zipkin compatible headers](https://docs.cloud.service.gov.uk/troubleshooting.html#tracing-http-requests) to the incoming requests so you can match those with your application's responses.
