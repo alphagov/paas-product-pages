@@ -17,6 +17,7 @@ $govuk-breakpoints: (
 @import "node_modules/govuk-frontend/govuk/components/button/index";
 @import "node_modules/govuk-frontend/govuk/components/footer/index";
 @import "node_modules/govuk-frontend/govuk/components/header/index";
+@import "node_modules/govuk-frontend/govuk/components/inset-text/index";
 @import "node_modules/govuk-frontend/govuk/components/skip-link/index";
 @import "node_modules/govuk-frontend/govuk/utilities/all";
 @import "node_modules/govuk-frontend/govuk/overrides/all";
@@ -116,4 +117,8 @@ h2:hover > a,
 h3:hover > a,
 h4:hover > a  {
   display: block;
+}
+
+blockquote {
+  @extend .govuk-inset-text;
 }
