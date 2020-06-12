@@ -1,3 +1,0 @@
-root: out
-status_codes:
-  404: /404/index.html
