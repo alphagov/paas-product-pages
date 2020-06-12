@@ -11,8 +11,8 @@ export default function GenericLayout({children}) {
       {children}
     </main>
     <Footer />
-    <script src="assets/scripts/govuk-frontend.js"></script>
-    <script src="assets/scripts/init.js"></script>
+    <script src="/assets/scripts/govuk-frontend.js"></script>
+    <script src="/assets/scripts/init.js"></script>
     </>
   )
 }
