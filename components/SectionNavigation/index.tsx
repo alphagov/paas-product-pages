@@ -30,7 +30,14 @@ const SectionNavigation = (section) => {
   return (
     <nav className="section-navigation" aria-label="Pages in the current section">
       <ol>
-        {pagesInCurrentSection.map((page) => (  
+        {pagesInCurrentSection.sort(function (a, b) {
+          if (!a.hasOwnProperty("order") || !b.hasOwnProperty("order")) {
+            // property doesn't exist on either object
+            return 0;
+          }
+          return a.order - b.order;
+        })
+        .map((page) => (  
           <li key={page.__resourcePath}
             className={`section-navigation__item ${addTrailingSlash(formatPath(page.__resourcePath)) === addTrailingSlash(router.pathname) ? 'section-navigation__item--active' : ''}`}>
             <Link href={formatPath(page.__resourcePath)}>
