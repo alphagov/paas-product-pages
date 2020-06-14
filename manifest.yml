@@ -2,7 +2,7 @@
 applications:
   - name: paas-product-pages
     buildpacks:
-      - https://github.com/cloudfoundry/nginx-buildpack.git#v1.1.9
+      - staticfile_buildpack
     memory: 256M
     instances: 2
     stack: cflinuxfs3
