@@ -1,0 +1,43 @@
+---
+section: "features"
+title: "Constraints"
+sectionNav: true
+---
+
+These are things we do not currently support. However, we are continually evolving our [roadmap](/roadmap) to meet the needs of our users, so if there is a feature here you need please let us know by contacting [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
+
+## Autoscaling
+
+The platform does not support autoscaling of tenant applications 'out of the box'. However tenants are able to automate the scaling of their applications by using the command line interface or API.
+
+## Continuous Integration
+
+The platform does not come with a CI/CD service but you are able to use industry standard tooling for this. [Read about how you can configure your own CI tooling to work with GOV.UK PaaS](https://docs.cloud.service.gov.uk/using_ci.html#configuring-a-continuous-integration-ci-tool).
+
+## Functions as a service
+
+GOV.UK PaaS does not currently support the Functions as a Service programming model.
+
+## Graphics processing unit (GPU) support
+
+Some machine learning workloads require the use of specific Amazon machine instance types that support hardware Graphics processing units (GPUs).
+
+GOV.UK PaaS does not support GPUs.
+
+## Identity provider
+
+GOV.UK PaaS does not provide an identity provider for use in tenant applications.
+
+## Public Service Network (PSN)
+
+The platform does not support connection to the [Public Services Network](https://www.gov.uk/government/groups/public-services-network).
+
+## Virtual machines
+
+We do not offer hosting for virtual machines.
+
+## Windows
+
+GOV.UK PaaS runs on an Ubuntu Bionic 18.04 linux kernel and does not runtime support for Windows binaries.
+
+You may deploy [.NET Core](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html) applications via a buildpack.

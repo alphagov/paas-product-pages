@@ -1,0 +1,124 @@
+---
+section: "features"
+title: "Application development"
+sectionNav: true
+---
+
+GOV.UK PaaS gives you a straightforward way to run your cloud native applications in containers. The platform supports most common programming languages and Docker containers.
+
+## Languages
+
+GOV.UK PaaS provides a consistent experience for different programming languages through the use of language [buildpacks](https://docs.cloudfoundry.org/buildpacks/).
+
+<table className="govuk-table">
+  <thead className="govuk-table__head">
+    <tr className="govuk-table__row">
+      <th scope="col" className="govuk-table__header">Buildpack</th>
+      <th scope="col" className="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody className="govuk-table__body">
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Binary</th>
+      <td className="govuk-table__cell">a <a href="https://docs.cloudfoundry.org/buildpacks/binary/index.html">binary</a> web application</td>
+    </tr>
+      <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Custom</th>
+    <td className="govuk-table__cell"><a href="https://docs.cloudfoundry.org/buildpacks/custom.html">a custom buildpack</a> providing a language runtime from the wider Cloud Foundry community</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Go</th>
+      <td className="govuk-table__cell">apps written in the <a href="https://docs.cloudfoundry.org/buildpacks/go/index.html">Go programming language</a></td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Java</th>
+      <td className="govuk-table__cell">apps written in the <a href="https://docs.cloudfoundry.org/buildpacks/java/index.html">Java programming language</a> or Java Virtual Machine languages such as Scala</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Nginx</th>
+      <td className="govuk-table__cell"><a href="https://docs.cloudfoundry.org/buildpacks/nginx/index.html">a web server</a></td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Nodejs</th>
+      <td className="govuk-table__cell">apps written in the <a href="https://docs.cloudfoundry.org/buildpacks/node/index.html">Nodejs programming language</a></td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">PHP</th>
+      <td className="govuk-table__cell">apps written in the <a href="https://docs.cloudfoundry.org/buildpacks/php/index.html">PHP programming language</a></td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Ruby</th>
+      <td className="govuk-table__cell">apps written in the <a href="https://docs.cloudfoundry.org/buildpacks/ruby/index.html">Ruby programming language</a></td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Python</th>
+      <td className="govuk-table__cell">apps written in the <a href="https://docs.cloudfoundry.org/buildpacks/python/index.html">Python programming language</a></td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">R</th>
+      <td className="govuk-table__cell">apps written in the <a href="https://docs.cloudfoundry.org/buildpacks/r/index.html">R programming language</a></td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Static</th>
+      <td className="govuk-table__cell">a <a href="https://docs.cloudfoundry.org/buildpacks/staticfile/index.html">static HTML/CSS/Javascript website</a> served by nginx. The product of site publishing tools such as <a href="https://jekyllrb.com/">Jekyll</a>, <a href="https://middlemanapp.com/">Middleman</a> or <a href="https://gohugo.io/">Hugo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+## Docker
+
+GOV.UK PaaS also [supports the deployment of Docker images](https://docs.cloud.service.gov.uk/deploying_apps.html#deploy-a-docker-image) with the following caveats:
+
+-   We do not offer a Docker registry service
+-   Images must be pushed to a Docker registry such as [DockerHub](https://hub.docker.com/) or [Google Container Registry](https://cloud.google.com/container-registry) before they can be deployed to GOV.UK PaaS. Your ability to stage and restage Docker applications is tied to the availability of the registry hosting the images.
+-   GOV.UK PaaS does not support Docker Compose multi-container applications
+-   The maximum size of Docker image that may be staged is 4GB
+
+## Backing services
+
+GOV.UK PaaS provides a number of highly available backing services. Please visit [our marketplace](https://admin.london.cloud.service.gov.uk/marketplace) to view more information about these services.
+
+<table className="govuk-table">
+  <thead className="govuk-table__head">
+    <tr className="govuk-table__row">
+      <th scope="col" className="govuk-table__header">Service</th>
+      <th scope="col" className="govuk-table__header">Description</th>
+    </tr>
+  </thead>
+  <tbody className="govuk-table__body">
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">CDN-route</th>
+      <td className="govuk-table__cell">Proxy traffic from a user controlled domain to an existing Cloud Foundry application or external URL. This allows you to bring your own domain to the platform and have the platform manage your TLS certificates using <a href="https://aws.amazon.com/cloudfront/">AWS Cloudfront</a> + Letsencrypt</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Elasticsearch</th>
+      <td className="govuk-table__cell"><a href="https://www.elastic.co/products/elasticsearch">A search engine</a> with a full-text search engine, an HTTP web interface and schema-free JSON documents.</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">MySQL</th>
+      <td className="govuk-table__cell"><a href="https://www.mysql.com/">A relational database</a> system</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Object Store</th>
+      <td className="govuk-table__cell">Object storage using <a href="https://aws.amazon.com/s3/">AWS S3</a></td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">PostgreSQL</th>
+      <td className="govuk-table__cell"><a href="https://www.postgresql.org/">A relational database</a> system</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Redis</th>
+      <td className="govuk-table__cell"><a href="https://redis.io/">A distributed, in-memory key-value database</a></td>
+    </tr>
+  </tbody>
+</table>
+
+## External services
+
+In addition to the service we provide, applications can connect to other internet hosted back-ends allowing you to integrate third party services and other platforms through public web APIs.
+
+## Public and private networking
+
+Applications on GOV.UK PaaS typically have a route to allow [inbound connections via the internet](https://docs.cloud.service.gov.uk/deploying_apps.html#deploying-public-apps).
+
+The platform also supports [private applications](https://docs.cloud.service.gov.uk/deploying_apps.html#deploying-private-apps) (i.e. applications without a public internet route).

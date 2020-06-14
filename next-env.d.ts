@@ -15,6 +15,7 @@ interface FrontMatter {
   __resourcePath: string;
   title: string;
   section: string;
+  navLinkText: string;
 }
 
 declare module "*.mdx" {

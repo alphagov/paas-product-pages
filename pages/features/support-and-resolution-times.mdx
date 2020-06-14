@@ -1,0 +1,106 @@
+---
+section: "features"
+title: "How we support the platform and our tenants"
+navLinkText: "Support and resolution times"
+sectionNav: true
+---
+
+GOV.UK PaaS is supported 24 hours a day, 7 days a week by the team that builds it. Our [responsibility model](https://docs.cloud.service.gov.uk/responsibility_model.html) details the areas we cover.
+
+You can email us for support at [gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk).
+
+From Monday to Friday, between 9 and 5 and excluding bank holidays ('in hours' support), our response times (see below) range from 20 minutes to 1 business day depending on:
+
+-   the nature of the request - we prioritise issues over queries
+-   the severity of the issue
+-   whether it affects a live service
+-   whether it was raised during or outside of working hours
+
+Between 5pm and 9am on Monday to Friday, at weekends and during bank holidays ('out of hours' support) we provide emergency support for critical incidents affecting live production services.
+
+Tenants with services in production can contact us to [notify and escalate about a critical issue out of working hours](/support).
+
+## Response and resolution times for services in production
+
+We address incidents, issues and requests within the timeframes detailed below:
+
+<table className="govuk-table">
+  <thead className="govuk-table__head">
+    <tr className="govuk-table__row">
+      <th className="govuk-table__cell">Classification</th>
+      <th className="govuk-table__cell">Example</th>
+      <th className="govuk-table__cell">In hours</th>
+      <th className="govuk-table__cell">Out of hours</th>
+    </tr>
+  </thead>
+  <tbody className="govuk-table__body">
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">P1<br/>Critical<br/>Incident</th>
+      <td className="govuk-table__cell">
+        <ul className="govuk-list govuk-list--bullet">
+          <li className="govuk-body-s">Applications are unavailable to end users due to a problem with our platform</li>
+          <li className="govuk-body-s">Serious security breach on the platform</li>
+          <li className="govuk-body-s">You can't make a critical fix to your production app due to the PaaS API not being available</li>
+          <li className="govuk-body-s">Your live production app has a P1 issue which cannot be resolved without help from us</li>
+        </ul>
+      </td>
+      <td className="govuk-table__cell">
+        <p className="govuk-body-s">Start work &amp; respond: 20 minutes</p>
+        <p className="govuk-body-s">Update time: 1hr</p>
+      </td>
+      <td className="govuk-table__cell">
+        <p className="govuk-body-s">Start work &amp; respond: 40 minutes</p>
+        <p className="govuk-body-s">Update time: 1hr</p>
+      </td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">P2<br/>Major<br/>Incident</th>
+      <td className="govuk-table__cell">
+        <ul className="govuk-list govuk-list--bullet">
+          <li className="govuk-body-s">Can't update/push apps due to platform issue</li>
+          <li className="govuk-body-s">Upstream vulnerabilities in GOV.UK PaaS components</li>
+          <li className="govuk-body-s">Elevated error rates on the GOV.UK PaaS platform</li>
+          <li className="govuk-body-s">Complete failure of a GOV.UK PaaS component</li>
+          <li className="govuk-body-s">Substantial degradation of the GOV.UK PaaS service</li>
+        </ul>
+      </td>
+      <td className="govuk-table__cell">
+        <p className="govuk-body-s">Start work &amp; respond: 30 minutes</p>
+        <p className="govuk-body-s">Update time: 2hr</p>
+      </td>
+      <td className="govuk-table__cell">
+        <span className="govuk-visually-hidden">not applicable</span>
+      </td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">P3<br/>Significant<br/>issue</th>
+      <td className="govuk-table__cell">
+        <ul className="govuk-list govuk-list--bullet">
+          <li className="govuk-body-s">Users (platform users or end users) experiencing intermittent or degraded service due to platform issue.</li>
+        </ul>
+      </td>
+      <td className="govuk-table__cell">
+        <p className="govuk-body-s">Start work &amp; respond: 2 hours</p>
+        <p className="govuk-body-s">Update time: 4 hours</p>
+      </td>
+      <td className="govuk-table__cell">
+        <span className="govuk-visually-hidden">not applicable</span>
+      </td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">P4<br/>Minor<br/>issue</th>
+      <td className="govuk-table__cell">
+        <ul className="govuk-list govuk-list--bullet">
+          <li className="govuk-body-s">Component failure that is not immediately impacting on service</li>
+        </ul>
+      </td>
+      <td className="govuk-table__cell">
+        <p className="govuk-body-s">Start work &amp; respond: 1 business day</p>
+        <p className="govuk-body-s">Update time: 2 business days</p>
+      </td>
+      <td className="govuk-table__cell">
+        <span className="govuk-visually-hidden">not applicable</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

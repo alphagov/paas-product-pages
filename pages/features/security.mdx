@@ -1,0 +1,85 @@
+---
+section: "features"
+title: "Security"
+sectionNav: true
+---
+
+## Our safety measures
+
+The platform is designed to meet both the [Cloud Security Principles](/cloud-security-principles) and the common security needs of data classified as 'OFFICIAL':
+
+-   data in transit is protected by HTTPS from the client to the platform
+-   apps communicate with each other through private LANs using [Silk](https://github.com/cloudfoundry/silk). Silk uses [VXLAN](https://tools.ietf.org/html/rfc7348) to address private virtual network address spaces. Cloud Foundry network policies use [iptables](https://linux.die.net/man/8/iptables) to stop unwanted communication between apps.
+-   connections from your application to backing services require TLS
+-   we host on Amazon Web Services (AWS) - their physical security procedures are [robust and audited](http://d0.awsstatic.com/whitepapers/compliance/AWS_CESG_UK_Cloud_Security_Principles.pdf)
+-   data in backing services can be encrypted at rest
+-   separation between users of the platform is enforced by Cloud Foundry's internal authentication and access control system
+-   Linux containers provide the boundary between running application instances
+-   the platform relies on robust operational security and processes (see below)
+-   it's possible to change and revoke your team members' permissions and roles to manage the service
+-   users can authenticate via single sign-on with your organisation's Google and Microsoft accounts
+-   we use 2-factor authentication, short-lived credentials and IP restriction policies for identity and access management to protect AWS resources
+-   shared credentials are rotated to minimise risk of unauthorised access
+-   Amazon Cloudtrail audits and monitors AWS activity
+-   the CloudFoundry events API provides audit information about the use of your service
+
+## How we manage change, vulnerabilities and incidents
+
+The platform is built and maintained by a government team within the Government Digital Service, and these are the established working practices:
+
+-   everyone with production access has Security Check (SC) clearance
+-   code changes are approved by team members who haven't worked on the feature
+-   we do pair programming whenever possible
+-   system configuration and access privileges are under source code control and so is documentation
+-   control changes to the production platform are overseen by civil servants
+-   we code in the open and our code is available in the [alphagov](https://github.com/alphagov) project on GitHub - search for the 'paas' repositories
+-   we have a tried and tested incident management approach
+-   reports of incidents are published and available on our [status page](https://status.cloud.service.gov.uk/history)
+-   external penetration tests (IT Health Checks) of the platform are carried out annually and it's our policy to address all issues discovered with a CVSS score of medium or above
+-   when security updates become available, we start working on them within one working day, prioritising fixes to critical severity vulnerabilities
+
+If you need more information, contact us at:  
+[gov-uk-paas-support@digital.cabinet-office.gov.uk](mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk)
+
+## Who's responsible for what
+
+ <table className="govuk-table">
+  <thead className="govuk-table__head">
+    <tr className="govuk-table__row">
+      <th scope="col" className="govuk-table__header">Your responsibility</th>
+      <th scope="col" className="govuk-table__header">Our responsibility</th>
+    </tr>
+  </thead>
+  <tbody className="govuk-table__body">
+    <tr className="govuk-table__row">
+      <td className="govuk-table__cell">Security of the application design and code</td>
+      <td className="govuk-table__cell">Security of the platform</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <td className="govuk-table__cell">Applying security updates to application dependencies</td>
+      <td className="govuk-table__cell">Applying security updates to the platform including the underlying operating system</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <td className="govuk-table__cell">Updating custom buildpacks (if you use them)</td>
+      <td className="govuk-table__cell">Updating system buildpacks</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <td className="govuk-table__cell">Applying security updates to your Docker images (if you use them)</td>
+      <td className="govuk-table__cell">Applying security updates to backing services</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <td className="govuk-table__cell">Telling us if you experience any security breaches</td>
+      <td className="govuk-table__cell">Telling you if the platform experiences any security breaches</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <td className="govuk-table__cell">Performing penetration testing on your applications</td>
+      <td className="govuk-table__cell">Performing penetration testing on the platform</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <td className="govuk-table__cell">
+        <span className="govuk-visually-hidden">not applicable</span>
+      </td>
+      <td className="govuk-table__cell">Setting defaults that optimise for security</td>
+    </tr>
+  </tbody>
+</table>
