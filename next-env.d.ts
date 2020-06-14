@@ -16,6 +16,7 @@ interface FrontMatter {
   title: string;
   section: string;
   navLinkText: string;
+  order: Integer;
 }
 
 declare module "*.mdx" {
