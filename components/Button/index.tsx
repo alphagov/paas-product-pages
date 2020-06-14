@@ -5,6 +5,7 @@ const Button = (props) => {
   const {
     element,
     href,
+    externalHref,
     isStartButton,
     disabled,
     className,
@@ -26,7 +27,7 @@ const Button = (props) => {
 
   if (element) {
     el = element;
-  } else if (href) {
+  } else if (href || externalHref) {
     el = 'a';
   } else {
     el = 'button';
@@ -73,14 +74,19 @@ const Button = (props) => {
       draggable: 'false',
       ...attributes,
       'data-module': 'govuk-button',
-      href
+      href,
     };
-
-    button = (
-      <Link href={href}>
-        <a {...linkAttributes} {...commonAttributes}>{children}{iconHtml}</a>
-      </Link>
-    );
+    if (externalHref) {
+      button = (
+        <a {...linkAttributes} {...commonAttributes} href={externalHref}>{children}{iconHtml}</a>
+      )
+    } else {
+      button = (
+        <Link href={href}>
+          <a {...linkAttributes} {...commonAttributes}>{children}{iconHtml}</a>
+        </Link>
+      );
+    }
   } else if (el === 'button') {
     button = (
       <button {...buttonAttributes} {...commonAttributes}>
