@@ -1,15 +1,22 @@
 import React from 'react'
-import DocumentMeta from '@components/DocumentMeta'
+import Head from 'next/head'
 import SectionNavigation from '@components/SectionNavigation'
 import { GridRow, GridColumn } from '@components/GridLayout'
-import GenericLayout from '@layouts/GenericLayout'
+import config from '../../config/config.json'
 
 export default function contentPage(frontMatter) {
   return ({ children: content }) => {
     return (
-      <GenericLayout>
-        <DocumentMeta title={frontMatter.title} />
-        <div className="govuk-width-container">
+      <>
+      <Head>
+        <title>
+          {frontMatter && frontMatter.title ? 
+            (`${frontMatter.title} - ${config.siteName}`)
+            : config.siteName
+          }
+        </title>
+      </Head>
+      <div className="govuk-width-container">
         <main className="govuk-main-wrapper" id="main-content" role="main">
           <GridRow>
             { frontMatter.sectionNav ? ( 
@@ -26,7 +33,7 @@ export default function contentPage(frontMatter) {
           </GridRow>
         </main>
       </div>
-      </GenericLayout>
+      </>
     )
   }
 }
