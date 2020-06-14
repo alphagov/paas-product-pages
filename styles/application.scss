@@ -28,15 +28,6 @@ $govuk-breakpoints: (
 // so we don't affect component styles
 $notGOVUKClass: 'not([class^='govuk'])';
 
-//mitigate fouc
-html {
- @extend .govuk-template;
-}
-
-body {
-  @extend .govuk-template__body;
-}
-
 h1:#{$notGOVUKClass} {
   @extend .govuk-heading-xl;
 }
