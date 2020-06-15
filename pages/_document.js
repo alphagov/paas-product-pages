@@ -31,6 +31,12 @@ class GovukTemplate extends Document {
           <Main />
           <Footer />
           <NextScript />
+          <script type="text/javascript" src="/assets/javascript/govuk-frontend.js" />
+          <script dangerouslySetInnerHTML={{__html: `
+            if (typeof window !== 'undefined') { 
+              window.GOVUKFrontend.initAll();
+            }
+           `}} />
         </body>
       </Html>
     )
