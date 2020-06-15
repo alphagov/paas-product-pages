@@ -123,3 +123,11 @@ h4:hover > a  {
 blockquote {
   @extend .govuk-inset-text;
 }
+
+// scrollable table on mobile
+.scrollable-table-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
