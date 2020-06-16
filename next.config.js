@@ -3,7 +3,7 @@ const rehypeSlug = require('rehype-slug')
 const rehypeAutolinkHeadings = require('rehype-autolink-headings')
 
 module.exports = withMdxEnhanced({
-  layoutPath: 'layouts/Content/',
+  layoutPath: 'src/layouts/Content/',
   defaultLayout: true,
   fileExtensions: ['mdx'],
   remarkPlugins: [],
