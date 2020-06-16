@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import {frontMatter as pages} from '../../pages/**/*.mdx'
+import {frontMatter as pages} from '../../pages/*.mdx'
 import { useRouter } from 'next/router'
 
 const SectionNavigation = (section) => {
@@ -12,17 +12,13 @@ const SectionNavigation = (section) => {
   // in local dev you'll see 
   // react-dom.development.js:88 Warning: Prop `href` did not match. error. Ignore.
   const formatPath = (path) => {
-    return path.endsWith('/index.mdx') ? addLeadingSlash(path.replace(/index\.mdx$/, '')) : addLeadingSlash(path.replace(/\.mdx$/, ''))
+    return addLeadingSlash(path.replace(/\.mdx$/, ''))
   }
   
   const addLeadingSlash = (path) => {
     return `/${path}`
   }
-  const addTrailingSlash = (path) => {
-    return path.endsWith('/') ? path : path.replace(/\/?(\?|#|$)/, '/$1')
-  }
   
-
   const pagesInCurrentSection = pages.filter(function(page){
     return page.section === section.section
   })
@@ -39,7 +35,7 @@ const SectionNavigation = (section) => {
         })
         .map((page) => (  
           <li key={page.__resourcePath}
-            className={`section-navigation__item ${addTrailingSlash(formatPath(page.__resourcePath)) === addTrailingSlash(router.pathname) ? 'section-navigation__item--active' : ''}`}>
+            className={`section-navigation__item ${formatPath(page.__resourcePath) === router.pathname ? 'section-navigation__item--active' : ''}`}>
             <Link href={formatPath(page.__resourcePath)}>
               <a className="govuk-link">{page.navLinkText ? page.navLinkText : page.title}</a>
             </Link>
