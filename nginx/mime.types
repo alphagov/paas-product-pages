@@ -4,7 +4,7 @@ types {
   text/xml xml;
   image/gif gif;
   image/jpeg jpeg jpg;
-  application/x-javascript js;
+  application/javascript js;
   application/atom+xml atom;
   application/rss+xml rss;
   font/ttf ttf;
@@ -60,8 +60,6 @@ types {
   application/octet-stream msi msp msm;
   application/x-font-ttf ttc ttf;
   application/x-font-otf otf;
-  application/font-woff woff;
-  application/font-woff2 woff2;
   application/vnd.ms-fontobject eot;
   application/json json;
   audio/midi mid midi kar;
