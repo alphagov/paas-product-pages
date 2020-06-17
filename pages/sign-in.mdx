@@ -1,0 +1,41 @@
+---
+title: "Sign in to GOV.UK PaaS"
+---
+import Button from '@components/Button'
+
+<form>
+  <div className="govuk-form-group">
+    <fieldset className="govuk-fieldset">
+      <legend className="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h2 className="govuk-fieldset__heading">
+          Choose your region
+        </h2>
+      </legend>
+      <div className="govuk-radios">
+        <div className="govuk-radios__item">
+          <input className="govuk-radios__input" id="region-london" name="region" type="radio" value="london" aria-describedby="region-london-hint" />
+          <label className="govuk-label govuk-radios__label govuk-label--s" htmlFor="region">
+            London
+          </label>
+          <span id="region-london-hint" className="govuk-hint govuk-radios__hint">
+            Apps without a custom domain end with <code>london.cloudapps.digital</code>.
+          </span>
+        </div>
+        <div className="govuk-radios__item">
+          <input className="govuk-radios__input" id="region-ireland" name="region" type="radio" value="ireland" aria-describedby="region-ireland-hint" />
+          <label className="govuk-label govuk-radios__label govuk-label--s" htmlFor="region-ireland">
+            Ireland
+          </label>
+          <span id="region-ireland-item-hint" className="govuk-hint govuk-radios__hint">
+            Apps without a custom domain end with <code>cloudapps.digital</code>.
+          </span>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <Button element="input">Continue</Button>
+</form>
+
+## Use the Command Line
+
+If you need help accessing GOV.UK PaaS from the command-line interface, take a look at our [technical documentation](https://docs.cloud.service.gov.uk/get_started.html#set-up-the-cloud-foundry-command-line).
