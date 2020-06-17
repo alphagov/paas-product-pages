@@ -1,3 +1,13 @@
 {
-  "siteName": "GOV.UK Platform as a Service"
+  "siteName": "GOV.UK Platform as a Service",
+  "adminLoginUrls": [
+    {
+      "location": "london",
+      "url": "https://admin.london.cloud.service.gov.uk/"
+    },
+    {
+      "location": "ireland",
+      "url": "https://admin.cloud.service.gov.uk/"
+    }
+  ]
 }
