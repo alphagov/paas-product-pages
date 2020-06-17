@@ -17,6 +17,12 @@ Then run the development server
 npm run dev
 ```
 
+To test the nginx configuration locally (requires docker)
+
+```bash
+npm run nginx:local # site available on http://localhost:8080
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 Page content is written in Markdown and is located in `pages/**/<filename>.mdx`. 
