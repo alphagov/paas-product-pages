@@ -58,6 +58,11 @@ types {
   application/octet-stream eot;
   application/octet-stream iso img;
   application/octet-stream msi msp msm;
+  application/x-font-ttf ttc ttf;
+  application/x-font-otf otf;
+  application/font-woff woff;
+  application/font-woff2 woff2;
+  application/vnd.ms-fontobject eot;
   application/json json;
   audio/midi mid midi kar;
   audio/mpeg mp3;
