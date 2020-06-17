@@ -7,7 +7,8 @@ types {
   application/javascript js;
   application/atom+xml atom;
   application/rss+xml rss;
-  font/ttf ttf;
+  font/ttf ttc ttf;
+  font/otf otf;
   font/woff woff;
   font/woff2 woff2;
   text/mathml mml;
@@ -58,9 +59,6 @@ types {
   application/octet-stream eot;
   application/octet-stream iso img;
   application/octet-stream msi msp msm;
-  application/x-font-ttf ttc ttf;
-  application/x-font-otf otf;
-  application/vnd.ms-fontobject eot;
   application/json json;
   audio/midi mid midi kar;
   audio/mpeg mp3;
