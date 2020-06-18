@@ -16,22 +16,36 @@ export default function contentPage(frontMatter) {
           }
         </title>
       </Head>
-      <div className="govuk-width-container">
-        <main className="govuk-main-wrapper" id="main-content" role="main">
-          <GridRow>
-            { frontMatter.sectionNav ? ( 
-            <GridColumn width='one-third'>
-              <SectionNavigation section={frontMatter.section} />
-            </GridColumn> ) : <></>
-            }
-            <GridColumn width='two-thirds'>
-              {frontMatter && frontMatter.title ? (
-                <h1 className="govuk-heading-xl">{frontMatter.title}</h1>
-              ): <></>}
-              {content}
-            </GridColumn>
-          </GridRow>
-        </main>
+      <div className="govuk-width-container ">
+        { frontMatter.sectionNav ? (
+            <>
+            <GridRow>
+              <GridColumn width='one-third'>
+                <SectionNavigation section={frontMatter.section} />
+              </GridColumn>
+              <GridColumn width='two-thirds'>
+                <main className="govuk-main-wrapper" id="main-content" role="main">
+                  {frontMatter && frontMatter.title ? (
+                      <h1 className="govuk-heading-xl">{frontMatter.title}</h1>
+                    ): <></>}
+                  {content}
+                </main>
+              </GridColumn>
+            </GridRow>
+            </>
+          ) : (
+            <main className="govuk-main-wrapper" id="main-content" role="main">
+            <GridRow>
+              <GridColumn width='two-thirds'>
+                {frontMatter && frontMatter.title ? (
+                  <h1 className="govuk-heading-xl">{frontMatter.title}</h1>
+                ): <></>}
+                {content}
+              </GridColumn>
+            </GridRow>
+          </main>
+          )
+        }
       </div>
       </>
     )
