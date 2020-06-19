@@ -13,3 +13,5 @@ node_modules
 out
 .DS_Store
 .mdx-data
+public/assets/styles
+public/assets/javascript

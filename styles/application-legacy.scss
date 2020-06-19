@@ -1,0 +1,24 @@
+$govuk-is-ie8: true;
+
+@import "application";
+
+h1 {
+  @extend .govuk-heading-xl;
+}
+
+h2 {
+  @extend .govuk-heading-l;
+}
+
+h3 {
+  @extend .govuk-heading-m;
+}
+
+h4 {
+  @extend .govuk-heading-s;
+}
+
+ol ,ul {
+  @extend .govuk-list;
+  @extend .govuk-list--bullet;
+}
