@@ -29,28 +29,31 @@ $govuk-breakpoints: (
 
 // we only want to style content elements that don't have "govuk" classnames
 // so we don't affect component styles
-$notGOVUKClass: 'not([class^='govuk'])';
 
-h1:#{$notGOVUKClass} {
-  @extend .govuk-heading-xl;
-}
+@include govuk-not-ie8 {
+  $notGOVUKClass: 'not([class^='govuk'])';
 
-h2:#{$notGOVUKClass} {
-  @extend .govuk-heading-l;
-}
+  h1:#{$notGOVUKClass} {
+    @extend .govuk-heading-xl;
+  }
 
-h3:#{$notGOVUKClass} {
-  @extend .govuk-heading-m;
-}
+  h2:#{$notGOVUKClass} {
+    @extend .govuk-heading-l;
+  }
 
-h4:#{$notGOVUKClass} {
-  @extend .govuk-heading-s;
-}
+  h3:#{$notGOVUKClass} {
+    @extend .govuk-heading-m;
+  }
 
-ol:#{$notGOVUKClass},
-ul:#{$notGOVUKClass} {
-  @extend .govuk-list;
-  @extend .govuk-list--bullet;
+  h4:#{$notGOVUKClass} {
+    @extend .govuk-heading-s;
+  }
+
+  ol:#{$notGOVUKClass},
+  ul:#{$notGOVUKClass} {
+    @extend .govuk-list;
+    @extend .govuk-list--bullet;
+  }
 }
 
 img {
@@ -69,11 +72,24 @@ img {
 
   .govuk-header__logo {
     width: auto;
+    @include govuk-if-ie8 {
+      img {
+        display: inline-block;
+        max-width: inherit;
+      }
+    }
   }
 
   .govuk-header__content {
     width: auto;
     padding-left: 0;
+  }
+
+  @include govuk-if-ie8 {
+    .govuk-header__logotype-crown-fallback-image {
+      display: inline-block;
+      max-width: auto;
+    }
   }
 }
 
@@ -82,7 +98,6 @@ img {
     float: right;
   }
 }
-
 
 // heading anchor link styles
 h2,
