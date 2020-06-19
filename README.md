@@ -14,7 +14,7 @@ npm install
 Then run the development server
 
 ```bash
-npm run dev
+npm run local
 ```
 
 To test the nginx configuration locally (requires docker)
