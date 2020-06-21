@@ -37,7 +37,12 @@ const SectionNavigation = (section) => {
           <li key={page.__resourcePath}
             className={`section-navigation__item ${formatPath(page.__resourcePath) === router.pathname ? 'section-navigation__item--active' : ''}`}>
             <Link href={formatPath(page.__resourcePath)}>
-              <a className="govuk-link">{page.navLinkText ? page.navLinkText : page.title}</a>
+              <a 
+                className="govuk-link" 
+                aria-current={formatPath(page.__resourcePath) === router.pathname ? 'page' : null}
+               >
+              {page.navLinkText ? page.navLinkText : page.title}
+              </a>
             </Link>
           </li>
         ))}
