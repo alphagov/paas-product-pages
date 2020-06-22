@@ -22,3 +22,7 @@ ol ,ul {
   @extend .govuk-list;
   @extend .govuk-list--bullet;
 }
+
+.js-enabled .govuk-header__navigation {
+  display: block;
+}
