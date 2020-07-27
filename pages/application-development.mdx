@@ -89,11 +89,15 @@ GOV.UK PaaS provides a number of highly available backing services. Please visit
   <tbody className="govuk-table__body">
     <tr className="govuk-table__row">
       <th scope="row" className="govuk-table__cell">CDN-route</th>
-      <td className="govuk-table__cell">Proxy traffic from a user controlled domain to an existing Cloud Foundry application or external URL. This allows you to bring your own domain to the platform and have the platform manage your TLS certificates using <a href="https://aws.amazon.com/cloudfront/">AWS Cloudfront</a> + Letsencrypt</td>
+      <td className="govuk-table__cell">Proxy traffic from a user controlled domain to an existing Cloud Foundry application or external URL. This allows you to bring your own domain to the platform and have the platform manage your TLS certificates using <a href="https://aws.amazon.com/cloudfront/">AWS Cloudfront</a> + <a href="https://aws.amazon.com/certificate-manager/">AWS Certificate Manager</a></td>
     </tr>
     <tr className="govuk-table__row">
       <th scope="row" className="govuk-table__cell">Elasticsearch</th>
       <td className="govuk-table__cell"><a href="https://www.elastic.co/products/elasticsearch">A search engine</a> with a full-text search engine, an HTTP web interface and schema-free JSON documents.</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">InfluxDB</th>
+      <td className="govuk-table__cell"><a href="https://www.influxdata.com/products/">A time series database</a>.</td>
     </tr>
     <tr className="govuk-table__row">
       <th scope="row" className="govuk-table__cell">MySQL</th>
