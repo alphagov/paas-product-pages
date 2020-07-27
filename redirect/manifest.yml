@@ -1,0 +1,15 @@
+---
+applications:
+  - name: paas-product-pages-redirect
+    buildpack: nginx_buildpack
+    memory: 32M
+    instances: 2
+
+    routes:
+      - route: cloud.service.gov.uk
+      - route: paas-product-page.cloudapps.digital
+      - route: paas-product-page-redirect.cloudapps.digital
+      - route: paas-product-pages-redirect.cloudapps.digital
+
+    env:
+      REDIRECT_DOMAIN: www.cloud.service.gov.uk
