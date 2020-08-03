@@ -1,0 +1,54 @@
+---
+title: "Cookies"
+---
+
+GOV.UK PaaS puts small files (known as ‘cookies’) onto your computer.
+
+Cookies are used to:
+
+*   remember you once you've signed in
+*   keep your session open
+*   avoid malicious requests
+
+Find out [how to manage cookies](https://ico.org.uk/for-the-public/online/cookies/).
+
+## Session cookies (strictly necessary)
+
+We store session cookies on your computer to help keep your information secure when you sign into the service.
+
+<table className="govuk-table">
+  <thead className="govuk-table__head">
+    <tr className="govuk-table__row">
+      <th scope="col" className="govuk-table__header">Name</th>
+      <th scope="col" className="govuk-table__header">Purpose</th>
+      <th scope="col" className="govuk-table__header">Expires</th>
+    </tr>
+  </thead>
+  <tbody className="govuk-table">
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__header">JSESSIONID</th>
+      <td className="govuk-table__cell">This is set to identify your session</td>
+      <td width="16%">when you close the browser</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__header">__VCAP_ID__</th>
+      <td className="govuk-table__cell">This is used with JSESSIONID to route your request to the right application instance (‘sticky session’)</td>
+      <td className="govuk-table__cell">when you close the browser</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__header">X-Uaa-Csrf</th>
+      <td className="govuk-table__cell">This is set to verify that your requests haven’t been tampered with by a malicious third party</td>
+      <td className="govuk-table__cell">1 day</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__header">pazmin-session</th>
+      <td className="govuk-table__cell">This is set to identify your session in our admin interface</td>
+      <td className="govuk-table__cell">when you close the browser</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__header">pazmin-session.sig</th>
+      <td className="govuk-table__cell">This is set to identify your session in our admin interface. This signature (sig) is generated using a key and is used to help prevent tampering.</td>
+      <td className="govuk-table__cell">when you close the browser</td>
+    </tr>
+  </tbody>
+</table>
