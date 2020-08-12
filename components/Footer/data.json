@@ -16,6 +16,10 @@
         "href": "/terms-of-use"
       },
       { 
+        "text": "Cookies", 
+        "href": "/cookies"
+      },
+      { 
         "text": "System status", 
         "href": "https://status.cloud.service.gov.uk/"
       }
