@@ -8,7 +8,7 @@ export default function HomePage() {
     return (
       <>
       <Head>
-        <title>{config.siteName}</title>
+        <title>{`Host your service in the Cloud - ${config.siteName}`}</title>
       </Head>
       <main id="main-content" role="main">
         <div className="app-width-container">

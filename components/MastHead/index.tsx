@@ -16,7 +16,7 @@ const Masthead = () => {
         </div>
         <div className="govuk-grid-row">
           <div className="masthead__body govuk-grid-column-two-thirds">
-            <h1 className="govuk-heading-xl masthead__title ">Host your service in the Cloud</h1>
+            <h1 className="govuk-heading-xl masthead__title ">Host your service in the Cloud< span className="govuk-visually-hidden">with GOV.UK Platform as a service (PaaS)</span></h1>
             <div className="masthead__inline-image">
               <img src="/assets/images/paas-top-image.png" alt="" role="presentation" />
             </div>
