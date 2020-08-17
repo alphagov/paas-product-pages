@@ -152,3 +152,41 @@ blockquote {
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
+
+//homepage breadcrumb -- inverse
+.app-breadcrumbs--inverse {
+  background-color: $govuk-brand-colour;
+  color: govuk-colour('white');
+  border-bottom: 1px solid rgba(govuk-colour("white"), .25);
+  padding-bottom: govuk-spacing(2);
+  margin-top: -11px;
+  padding-top: govuk-spacing(2);
+  margin-bottom: 0;
+
+  .govuk-breadcrumbs__list {
+    @extend .govuk-width-container;
+  }
+  .govuk-breadcrumbs__list-item{
+    &:before {
+      border-color: govuk-colour('white');
+    }
+
+    &[aria-current=page]{
+      font-weight: 700;
+      color: govuk-colour('white');
+    }
+  }
+
+  .govuk-breadcrumbs__link {
+    color: govuk-colour('white');
+
+    &:hover,
+    &:active {
+      color: govuk-colour('white');
+    }
+
+    &:focus {
+      color:  $govuk-text-colour;
+    }
+  }
+}
