@@ -12,6 +12,7 @@
     "nginx:local": "docker run --rm -it -v $PWD:/etc/nginx -p 8080:8080 nginx bash -c 'cp /etc/nginx/nginx.conf /tmp/nginx.old && sed -i 's/{{port}}/8080/' /etc/nginx/nginx.conf && nginx ; mv /tmp/nginx.old /etc/nginx/nginx.conf'"
   },
   "dependencies": {
+    "@jsdevtools/rehype-toc": "^3.0.2",
     "@mdx-js/loader": "^1.5.1",
     "@next/mdx": "^9.1.1",
     "babel-plugin-import-glob-array": "^0.2.0",
@@ -21,9 +22,9 @@
     "postcss-nested": "^4.2.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "rehype-autolink-headings": "^3.0.0",
     "rehype-slug": "^3.0.0",
-    "sass": "^1.26.5"
+    "sass": "^1.26.5",
+    "unist-util-remove": "^2.0.0"
   },
   "license": "MIT",
   "devDependencies": {
