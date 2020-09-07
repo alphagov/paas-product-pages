@@ -40,7 +40,7 @@ const Header = () => (
     </div>
     <div className="govuk-header__content">
       {Object.keys(data.navigation).length < 1 ? '' : <>
-      <button type="button" className="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+      <button type="button" className="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation Menu">Menu</button>
       <nav>
         <ul id="navigation" 
           className={`govuk-header__navigation ${data.navigationClasses}`}
