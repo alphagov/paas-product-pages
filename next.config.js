@@ -21,6 +21,7 @@ module.exports = withMdxEnhanced({
       customizeTOC: function(toc) {
         if (toc.type === 'element' && toc.tagName === 'nav') {
           toc.properties.role = 'navigation';
+          toc.properties['aria-label'] = 'Sections on this page';
         }
         if (toc.children[0].children.length === 0) {
           return false
