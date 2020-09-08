@@ -108,6 +108,10 @@ img[src*="#customer-logo"] {
   margin-bottom: govuk-spacing(6);
 }
 
+.app-toc__link {
+  line-height: 1.5;
+}
+
 .app-toc__list-item {
   list-style-type: none;
   position: relative;
