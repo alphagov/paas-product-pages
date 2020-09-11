@@ -4,16 +4,16 @@
     "visuallyHiddenTitle" : "Support links",
     "items": [
       { 
-        "text": "Built by Government Digital Service", 
-        "href": "https://www.gov.uk/government/organisations/government-digital-service"
-      },
-      { 
         "text": "Privacy notice", 
         "href": "/privacy-notice"
       },
       { 
         "text": "Terms of use", 
         "href": "/terms-of-use"
+      },
+      { 
+        "text": "Accessibility statement", 
+        "href": "/accessibility-statement"
       },
       { 
         "text": "Cookies", 
