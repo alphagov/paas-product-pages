@@ -50,5 +50,5 @@ module.exports = withMdxEnhanced({
     phase: 'prebuild|loader|both',
   },
 })({
-  exportTrailingSlash: true
+  trailingSlash: true
 })
