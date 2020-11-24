@@ -25,6 +25,7 @@ const Footer = () => (
           ))}
         </div>
       }
+      <hr className="govuk-footer__section-break"></hr>
       <div className="govuk-footer__meta">
         <div className="govuk-footer__meta-item govuk-footer__meta-item--grow">
           {Object.keys(meta).length < 1 ? '' : <>

@@ -1,28 +1,47 @@
 {
-  "navigation": [],
-  "meta": {
-    "visuallyHiddenTitle" : "Support links",
-    "items": [
-      { 
-        "text": "Privacy notice", 
-        "href": "/privacy-notice"
-      },
-      { 
-        "text": "Terms of use", 
-        "href": "/terms-of-use"
-      },
-      { 
-        "text": "Accessibility statement", 
-        "href": "/accessibility-statement"
-      },
-      { 
-        "text": "Cookies", 
-        "href": "/cookies"
-      },
-      { 
-        "text": "System status", 
-        "href": "https://status.cloud.service.gov.uk/"
-      }
-    ]
-  } 
+  "navigation": [
+    {
+      "title": "Support",
+      "items": [
+        { 
+          "text": "System status", 
+          "href": "https://status.cloud.service.gov.uk"
+        },
+        { 
+          "text": "Documentation", 
+          "href": "https://docs.cloud.service.gov.uk"
+        },
+        { 
+          "text": "Contact support", 
+          "href": "https://admin.london.cloud.service.gov.uk/support"
+        },
+        { 
+          "text": "Roadmap", 
+          "href": "https://github.com/alphagov/paas-roadmap/projects/1?fullscreen=true"
+        }
+      ]
+    },
+    {
+      "title": "Legal terms",
+      "items": [
+        { 
+          "text": "Privacy notice", 
+          "href": "/privacy-notice"
+        },
+        { 
+          "text": "Terms of use", 
+          "href": "/terms-of-use"
+        },
+        { 
+          "text": "Accessibility statement", 
+          "href": "/accessibility-statement"
+        },
+        { 
+          "text": "Cookies", 
+          "href": "/cookies"
+        }
+      ]
+    }
+  ],
+  "meta": {}
 }
