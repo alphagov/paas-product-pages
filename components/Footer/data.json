@@ -2,6 +2,7 @@
   "navigation": [
     {
       "title": "Support",
+      "columns": null,
       "items": [
         { 
           "text": "System status", 
@@ -23,6 +24,7 @@
     },
     {
       "title": "Legal terms",
+      "columns": null,
       "items": [
         { 
           "text": "Privacy notice", 
@@ -43,5 +45,9 @@
       ]
     }
   ],
-  "meta": {}
+  "meta" : {
+    "visuallyHiddenTitle" : null,
+    "items": []
+  }
 }
+

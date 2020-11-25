@@ -28,7 +28,7 @@ const Footer = () => (
       <hr className="govuk-footer__section-break"></hr>
       <div className="govuk-footer__meta">
         <div className="govuk-footer__meta-item govuk-footer__meta-item--grow">
-          {Object.keys(meta).length < 1 ? '' : <>
+          {meta.items.length < 1 ? '' : <>
             <h2 className="govuk-visually-hidden">{meta.visuallyHiddenTitle}</h2>
             <ul className="govuk-footer__inline-list">
               {meta.items.map((item, index) => (
