@@ -19,6 +19,10 @@
         { 
           "text": "Roadmap", 
           "href": "https://github.com/alphagov/paas-roadmap/projects/1?fullscreen=true"
+        },
+        { 
+          "text": "Chat to us on Slack", 
+          "href": "https://ukgovernmentdigital.slack.com/app_redirect?channel=govuk-paas"
         }
       ]
     },
