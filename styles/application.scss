@@ -25,6 +25,7 @@ $govuk-breakpoints: (
 @import "~govuk-frontend/govuk/overrides/all";
 @import "section-navigation";
 @import "masthead";
+@import "cookie-banner";
 
 
 // we only want to style content elements that don't have "govuk" classnames
