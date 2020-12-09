@@ -16,7 +16,7 @@
     "@mdx-js/loader": "^1.6.19",
     "@next/mdx": "^9.5.5",
     "babel-plugin-import-glob-array": "^0.2.0",
-    "govuk-frontend": "^3.9.1",
+    "govuk-frontend": "^3.10.1",
     "next": "^10.0.0",
     "next-mdx-enhanced": "5.0.0",
     "postcss-nested": "^4.2.3",
