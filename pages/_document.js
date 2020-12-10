@@ -47,7 +47,7 @@ class GovukTemplate extends Document {
           <Header />
           <Main />
           <Footer />
-          <script type="text/javascript" src="/assets/javascript/govuk-frontend.js" />
+          <script type="text/javascript" src="/assets/javascript/app.js" />
         </body>
       </Html>
     )

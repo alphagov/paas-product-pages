@@ -11,16 +11,15 @@ const production = !process.env.ROLLUP_WATCH;
 
 export default[ 
 	{
-		input: 'javascripts/govuk-frontend.js',
+		input: 'javascripts/app.js',
 		output: {
-			file: 'public/assets/javascript/govuk-frontend.js',
-			// legacy: true,
+			file: 'public/assets/javascript/app.js',
 			format: 'iife', // immediately-invoked function expression — suitable for <script> tags
 			sourcemap: false
 		},
 		plugins: [
-			resolve(), // tells Rollup how to find date-fns in node_modules
-			commonjs(), // converts date-fns to ES modules
+			resolve(),
+			commonjs(),
 			production && terser() // minify, but only in production
 		]
 	},
