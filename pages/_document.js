@@ -1,4 +1,5 @@
 import Document, { Html, Main } from 'next/document'
+import CookieBanner from '@components/CookieBanner'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
 
@@ -42,10 +43,11 @@ class GovukTemplate extends Document {
         <body className="govuk-template__body">
           <script dangerouslySetInnerHTML={{__html: `document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');`}} />      
           <a href="#main-content" className="govuk-skip-link">Skip to main content</a>
+          <CookieBanner />
           <Header />
           <Main />
           <Footer />
-          <script type="text/javascript" src="/assets/javascript/govuk-frontend.js" />
+          <script type="text/javascript" src="/assets/javascript/app.js" />
         </body>
       </Html>
     )

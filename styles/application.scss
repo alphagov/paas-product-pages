@@ -18,6 +18,7 @@ $govuk-breakpoints: (
 @import "~govuk-frontend/govuk/components/footer/index";
 @import "~govuk-frontend/govuk/components/header/index";
 @import "~govuk-frontend/govuk/components/inset-text/index";
+@import "~govuk-frontend/govuk/components/notification-banner/index";
 @import "~govuk-frontend/govuk/components/radios/index";
 @import "~govuk-frontend/govuk/components/skip-link/index";
 @import "~govuk-frontend/govuk/components/table/index";
@@ -25,6 +26,7 @@ $govuk-breakpoints: (
 @import "~govuk-frontend/govuk/overrides/all";
 @import "section-navigation";
 @import "masthead";
+@import "cookie-banner";
 
 
 // we only want to style content elements that don't have "govuk" classnames
@@ -173,4 +175,24 @@ blockquote {
       color:  $govuk-text-colour;
     }
   }
+}
+
+
+// no-js cookie setting message
+// js-enabled form
+
+.js-enabled .cookie-settings__no-js {
+  display: none;
+}
+
+.js-enabled .cookie-settings__form-wrapper {
+  display: block;
+}
+
+.cookie-settings__form-wrapper {
+  display: none;
+}
+
+[data-cookie-confirmation="true"] {
+  display: none;
 }
