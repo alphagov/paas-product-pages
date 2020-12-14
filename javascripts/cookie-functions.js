@@ -30,9 +30,31 @@ Cookies.prototype.initAnalytics = function() {
 
 Cookies.prototype.initCookieBanner = function ($module) {
   this.$module = $module
+
+  this.$module.hideCookieMessage = this.hideCookieMessage.bind(this)
+  this.$module.showBannerConfirmationMessage = this.showBannerConfirmationMessage.bind(this)
+  this.$module.setBannerCookieConsent = this.setBannerCookieConsent.bind(this)
+  this.$module.cookieBannerConfirmationMessage = this.$module.querySelector('.cookie-banner__confirmation')
+
   if (!this.$module) {
     return
   }
+
+  this.$hideLink = this.$module.querySelector('button[data-hide-cookie-banner]');
+  if (this.$hideLink) {
+    this.$hideLink.addEventListener('click', this.$module.hideCookieMessage);
+  }
+
+  this.$acceptCookiesLink = this.$module.querySelector('button[data-accept-cookies=true]');
+  if (this.$acceptCookiesLink) {
+    this.$acceptCookiesLink.addEventListener('click', () => this.$module.setBannerCookieConsent(true));
+  }
+
+  this.$rejectCookiesLink = this.$module.querySelector('button[data-accept-cookies=false]');
+  if (this.$rejectCookiesLink) {
+    this.$rejectCookiesLink.addEventListener('click', () => this.$module.setBannerCookieConsent(false));
+  }
+
   this.showCookieBanner()
 }
 
@@ -45,6 +67,38 @@ Cookies.prototype.showCookieBanner = function () {
     }
   }
 }
+
+Cookies.prototype.setBannerCookieConsent = function (analyticsConsent) {
+  this.setCookie(this.cookieName, JSON.stringify({ 'analytics': analyticsConsent }), {days: this.cookieDuration})
+
+  this.$module.showBannerConfirmationMessage(analyticsConsent)
+  this.$module.cookieBannerConfirmationMessage.focus()
+
+  if (analyticsConsent) { 
+    this.initAnalytics()
+  }
+}
+
+Cookies.prototype.hideCookieMessage = function (event) {
+  if (this.$module) {
+    this.$module.style.display = 'none'
+  }
+
+  if (event.target) {
+    event.preventDefault()
+  }
+}
+
+Cookies.prototype.showBannerConfirmationMessage = function (analyticsConsent) {
+  var messagePrefix = analyticsConsent ? 'You’ve accepted analytics cookies.' : 'You told us not to use analytics cookies.';
+
+  this.$cookieBannerMainContent = document.querySelector('.cookie-banner__wrapper')
+  this.$cookieBannerConfirmationMessage = document.querySelector('.cookie-banner__confirmation-message')
+
+  this.$cookieBannerConfirmationMessage.insertAdjacentText('afterbegin', messagePrefix)
+  this.$cookieBannerMainContent.style.display = 'none'
+  this.$module.cookieBannerConfirmationMessage.style.display = 'block'
+};
 
 Cookies.prototype.isInCookiesPage = function () {
   return window.location.pathname.indexOf('cookies') > -1
