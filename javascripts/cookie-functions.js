@@ -213,7 +213,7 @@ Cookies.prototype.showConfirmationMessage = function () {
 }
 
 Cookies.prototype.getReferrerLink = function () {
-  return document.referrer ? new URL(document.referrer).pathname : false
+  return document.referrer ? document.referrer : false
 }
 
 // GA analytics functions
