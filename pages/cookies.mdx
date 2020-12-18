@@ -107,9 +107,16 @@ Google Analytics sets the following cookies:
       <th scope="row" className="govuk-table__header">_gid</th>	
       <td className="govuk-table__cell">This helps us count how many people visit GOV.UK PaaS by tracking if you’ve visited before</td>	
       <td className="govuk-table__cell">1 day</td>	
-    </tr>	
+    </tr>
+    <tr>	
+      <th scope="row" className="govuk-table__header">_gat_gtag_UA_********_**</th>	
+      <td className="govuk-table__cell">Used to throttle request rate. </td>	
+      <td className="govuk-table__cell">1 minute</td>	
+    </tr>
   </tbody>	
 </table>
+
+This is a Google analytics cookie, used to throttle the request rate - limiting the collection of data on high traffic sites. It expires after 10 minutes.
 
 <div className="cookie-settings__no-js">
   <h2 className="govuk-heading-s govuk-!-margin-top-6">Do you want to accept analytics cookies?</h2>
