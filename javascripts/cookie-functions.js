@@ -4,6 +4,8 @@ function Cookies () {
   this.cookieDomain = 'cloud.service.gov.uk'
   this.cookieDuration = 365
   this.trackingId = 'UA-43115970-5'
+   // disable tracking by default
+  window['ga-disable-' + this.trackingId] = true;
 }
 
 Cookies.prototype.hasConsentForAnalytics = function () {
@@ -14,16 +16,13 @@ Cookies.prototype.hasConsentForAnalytics = function () {
 Cookies.prototype.initAnalytics = function() {
 
   // guard against being called more than once
-  if (!('analytics' in window)) {
+  if (!('GoogleAnalyticsObject' in window)) {
 
-    window[`ga-disable-${this.trackingId}`] = false;
+   window['ga-disable-' + this.trackingId] = false;
 
-    // Load Google Analytics libraries
-    this.loadGaAnalytics()
-    this.setupGaAnalytics()
-
-    // Track initial pageview
-    this.trackGaPageview()
+    // Load GTM
+    this.loadGtmScript()
+    this.setupGtm()
   }
   
 }
@@ -131,6 +130,10 @@ Cookies.prototype.setCookie = function (name, values, options) {
     cookieString = cookieString + '; expires=' + date.toGMTString() + ';domain=' + this.cookieDomain + '; path=/'
   }
 
+  if (document.location.protocol === 'https:') {
+    cookieString = cookieString + '; Secure';
+  }
+
   document.cookie = cookieString
 }
 
@@ -164,7 +167,7 @@ Cookies.prototype.submitSettingsForm = function (event) {
 
   var formInputs = event.target.querySelectorAll("input[name=cookies-analytics]"),
       consent = {},
-      isGaCookie = !!(this.getCookie('_ga') && this.getCookie('_ga')),
+      isGaCookie = !!(this.getCookie('_ga') && this.getCookie('_gid')),
       hasConsented
 
   for ( var i = 0; i < formInputs.length; i++ ) {
@@ -180,8 +183,11 @@ Cookies.prototype.submitSettingsForm = function (event) {
 
   // if GA cookies exists and user has wuthdrawn consent, then delete them
   if (isGaCookie && !hasConsented) {
+    var gtagCookie = '_gat_gtag_' + this.trackingId.replace(/-/g,'_')
+
     this.setCookie('_ga', '', { days: -1 })
     this.setCookie('_gid', '', { days: -1 })
+    this.setCookie(gtagCookie, '', { days: -1 })
   }
 
   this.setCookie(this.cookieName, JSON.stringify(consent), {days: this.cookieDuration})
@@ -213,61 +219,39 @@ Cookies.prototype.showConfirmationMessage = function () {
 }
 
 Cookies.prototype.getReferrerLink = function () {
-  return document.referrer ? new URL(document.referrer).pathname : false
+  return document.referrer ? document.referrer : false
 }
 
 // GA analytics functions
 
-Cookies.prototype.setupGaAnalytics = function () {
-  window.ga('create', {
-    'trackingId': this.trackingId,
-    'cookieDomain': 'auto',
-    'cookieExpires': this.cookieDuration * 24 * 60 * 60
-  });
+Cookies.prototype.setupGtm = function () {
+  // Pull dimensions vals from meta ; else all script/origin combinations have to be in the CSP	
+  window.dataLayer = window.dataLayer || [];	
+  function gtag(){dataLayer.push(arguments);}	
+  gtag('js', new Date());	
 
-  window.ga('set', 'anonymizeIp', true)
-  window.ga('set', 'allowAdFeatures', false)
-  window.ga('set', 'transport', 'beacon')
-  window.ga('set', 'title', 'GOV.UK Platform as a Service')
-}
-
-Cookies.prototype.loadGaAnalytics = function () {
-  (function(i, s, o, g, r, a, m){ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-    (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
-    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-}
-// https://developers.google.com/analytics/devguides/collection/analyticsjs/pages
-Cookies.prototype.trackGaPageview = function () {
-
-  // strip UUIDs
-  var page = (window.location.pathname + window.location.search).replace(
-    /[a-f0-9]{8}-?[a-f0-9]{4}-?4[a-f0-9]{3}-?[89ab][a-f0-9]{3}-?[a-f0-9]{12}/g, '…'
-  );
-  window.ga('send', 'pageview', page)
-}
-
-// https://developers.google.com/analytics/devguides/collection/analyticsjs/events
-Cookies.prototype.trackGaEvent = function (category, action, options) {
-
-  options = options || {};
-
-  var evt = {
-    eventCategory: category,
-    eventAction: action
+  var config = {
+    cookie_expires: this.cookieDuration * 24 * 60 * 60,
+    anonymize_ip: true,
+    linker: {
+      domains: [
+        'cloud.service.gov.uk',
+        'admin.cloud.service.gov.uk',
+        'admin.london.cloud.service.gov.uk', 
+        'docs.cloud.service.gov.uk'
+      ]
+    }
   };
 
-  if (options.label) {
-    evt.eventLabel = options.label;
-    delete options.label;
-  }
+  gtag('config', this.trackingId, config);
+}
 
-  if (typeof options === 'object') {
-    $.extend(evt, options);
-  }
-
-  window.ga('send', 'event', evt)
-
+Cookies.prototype.loadGtmScript = function () {
+  var gtmScriptTag = document.createElement("script");
+  gtmScriptTag.type = "text/javascript"
+  gtmScriptTag.setAttribute("async", "true")
+  gtmScriptTag.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=" + this.trackingId)
+  document.documentElement.firstChild.appendChild(gtmScriptTag)
 }
 
 export default Cookies
