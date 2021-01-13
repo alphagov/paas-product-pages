@@ -13,8 +13,8 @@ const Footer = () => (
             <div key={index} className="govuk-footer__section">
               <h2 className="govuk-footer__heading govuk-heading-m">{column.title}</h2>
                 <ul className={`govuk-footer__list ${column.columns ? `govuk-footer__list--columns-${column.columns}` : ''}`}>
-                  {column.items.map((item) => (
-                    <li className="govuk-footer__list-item">
+                  {column.items.map((item, index) => (
+                    <li key={index} className="govuk-footer__list-item">
                       <a className="govuk-footer__link" href={item.href}>
                         {item.text}
                       </a>
