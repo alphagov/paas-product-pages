@@ -64,8 +64,17 @@ img {
   max-width: 100%;
 }
 
-img[src*="#customer-logo"] {
-  max-width: 50vw;
+.tenant-logos {
+  margin-top: govuk-spacing(9);
+  @include govuk-media-query($from: tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+  display: grid;
+  
+}
+
+.tenant-logos img{
+  width: auto;
 }
 
 // PaaS spelled-out is a long name that GOV.UK Frontend doesn't account for
