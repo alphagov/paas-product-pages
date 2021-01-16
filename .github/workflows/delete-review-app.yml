@@ -1,0 +1,41 @@
+name: Delete review app
+on:
+  pull_request:
+    types: [ closed ]
+env:
+  PR_NUMBER: ${{ github.event.number }}
+
+jobs:
+  delete:
+    name: Delete app
+    runs-on: ubuntu-latest
+    env:
+      CF_API: "https://api.london.cloud.service.gov.uk"
+      CF_ORG:  ${{ secrets.CF_ORG }}
+      CF_SPACE: ${{ secrets.CF_SPACE }}
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Install the CF CLI
+        run: |
+          wget https://s3-us-west-1.amazonaws.com/v7-cf-cli-releases/releases/v7.2.0/cf7-cli-installer_7.2.0_x86-64.deb
+          sudo dpkg -i cf7-cli-installer_7.2.0_x86-64.deb
+      - name: Authenticate
+        env:
+          CF_USERNAME: ${{ secrets.CF_USERNAME }}
+          CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
+        run: |
+          echo "Logging into $CF_ORG/$CF_SPACE..."
+          cf api "${CF_API}"
+          cf auth 
+          cf target -o "${CF_ORG}" -s "${CF_SPACE}"
+          
+      - name: Fetch app name from manifest
+        run: echo "APP_NAME=$(ruby -e "require 'yaml'; config = YAML.load_file('manifest.yml'); puts config['applications'][0]['name']")-review-app-$PR_NUMBER" >> $GITHUB_ENV
+
+      - name: Delete
+        run: |
+          echo "Deleting $APP_NAME from $CF_ORG/$CF_SPACE..."
+          cf delete -f -r $APP_NAME
+          cf logout
