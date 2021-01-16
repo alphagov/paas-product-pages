@@ -4,7 +4,6 @@ on:
     types: [opened]
 env:
   PR_NUMBER: ${{ github.event.number }}
-  APP_NAME: "product-pages-review-${ PR_NUMBER }"
 
 jobs:
   build:
@@ -69,5 +68,11 @@ jobs:
         run:  |
           echo "Cancelling any previous deployments in progress"
           cf cancel-deployment $APP_NAME || true
+
+      - name: Deploy to PaaS
+        run: |
+          echo "Deploying $APP_NAME to $CF_ORG/$CF_SPACE..."
+          cf push $APP_NAME -f manifest.review.yml --var app-name=$APP_NAME --strategy rolling
+          cf logout
 
      
