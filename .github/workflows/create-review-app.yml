@@ -22,6 +22,13 @@ jobs:
 
       - name: Build
         run: npm run build
+        
+      - name: Upload artefact
+        uses: actions/upload-artifact@v2
+        with:
+            name: build
+            path: out/**
+            retention-days: 1
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
@@ -33,6 +40,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
+        
+      - name: Download build artefact
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: out
 
       - name: Install the CF CLI
         run: |
