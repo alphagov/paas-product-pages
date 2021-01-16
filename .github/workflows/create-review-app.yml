@@ -4,6 +4,7 @@ on:
     types: [opened]
 env:
   PR_NUMBER: ${{ github.event.number }}
+  APP_NAME: "product-pages-review-${ PR_NUMBER }"
 
 jobs:
   build:
@@ -35,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     env:
-      CF_API: "https://api.cloud.service.gov.uk"
+      CF_API: "https://api.london.cloud.service.gov.uk"
       CF_ORG:  ${{ secrets.CF_ORG }}
       CF_SPACE: ${{ secrets.CF_SPACE }}
 
@@ -58,7 +59,7 @@ jobs:
         run: |
           echo "Logging into $CF_ORG/$CF_SPACE..."
           cf api "${CF_API}"
-          cf auth
+          cf auth 
           cf target -o "${CF_ORG}" -s "${CF_SPACE}"
           
       - name: Cancel any existing running deploys to avoid conflict
