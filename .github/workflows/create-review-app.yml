@@ -4,6 +4,7 @@ on:
     types: [opened, synchronize, reopened ]
 env:
   PR_NUMBER: ${{ github.event.number }}
+  APP_NAME: ${{ github.event.number }}
 
 jobs:
   build:
@@ -61,11 +62,6 @@ jobs:
           echo "Deploying $APP_NAME to $CF_ORG/$CF_SPACE..."
           cf push $APP_NAME -f manifest.review.yml --var app-name=$APP_NAME --strategy rolling
           cf logout
-  comment:
-    name: Comment on PR with review app link
-    runs-on: ubuntu-latest
-    needs: deploy
-    steps:
       - uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -74,5 +70,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "Preview URL: https://${{env.APP_NAME }}.london.cloudapps.digital"
+              body: "Preview URL: https://${ APP_NAME }.london.cloudapps.digital"
             })
