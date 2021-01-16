@@ -62,13 +62,12 @@ jobs:
           cf auth 
           cf target -o "${CF_ORG}" -s "${CF_SPACE}"
           
+      - name: Fetch app name from manifest
+        run: echo "APP_NAME=$(ruby -e "require 'yaml'; config = YAML.load_file('manifest.yml'); puts config['applications'][0]['name']")-review-app-$PR_NUMBER" >> $GITHUB_ENV
+          
       - name: Cancel any existing running deploys to avoid conflict
         run:  |
           echo "Cancelling any previous deployments in progress"
           cf cancel-deployment $APP_NAME || true
-      - name: Deploy to PaaS
-        run: |
-          echo "Deploying $APP_NAME to $CF_ORG/$CF_SPACE..."
-          cf push $APP_NAME --strategy rolling
-          cf logout
+
      
