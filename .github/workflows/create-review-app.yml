@@ -1,0 +1,71 @@
+name: Review app
+on:
+  pull_request:
+    types: [opened]
+env:
+  PR_NUMBER: ${{ github.event.number }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build app
+    steps:
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      
+      - name: Install dependencies
+        run: npm install --no-optional
+
+      - name: Build
+        run: npm run build
+      
+      - name: Upload artefact
+        uses: actions/upload-artifact@v2
+        with:
+            name: build
+            path: out/**
+            retention-days: 1
+            
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
+    env:
+      CF_API: "https://api.cloud.service.gov.uk"
+      CF_ORG:  ${{ secrets.CF_ORG }}
+      CF_SPACE: ${{ secrets.CF_SPACE }}
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Download build artefact
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+
+      - name: Install the CF CLI
+        run: |
+          wget https://s3-us-west-1.amazonaws.com/v7-cf-cli-releases/releases/v7.2.0/cf7-cli-installer_7.2.0_x86-64.deb
+          sudo dpkg -i cf7-cli-installer_7.2.0_x86-64.deb
+      - name: Authenticate
+        env:
+          CF_USERNAME: ${{ secrets.CF_USERNAME }}
+          CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
+        run: |
+          echo "Logging into $CF_ORG/$CF_SPACE..."
+          cf api "${CF_API}"
+          cf auth
+          cf target -o "${CF_ORG}" -s "${CF_SPACE}"
+          
+      - name: Cancel any existing running deploys to avoid conflict
+        run:  |
+          echo "Cancelling any previous deployments in progress"
+          cf cancel-deployment $APP_NAME || true
+      - name: Deploy to PaaS
+        run: |
+          echo "Deploying $APP_NAME to $CF_ORG/$CF_SPACE..."
+          cf push $APP_NAME --strategy rolling
+          cf logout
+     
