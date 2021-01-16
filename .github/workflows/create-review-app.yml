@@ -73,8 +73,10 @@ jobs:
         run: |
           echo "Deploying $APP_NAME to $CF_ORG/$CF_SPACE..."
           cf push $APP_NAME -f manifest.review.yml --var app-name=$APP_NAME --strategy rolling
+          echo "APP_ROUTE=$(cf app $APP_NAME | grep 'routes:' | cut -d ':' -f 2 | xargs)" >> $GITHUB_ENV
           cf logout
-      - uses: actions/github-script@v3
+      - name: Comment on PR with preview url
+        uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
@@ -82,5 +84,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "Preview URL: https://${{env.APP_NAME}}.london.cloudapps.digital"
+              body: "Preview URL: https://${{env.APP_NAME}}.${{env.APP_ROUTE}}"
             })
