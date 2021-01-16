@@ -4,7 +4,6 @@ on:
     types: [opened, synchronize, reopened ]
 env:
   PR_NUMBER: ${{ github.event.number }}
-  APP_NAME: ${{ github.event.number }}
 
 jobs:
   build:
@@ -70,5 +69,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "Preview URL: https://$APP_NAME.london.cloudapps.digital"
+              body: ${{APP_NAME}}
             })
