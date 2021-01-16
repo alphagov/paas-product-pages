@@ -62,7 +62,6 @@ jobs:
           cf push $APP_NAME -f manifest.review.yml --var app-name=$APP_NAME --strategy rolling
           echo "APP_ROUTE=$(cf app $APP_NAME | grep 'routes:' | cut -d ':' -f 2 | xargs)" >> $GITHUB_ENV
           cf logout
-
   comment:
    name: Comment on PR with review app link
     runs-on: ubuntu-latest
