@@ -75,7 +75,12 @@ jobs:
           cf push $APP_NAME -f manifest.review.yml --var app-name=$APP_NAME --strategy rolling
           echo "APP_ROUTE=$(cf app $APP_NAME | grep 'routes:' | cut -d ':' -f 2 | xargs)" >> $GITHUB_ENV
           cf logout
-      - name: Comment on PR with preview url
+  comment:
+    name: Provide preview url
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+    - name: Comment on PR with preview url
         uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
