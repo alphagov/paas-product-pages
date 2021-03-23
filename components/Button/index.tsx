@@ -7,9 +7,7 @@ const Button = (props) => {
     href,
     externalHref,
     isStartButton,
-    disabled,
     className,
-    preventDoubleClick,
     name,
     type,
     children,
@@ -51,22 +49,8 @@ const Button = (props) => {
   }
 
   const commonAttributes = {
-    className: `govuk-button ${className || ''}${
-      disabled ? ' govuk-button--disabled' : ''
-    } ${isStartButton ? 'govuk-button--start' : ''}`
+    className: `govuk-button ${className || ''} ${isStartButton ? 'govuk-button--start' : ''}`
   };
-
-  if (preventDoubleClick) {
-    buttonAttributes['data-prevent-double-click'] = preventDoubleClick;
-  }
-
-  if (disabled) {
-    buttonAttributes = {
-      ...buttonAttributes,
-      'aria-disabled': true,
-      disabled: 'disabled',
-    };
-  }
 
   if (el === 'a') {
     const linkAttributes = {
@@ -102,6 +86,7 @@ const Button = (props) => {
       <input value={children} {...buttonAttributes} {...commonAttributes} />
     );
   }
+
 
   return button;
 }
