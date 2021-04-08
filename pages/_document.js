@@ -41,13 +41,13 @@ class GovukTemplate extends Document {
           <![endif]-->
         `}} />
         <body className="govuk-template__body">
-          <script dangerouslySetInnerHTML={{__html: `document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');`}} />      
+          <script nonce="**CSP_NONCE_VAL**" dangerouslySetInnerHTML={{__html: `document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');`}} />      
           <a href="#main-content" className="govuk-skip-link">Skip to main content</a>
           <CookieBanner />
           <Header />
           <Main />
           <Footer />
-          <script type="text/javascript" src="/assets/javascript/app.js" />
+          <script type="text/javascript" nonce="**CSP_NONCE_VAL**" src="/assets/javascript/app.js" />
         </body>
       </Html>
     )
