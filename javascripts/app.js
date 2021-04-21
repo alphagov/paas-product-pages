@@ -2,12 +2,15 @@ import common from 'govuk-frontend/govuk/common'
 import Button from 'govuk-frontend/govuk/components/button/button'
 import Header from 'govuk-frontend/govuk/components/header/header'
 import Cookies from './cookie-functions'
+import Analytics from './analytics'
 
 var nodeListForEach = common.nodeListForEach
 var cookies = new Cookies()
+var analytics = new Analytics()
 
 if (cookies.hasConsentForAnalytics()) {
   cookies.initAnalytics()
+  analytics.init()
 }
 
 var $cookieBanner = document.querySelector('[data-module="cookie-banner"]')
