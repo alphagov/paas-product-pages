@@ -19,3 +19,6 @@ jobs:
 
       - name: Test
         run: npm test
+
+      - name: Lint
+        run: standard
