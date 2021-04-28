@@ -30,8 +30,8 @@ jobs:
           files: javascripts/**/*.js
 
           # show errors in the the github diff UI
-          #annotate: true
+          annotate: true
 
         # Allow the action to add lint errors to the github diff UI
-        #env:
-        #  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
