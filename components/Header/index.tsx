@@ -48,7 +48,13 @@ const Header = () => (
           >
           {data.navigation.map((item, index) => (
             <li key={index} className="govuk-header__navigation-item">
-              <a className="govuk-header__link" href={item.href}>
+              <a 
+                className="govuk-header__link" 
+                href={item.href}
+                data-track-click="true"
+                data-track-category="Navigation"
+                data-track-action="Top Menu"
+                data-track-label={item.text}>
                 {item.text}
               </a> 
             </li>

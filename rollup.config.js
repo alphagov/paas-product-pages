@@ -11,9 +11,9 @@ const production = !process.env.ROLLUP_WATCH;
 
 export default[ 
 	{
-		input: 'javascripts/app.js',
+		input: 'javascripts/application.js',
 		output: {
-			file: 'public/assets/javascript/app.js',
+			file: 'public/assets/javascript/application.js',
 			format: 'iife', // immediately-invoked function expression — suitable for <script> tags
 			sourcemap: false
 		},

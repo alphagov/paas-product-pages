@@ -47,7 +47,7 @@ class GovukTemplate extends Document {
           <Header />
           <Main />
           <Footer />
-          <script type="text/javascript" nonce="**CSP_NONCE_VAL**" src="/assets/javascript/app.js" />
+          <script type="text/javascript" nonce="**CSP_NONCE_VAL**" src="/assets/javascript/application.js" />
         </body>
       </Html>
     )
