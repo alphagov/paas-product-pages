@@ -44,5 +44,15 @@
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.2.4"
+  },
+"standard": {
+    "ignore": [
+      "out/*"
+    ],
+    "env": [
+      "jest",
+      "es6",
+      "browser"
+    ]
   }
 }
