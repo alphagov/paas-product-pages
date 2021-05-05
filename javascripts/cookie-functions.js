@@ -1,4 +1,4 @@
-
+/* eslint-disable no-var, prefer-const */
 function Cookies () {
   this.cookieName = 'govuk-paas-cookie-policy'
   this.cookieDomain = 'cloud.service.gov.uk'

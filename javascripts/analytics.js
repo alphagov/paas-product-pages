@@ -1,3 +1,4 @@
+/* eslint-disable no-var, prefer-const */
 function Analytics () {
   this.$bodyElement = document.querySelector('body')
   this.is404Page = this.$bodyElement.querySelector('h1') ? this.$bodyElement.querySelector('h1').textContent === 'Page not found' : false
