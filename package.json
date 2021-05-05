@@ -50,8 +50,7 @@
   },
   "standard": {
     "ignore": [
-      "out/*",
-      "*config*"
+      "out/*"
     ],
     "env": [
       "jest",

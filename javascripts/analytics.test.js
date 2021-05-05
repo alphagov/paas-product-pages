@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
@@ -28,49 +28,45 @@ document.body.innerHTML = `
   data-track-action="Test action 2" 
   data-track-label="Test label 2">
     External link with data tracking attributes
-</a>`;
+</a>`
 
 const analytics = new Analytics()
 global.dataLayer = []
 
 analytics.init()
 
-
-test("if a link has data tracking attributes, those values should be used in push to dataLayer", () => {
-
+test('if a link has data tracking attributes, those values should be used in push to dataLayer', () => {
   userEvent.click(screen.getByTestId('data-attribute-tracking'))
-  
+
   expect(global.dataLayer[1]).toEqual(
     expect.objectContaining({
-      '0': 'event',
-      '1': 'Test action 1',
-      '2': { event_label: 'Test label 1', event_category: 'Test category 1' }
+      0: 'event',
+      1: 'Test action 1',
+      2: { event_label: 'Test label 1', event_category: 'Test category 1' }
     })
-  );
+  )
 })
 
-test("if a link has data tracking attributes but is also an external link, data attribute values should be used in push to dataLayer", () => {
-
+test('if a link has data tracking attributes but is also an external link, data attribute values should be used in push to dataLayer', () => {
   userEvent.click(screen.getByTestId('external-with-data-attribute-tracking'))
 
   expect(global.dataLayer[2]).toEqual(
     expect.objectContaining({
-      '0': 'event',
-      '1': 'Test action 2',
-      '2': { event_label: 'Test label 2', event_category: 'Test category 2' }
+      0: 'event',
+      1: 'Test action 2',
+      2: { event_label: 'Test label 2', event_category: 'Test category 2' }
     })
   )
 })
 
 test("if a link is an external link only, values set in 'trackExternalLinkClick' function should be used in push to dataLayer", () => {
-
   userEvent.click(screen.getByTestId('external'))
 
   expect(global.dataLayer[3]).toEqual(
     expect.objectContaining({
-      '0': 'event',
-      '1': 'External link',
-      '2': { event_category: 'External Link Clicked', event_label: 'https://www.example.com' }
+      0: 'event',
+      1: 'External link',
+      2: { event_category: 'External Link Clicked', event_label: 'https://www.example.com' }
     })
   )
 })
@@ -78,10 +74,9 @@ test("if a link is an external link only, values set in 'trackExternalLinkClick'
 test("if a page is a 404 page, values set in the 'page404Event' function should be used in push to dataLayer", () => {
   expect(global.dataLayer[0]).toEqual(
     expect.objectContaining({
-      '0': 'event',
-      '1': '404',
-      '2': { event_category: 'Error', event_label: 'Page ' }
+      0: 'event',
+      1: '404',
+      2: { event_category: 'Error', event_label: 'Page ' }
     })
   )
 })
-

@@ -4,15 +4,16 @@ import Footer from '@components/Footer'
 import Header from '@components/Header'
 
 class GovukTemplate extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps (ctx) {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
 
-  render() {
+  render () {
     return (
       <Html lang='en' className='govuk-template'>
-        <head dangerouslySetInnerHTML={{__html: `
+        <head dangerouslySetInnerHTML={{
+          __html: `
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
           <meta name="theme-color" content="#0b0c0c" />
@@ -39,15 +40,17 @@ class GovukTemplate extends Document {
           <!--[if lt IE 9]>
             <script src="/assets/javascript/html5shiv.min.js"></script>
           <![endif]-->
-        `}} />
-        <body className="govuk-template__body">
-          <script nonce="**CSP_NONCE_VAL**" dangerouslySetInnerHTML={{__html: `document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');`}} />      
-          <a href="#main-content" className="govuk-skip-link">Skip to main content</a>
+        `
+        }}
+        />
+        <body className='govuk-template__body'>
+          <script nonce='**CSP_NONCE_VAL**' dangerouslySetInnerHTML={{ __html: 'document.body.className = ((document.body.className) ? document.body.className + \' js-enabled\' : \'js-enabled\');' }} />
+          <a href='#main-content' className='govuk-skip-link'>Skip to main content</a>
           <CookieBanner />
           <Header />
           <Main />
           <Footer />
-          <script type="text/javascript" nonce="**CSP_NONCE_VAL**" src="/assets/javascript/application.js" />
+          <script type='text/javascript' nonce='**CSP_NONCE_VAL**' src='/assets/javascript/application.js' />
         </body>
       </Html>
     )
