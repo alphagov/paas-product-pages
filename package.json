@@ -10,6 +10,7 @@
     "build": "rollup -c && next build && next export",
     "start": "next start",
     "test": "./test.sh",
+    "lint-fix": "standard --fix",
     "nginx:local": "docker run --rm -it -v $PWD:/etc/nginx -p 8080:8080 nginx bash -c 'cp /etc/nginx/nginx.conf /tmp/nginx.old && sed -i 's/{{port}}/8080/' /etc/nginx/nginx.conf && nginx ; mv /tmp/nginx.old /etc/nginx/nginx.conf'"
   },
   "dependencies": {
