@@ -1,7 +1,7 @@
 const withMdxEnhanced = require('next-mdx-enhanced')
 const rehypeSlug = require('rehype-slug')
-const toc = require("@jsdevtools/rehype-toc");
-const removeTOC = require("./lib/rehype-removeTOC");
+const toc = require('@jsdevtools/rehype-toc')
+const removeTOC = require('./lib/rehype-removeTOC')
 
 module.exports = withMdxEnhanced({
   layoutPath: 'layouts/Content/',
@@ -10,18 +10,18 @@ module.exports = withMdxEnhanced({
   remarkPlugins: [],
   rehypePlugins: [
     rehypeSlug,
-    [toc,{
-      headings: ["h2", "h3", "h4"],  
+    [toc, {
+      headings: ['h2', 'h3', 'h4'],
       cssClasses: {
-        toc: "app-toc",
-        list: "app-toc__list",
-        listItem: "app-toc__list-item",
-        link: "app-toc__link",
+        toc: 'app-toc',
+        list: 'app-toc__list',
+        listItem: 'app-toc__list-item',
+        link: 'app-toc__link'
       },
-      customizeTOC: function(toc) {
+      customizeTOC: function (toc) {
         if (toc.type === 'element' && toc.tagName === 'nav') {
-          toc.properties.role = 'navigation';
-          toc.properties['aria-label'] = 'Sections on this page';
+          toc.properties.role = 'navigation'
+          toc.properties['aria-label'] = 'Sections on this page'
         }
         if (toc.children[0].children.length === 0) {
           return false
@@ -31,8 +31,8 @@ module.exports = withMdxEnhanced({
             tagName: 'h2',
             children: [
               {
-                "type": "text",
-                "value": "Contents"
+                type: 'text',
+                value: 'Contents'
               }
             ],
             properties: {
@@ -47,8 +47,8 @@ module.exports = withMdxEnhanced({
   ],
   extendFrontMatter: {
     process: (mdxContent, frontMatter) => {},
-    phase: 'prebuild|loader|both',
-  },
+    phase: 'prebuild|loader|both'
+  }
 })({
   trailingSlash: true
 })

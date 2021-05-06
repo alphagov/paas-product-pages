@@ -9,7 +9,9 @@
     "local": "npm-run-all --parallel dev rollup:watch",
     "build": "rollup -c && next build && next export",
     "start": "next start",
-    "test": "jest",
+    "test": "npm run lint && jest",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
     "nginx:local": "docker run --rm -it -v $PWD:/etc/nginx -p 8080:8080 nginx bash -c 'cp /etc/nginx/nginx.conf /tmp/nginx.old && sed -i 's/{{port}}/8080/' /etc/nginx/nginx.conf && nginx ; mv /tmp/nginx.old /etc/nginx/nginx.conf'"
   },
   "dependencies": {
@@ -25,6 +27,7 @@
     "react-dom": "^17.0.2",
     "rehype-slug": "^4.0.1",
     "sass": "^1.32.8",
+    "standard": "^16.0.3",
     "unist-util-remove": "^2.1.0"
   },
   "license": "MIT",
@@ -44,5 +47,18 @@
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.2.4"
+  },
+  "standard": {
+    "ignore": [
+      "out/*"
+    ],
+    "env": [
+      "jest",
+      "es6",
+      "browser"
+    ],
+    "globals": [
+      "dataLayer"
+    ]
   }
 }

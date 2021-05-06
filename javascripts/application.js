@@ -1,3 +1,4 @@
+/* eslint-disable no-var, prefer-const */
 import common from 'govuk-frontend/govuk/common'
 import Button from 'govuk-frontend/govuk/components/button/button'
 import Header from 'govuk-frontend/govuk/components/header/header'

@@ -1,30 +1,27 @@
-
+/* eslint-disable no-var, prefer-const */
 function Cookies () {
   this.cookieName = 'govuk-paas-cookie-policy'
   this.cookieDomain = 'cloud.service.gov.uk'
   this.cookieDuration = 365
   this.trackingId = 'UA-43115970-5'
-   // disable tracking by default
-  window['ga-disable-' + this.trackingId] = true;
+  // disable tracking by default
+  window['ga-disable-' + this.trackingId] = true
 }
 
 Cookies.prototype.hasConsentForAnalytics = function () {
-  var consentCookie = JSON.parse(this.getCookie(this.cookieName));
+  var consentCookie = JSON.parse(this.getCookie(this.cookieName))
   return consentCookie ? consentCookie.analytics : false
 }
 
-Cookies.prototype.initAnalytics = function() {
-
+Cookies.prototype.initAnalytics = function () {
   // guard against being called more than once
   if (!('GoogleAnalyticsObject' in window)) {
-
-   window['ga-disable-' + this.trackingId] = false;
+    window['ga-disable-' + this.trackingId] = false
 
     // Load GTM
     this.loadGtmScript()
     this.setupGtm()
   }
-  
 }
 
 Cookies.prototype.initCookieBanner = function ($module) {
@@ -39,23 +36,23 @@ Cookies.prototype.initCookieBanner = function ($module) {
     return
   }
 
-  this.$hideLink = this.$module.querySelector('button[data-hide-cookie-banner]');
+  this.$hideLink = this.$module.querySelector('button[data-hide-cookie-banner]')
   if (this.$hideLink) {
-    this.$hideLink.addEventListener('click', this.$module.hideCookieMessage);
+    this.$hideLink.addEventListener('click', this.$module.hideCookieMessage)
   }
 
-  this.$acceptCookiesLink = this.$module.querySelector('button[data-accept-cookies=true]');
+  this.$acceptCookiesLink = this.$module.querySelector('button[data-accept-cookies=true]')
   if (this.$acceptCookiesLink) {
-    this.$acceptCookiesLink.addEventListener('click', function() {
-      this.$module.setBannerCookieConsent(true);
-    }.bind(this));
+    this.$acceptCookiesLink.addEventListener('click', function () {
+      this.$module.setBannerCookieConsent(true)
+    }.bind(this))
   }
 
-  this.$rejectCookiesLink = this.$module.querySelector('button[data-accept-cookies=false]');
+  this.$rejectCookiesLink = this.$module.querySelector('button[data-accept-cookies=false]')
   if (this.$rejectCookiesLink) {
-    this.$rejectCookiesLink.addEventListener('click', function() {
-      this.$module.setBannerCookieConsent(false);
-    }.bind(this));
+    this.$rejectCookiesLink.addEventListener('click', function () {
+      this.$module.setBannerCookieConsent(false)
+    }.bind(this))
   }
 
   this.showCookieBanner()
@@ -72,12 +69,12 @@ Cookies.prototype.showCookieBanner = function () {
 }
 
 Cookies.prototype.setBannerCookieConsent = function (analyticsConsent) {
-  this.setCookie(this.cookieName, JSON.stringify({ 'analytics': analyticsConsent }), {days: this.cookieDuration})
+  this.setCookie(this.cookieName, JSON.stringify({ analytics: analyticsConsent }), { days: this.cookieDuration })
 
   this.$module.showBannerConfirmationMessage(analyticsConsent)
   this.$module.cookieBannerConfirmationMessage.focus()
 
-  if (analyticsConsent) { 
+  if (analyticsConsent) {
     this.initAnalytics()
   }
 }
@@ -93,7 +90,7 @@ Cookies.prototype.hideCookieMessage = function (event) {
 }
 
 Cookies.prototype.showBannerConfirmationMessage = function (analyticsConsent) {
-  var messagePrefix = analyticsConsent ? 'You’ve accepted analytics cookies.' : 'You told us not to use analytics cookies.';
+  var messagePrefix = analyticsConsent ? 'You’ve accepted analytics cookies.' : 'You told us not to use analytics cookies.'
 
   this.$cookieBannerMainContent = document.querySelector('.cookie-banner__wrapper')
   this.$cookieBannerConfirmationMessage = document.querySelector('.cookie-banner__confirmation-message')
@@ -101,7 +98,7 @@ Cookies.prototype.showBannerConfirmationMessage = function (analyticsConsent) {
   this.$cookieBannerConfirmationMessage.insertAdjacentText('afterbegin', messagePrefix)
   this.$cookieBannerMainContent.style.display = 'none'
   this.$module.cookieBannerConfirmationMessage.style.display = 'block'
-};
+}
 
 Cookies.prototype.isInCookiesPage = function () {
   return window.location.pathname.indexOf('cookies') > -1
@@ -135,7 +132,7 @@ Cookies.prototype.setCookie = function (name, values, options) {
   }
 
   if (document.location.protocol === 'https:') {
-    cookieString = cookieString + '; Secure';
+    cookieString = cookieString + '; Secure'
   }
 
   document.cookie = cookieString
@@ -145,17 +142,17 @@ Cookies.prototype.setCookie = function (name, values, options) {
 
 Cookies.prototype.initCookieSettings = function ($module) {
   this.$module = $module
-  this.$module.submitSettingsForm = this.submitSettingsForm.bind(this);
+  this.$module.submitSettingsForm = this.submitSettingsForm.bind(this)
 
   document.querySelector('form[data-module=cookie-settings]')
     .addEventListener('submit', this.$module.submitSettingsForm)
 
-  this.setInitialFormValues();
+  this.setInitialFormValues()
 }
 
 Cookies.prototype.setInitialFormValues = function () {
-  var currentConsentCookie = JSON.parse(this.getCookie(this.cookieName)),
-      radioButton
+  var currentConsentCookie = JSON.parse(this.getCookie(this.cookieName))
+  var radioButton
 
   if (currentConsentCookie && currentConsentCookie.analytics) {
     radioButton = document.querySelector('input[name=cookies-analytics][value=on]')
@@ -163,63 +160,63 @@ Cookies.prototype.setInitialFormValues = function () {
     radioButton = document.querySelector('input[name=cookies-analytics][value=off]')
   }
 
-  radioButton.checked = true;
+  radioButton.checked = true
 }
 
 Cookies.prototype.submitSettingsForm = function (event) {
   event.preventDefault()
 
-  var formInputs = event.target.querySelectorAll("input[name=cookies-analytics]"),
-      consent = {},
-      isGaCookie = !!(this.getCookie('_ga') && this.getCookie('_gid')),
-      hasConsented
+  var formInputs = event.target.querySelectorAll('input[name=cookies-analytics]')
+  var consent = {}
+  var isGaCookie = !!(this.getCookie('_ga') && this.getCookie('_gid'))
+  var hasConsented
 
-  for ( var i = 0; i < formInputs.length; i++ ) {
+  for (var i = 0; i < formInputs.length; i++) {
     var input = formInputs[i]
-      
-    if (input.checked) {
-      hasConsented = input.value === "on" ? true : false
 
-      consent.analytics = hasConsented;
-      break;
+    if (input.checked) {
+      hasConsented = input.value === 'on'
+
+      consent.analytics = hasConsented
+      break
     }
   }
 
   // if GA cookies exists and user has wuthdrawn consent, then delete them
   if (isGaCookie && !hasConsented) {
-    var gtagCookie = '_gat_gtag_' + this.trackingId.replace(/-/g,'_')
+    var gtagCookie = '_gat_gtag_' + this.trackingId.replace(/-/g, '_')
 
     this.setCookie('_ga', '', { days: -1 })
     this.setCookie('_gid', '', { days: -1 })
     this.setCookie(gtagCookie, '', { days: -1 })
   }
 
-  this.setCookie(this.cookieName, JSON.stringify(consent), {days: this.cookieDuration})
+  this.setCookie(this.cookieName, JSON.stringify(consent), { days: this.cookieDuration })
 
-  this.showConfirmationMessage();
+  this.showConfirmationMessage()
 
-  if(this.hasConsentForAnalytics()) {
+  if (this.hasConsentForAnalytics()) {
     this.initAnalytics()
   }
 
-  return false;
+  return false
 }
 
 Cookies.prototype.showConfirmationMessage = function () {
-  var confirmationMessage = document.querySelector('div[data-cookie-confirmation]'),
-      previousPageLink = document.querySelector('.previous-page'),
-      referrer = Cookies.prototype.getReferrerLink()
+  var confirmationMessage = document.querySelector('div[data-cookie-confirmation]')
+  var previousPageLink = document.querySelector('.previous-page')
+  var referrer = Cookies.prototype.getReferrerLink()
 
   document.body.scrollTop = document.documentElement.scrollTop = 0
 
   if (referrer && referrer !== document.location.pathname) {
-    previousPageLink.href = referrer;
-    previousPageLink.style.display = "block"
+    previousPageLink.href = referrer
+    previousPageLink.style.display = 'block'
   } else {
-    previousPageLink.style.display = "none"
+    previousPageLink.style.display = 'none'
   }
 
-  confirmationMessage.style.display = "block"
+  confirmationMessage.style.display = 'block'
 }
 
 Cookies.prototype.getReferrerLink = function () {
@@ -229,10 +226,10 @@ Cookies.prototype.getReferrerLink = function () {
 // GA analytics functions
 
 Cookies.prototype.setupGtm = function () {
-  // Pull dimensions vals from meta ; else all script/origin combinations have to be in the CSP	
-  window.dataLayer = window.dataLayer || [];	
-  function gtag(){dataLayer.push(arguments);}	
-  gtag('js', new Date());	
+  // Pull dimensions vals from meta ; else all script/origin combinations have to be in the CSP
+  window.dataLayer = window.dataLayer || []
+  function gtag () { dataLayer.push(arguments) }
+  gtag('js', new Date())
 
   var config = {
     cookie_expires: this.cookieDuration * 24 * 60 * 60,
@@ -241,20 +238,20 @@ Cookies.prototype.setupGtm = function () {
       domains: [
         'cloud.service.gov.uk',
         'admin.cloud.service.gov.uk',
-        'admin.london.cloud.service.gov.uk', 
+        'admin.london.cloud.service.gov.uk',
         'docs.cloud.service.gov.uk'
       ]
     }
-  };
+  }
 
-  gtag('config', this.trackingId, config);
+  gtag('config', this.trackingId, config)
 }
 
 Cookies.prototype.loadGtmScript = function () {
-  var gtmScriptTag = document.createElement("script");
-  gtmScriptTag.type = "text/javascript"
-  gtmScriptTag.setAttribute("async", "true")
-  gtmScriptTag.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=" + this.trackingId)
+  var gtmScriptTag = document.createElement('script')
+  gtmScriptTag.type = 'text/javascript'
+  gtmScriptTag.setAttribute('async', 'true')
+  gtmScriptTag.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=' + this.trackingId)
   document.documentElement.firstChild.appendChild(gtmScriptTag)
 }
 
