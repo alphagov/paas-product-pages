@@ -1,24 +1,66 @@
 {
   "navigation": [
     {
-      "title": "Support",
+      "title": "About GOV.UK PaaS",
       "columns": null,
       "items": [
         { 
-          "text": "System status", 
-          "href": "https://status.cloud.service.gov.uk"
+          "text": "Get started", 
+          "href": "/get-started"
         },
         { 
-          "text": "Documentation", 
-          "href": "https://docs.cloud.service.gov.uk"
+          "text": "Features", 
+          "href": "/features"
         },
+        { 
+          "text": "Pricing", 
+          "href": "/pricing"
+        },
+        { 
+          "text": "Marketplace", 
+          "href": "https://admin.london.cloud.service.gov.uk/marketplace"
+        },
+        { 
+          "text": "Roadmap", 
+          "href": "/roadmap"
+        },
+        { 
+          "text": "Information assurance", 
+          "href": "/information-assurance"
+        },
+        { 
+          "text": "Security", 
+          "href": "/security"
+        },
+        { 
+          "text": "Cloud Security Principles", 
+          "href": "/cloud-security-principles"
+        },
+        { 
+          "text": "Shared Responsibility Model", 
+          "href": "/cloud-security-principles"
+        }
+      ]
+    },
+    {
+      "title": "Support",
+      "columns": null,
+      "items": [
         { 
           "text": "Contact support", 
           "href": "https://admin.london.cloud.service.gov.uk/support"
         },
         { 
-          "text": "Roadmap", 
-          "href": "https://github.com/alphagov/paas-roadmap/projects/1?fullscreen=true"
+          "text": "System status", 
+          "href": "https://status.cloud.service.gov.uk"
+        },
+        { 
+          "text": "Performance dashboard", 
+          "href": "https://admin.london.cloud.service.gov.uk/performance"
+        },
+        { 
+          "text": "Documentation", 
+          "href": "https://docs.cloud.service.gov.uk"
         },
         { 
           "text": "Chat to us on Slack", 
