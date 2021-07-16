@@ -59,6 +59,9 @@ $govuk-breakpoints: (
   }
 }
 
+.app-text--inverse {
+  color:  govuk-colour("white");;
+}
 img {
   display: block;
   width:100%;
