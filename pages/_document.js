@@ -31,15 +31,7 @@ class GovukTemplate extends Document {
           <link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png" />
           <meta property="og:image" content="/assets/images/govuk-opengraph-image.png" />
           <meta name="description" content="GOV.UK Platform as a Service - cloud hosting for government services" />
-          <!--[if !IE 8]><!-->
-            <link href="/assets/styles/application.css" rel="stylesheet" />
-          <!--<![endif]-->
-          <!--[if IE 8]>
-            <link href="/assets/styles/application-legacy.css" rel="stylesheet" />
-          <![endif]-->
-          <!--[if lt IE 9]>
-            <script src="/assets/javascript/html5shiv.min.js"></script>
-          <![endif]-->
+          <link href="/assets/styles/application.css" rel="stylesheet" />
         `
         }}
         />
