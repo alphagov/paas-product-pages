@@ -1,9 +1,8 @@
-const withMdxEnhanced = require('next-mdx-enhanced')
 const rehypeSlug = require('rehype-slug')
 const toc = require('@jsdevtools/rehype-toc')
 const removeTOC = require('./lib/rehype-removeTOC')
 
-module.exports = withMdxEnhanced({
+module.exports = {
   layoutPath: 'layouts/Content/',
   defaultLayout: true,
   fileExtensions: ['mdx'],
@@ -45,10 +44,5 @@ module.exports = withMdxEnhanced({
     }],
     removeTOC
   ],
-  extendFrontMatter: {
-    process: (mdxContent, frontMatter) => {},
-    phase: 'prebuild|loader|both'
-  }
-})({
   trailingSlash: true
-})
+}

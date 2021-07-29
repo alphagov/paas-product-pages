@@ -21,7 +21,7 @@
     "babel-plugin-import-glob-array": "^0.2.0",
     "govuk-frontend": "^3.12.0",
     "next": "^10.2.3",
-    "next-mdx-enhanced": "5.0.0",
+    "next-mdx-remote": "^3.0.4",
     "postcss-nested": "^5.0.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
