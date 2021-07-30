@@ -1,9 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
-import config from '../../config/config.json'
+import config from '../config/config.json'
 import Masthead from '@components/MastHead'
 
-export default function HomePage({ children }) {
+export default function HomePageLayout({ children }) {
   return (
     <>
     <Head>
