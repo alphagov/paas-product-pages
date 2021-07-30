@@ -1,4 +1,4 @@
-import Document, { Head, Html, Main } from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 import CookieBanner from '@components/CookieBanner'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
@@ -21,6 +21,7 @@ class GovukTemplate extends Document {
           <Main />
           <Footer />
           <script type='text/javascript' nonce='**CSP_NONCE_VAL**' src='/assets/javascript/application.js' />
+          <NextScript />
         </body>
       </Html>
     )
