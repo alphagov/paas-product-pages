@@ -6,7 +6,7 @@
     "dev": "next",
     "rollup:build": "rollup -c",
     "rollup:watch": "rollup -c -w",
-    "local": "npm-run-all --parallel dev rollup:watch",
+    "local": "npm-run-all rollup:build --parallel dev rollup:watch",
     "build": "rollup -c && next build && next export",
     "start": "next start",
     "test": "npm run lint && jest",
@@ -43,6 +43,7 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.1",
     "rollup": "^2.51.2",
+    "rollup-plugin-output-manifest": "^2.0.0",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.3.5"

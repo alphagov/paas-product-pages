@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import styleSheetHash from '../public/assets/styles/manifest.json'
 
 export default function ProductPages ({ Component, pageProps }: AppProps) {
   return (
@@ -17,7 +18,7 @@ export default function ProductPages ({ Component, pageProps }: AppProps) {
         <link rel='apple-touch-icon' href='/assets/images/govuk-apple-touch-icon.png' />
         <meta property='og:image' content='/assets/images/govuk-opengraph-image.png' />
         <meta name='description' content='GOV.UK Platform as a Service - cloud hosting for government services' />
-        <link href='/assets/styles/application.css' rel='stylesheet' />
+        <link href={`/assets/styles/${styleSheetHash['application.css']}`} rel='stylesheet' />
       </Head>
       <Component {...pageProps} />
     </>

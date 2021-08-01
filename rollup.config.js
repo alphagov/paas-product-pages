@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import postcss from 'rollup-plugin-postcss'
 import { terser } from 'rollup-plugin-terser'
 import postcssNested from 'postcss-nested'
+import outputManifest from 'rollup-plugin-output-manifest'
 
 // `npm run build` -> `production` is true
 // `npm run local` -> `production` is false
@@ -12,24 +13,30 @@ export default [
   {
     input: 'javascripts/application.js',
     output: {
-      file: 'public/assets/javascript/application.js',
+      name: 'application',
+      entryFileNames: '[hash][name].js',
+      dir: 'public/assets/javascript',
       format: 'iife', // immediately-invoked function expression — suitable for <script> tags
       sourcemap: false
     },
     plugins: [
       resolve(),
       commonjs(),
-      production && terser() // minify, but only in production
+      production && terser(), // minify, but only in production
+      outputManifest()
     ]
   },
   {
     input: 'styles/application.scss',
     output: {
-      file: 'public/assets/styles/application'
+      name: 'application',
+      entryFileNames: '[hash][name].css',
+      dir: 'public/assets/styles'
     },
     plugins: [
+      outputManifest(),
       postcss({
-        extract: 'application.css',
+        extract: true,
         minimize: production,
         plugins: [postcssNested]
       })

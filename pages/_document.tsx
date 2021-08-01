@@ -2,6 +2,7 @@ import Document, { Head, Html, Main, NextScript } from 'next/document'
 import CookieBanner from '@components/CookieBanner'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
+import javascriptHash from '../public/assets/javascript/manifest.json'
 
 class GovukTemplate extends Document {
   static async getInitialProps (ctx) {
@@ -20,7 +21,7 @@ class GovukTemplate extends Document {
           <Header />
           <Main />
           <Footer />
-          <script type='text/javascript' nonce='**CSP_NONCE_VAL**' src='/assets/javascript/application.js' />
+          <script type='text/javascript' nonce='**CSP_NONCE_VAL**' src={`/assets/javascript/${javascriptHash['application.js']}`} />
           <NextScript />
         </body>
       </Html>
