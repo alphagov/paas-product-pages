@@ -25,7 +25,7 @@ npm run nginx:local # site available on http://localhost:8080
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Page content is written in Markdown and is located in `pages/**/<filename>.mdx`. 
+Page content is written in Markdown and is located in `pages/content/<filename>.mdx`. 
 The page auto-updates as you edit the file.
 
 
