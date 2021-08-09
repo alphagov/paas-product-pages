@@ -1,4 +1,4 @@
-import resolve from '@rollup/plugin-node-resolve'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import postcss from 'rollup-plugin-postcss'
 import { terser } from 'rollup-plugin-terser'
@@ -20,7 +20,7 @@ export default [
       sourcemap: false
     },
     plugins: [
-      resolve(),
+      nodeResolve(),
       commonjs(),
       production && terser(), // minify, but only in production
       outputManifest()
