@@ -20,7 +20,7 @@
     "@next/mdx": "^11.0.1",
     "govuk-frontend": "^3.13.0",
     "gray-matter": "^4.0.3",
-    "next": "^11.1.0",
+    "next": "^11.1.1",
     "next-mdx-remote": "^3.0.4",
     "postcss-nested": "^5.0.5",
     "react": "^17.0.2",
