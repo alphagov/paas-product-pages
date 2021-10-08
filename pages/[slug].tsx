@@ -6,8 +6,8 @@ import matter from 'gray-matter'
 import Button from '@components/Button'
 import ContentPageLayout from '../layouts/ContentPageLayout'
 import { GetStaticProps, GetStaticPaths } from 'next'
+import rehypeSlug from 'rehype-slug'
 
-const rehypeSlug = require('rehype-slug')
 const toc = require('@jsdevtools/rehype-toc')
 
 // prevent NextJS from incluidng all their scripts
@@ -99,6 +99,7 @@ export const getStaticProps:GetStaticProps = async ({ params }) => {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [],
+      // @ts-ignore
       rehypePlugins: addTocToPage()
     },
     scope: data
