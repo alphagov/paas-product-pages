@@ -20,7 +20,7 @@
     "govuk-frontend": "^3.14.0",
     "gray-matter": "^4.0.3",
     "next": "^11.1.2",
-    "next-mdx-remote": "^3.0.5",
+    "next-mdx-remote": "^3.0.6",
     "postcss-nested": "^5.0.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -34,17 +34,17 @@
     "@rollup/plugin-node-resolve": "^13.0.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.2.1",
-    "@types/node": "^16.10.3",
-    "@types/react": "^17.0.27",
-    "jest": "^27.2.4",
+    "@testing-library/user-event": "^13.3.0",
+    "@types/node": "^16.10.5",
+    "@types/react": "^17.0.29",
+    "jest": "^27.2.5",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.9",
     "rollup": "^2.58.0",
     "rollup-plugin-output-manifest": "^2.0.0",
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.4"
   },
   "standard": {
     "ignore": [
