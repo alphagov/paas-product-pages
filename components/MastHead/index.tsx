@@ -8,12 +8,12 @@ const Masthead = () => {
       <div className="masthead__content">
         <div className="govuk-grid-row">
           <div className="masthead__body govuk-grid-column-two-thirds">
-            <h1 className="govuk-heading-xl masthead__title ">Host your service in the Cloud< span className="govuk-visually-hidden">with GOV.UK Platform as a service (PaaS)</span></h1>
+            <h1 className="govuk-heading-xl masthead__title ">Host your applications in the Cloud< span className="govuk-visually-hidden">with GOV.UK Platform as a Service (PaaS)</span></h1>
             <div className="masthead__inline-image">
               <img src="/assets/images/paas-top-image.png" alt="" role="presentation" />
             </div>
             <p className="govuk-!-margin-bottom-5 masthead__description">
-              If you work in the public sector, use GOV.UK PaaS to host your service without worrying about infrastructure.
+              Use GOV.UK Platform as a Service (PaaS) to host your public sector service so you do not need to worry about infrastructure.
             </p>
             <Button 
               href="/get-started" 
@@ -24,7 +24,7 @@ const Masthead = () => {
               data-track-action="Button Click"
               data-track-label="Get ready"
               >
-                Read how to get started
+                Create a free trial account
               </Button>
           </div>
           <div className="masthead__aside govuk-grid-column-one-third">
