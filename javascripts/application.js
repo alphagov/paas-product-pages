@@ -2,6 +2,7 @@
 import common from 'govuk-frontend/govuk/common'
 import Button from 'govuk-frontend/govuk/components/button/button'
 import Header from 'govuk-frontend/govuk/components/header/header'
+import SkipLink from 'govuk-frontend/govuk/components/skip-link/skip-link'
 import Cookies from './cookie-functions'
 import Analytics from './analytics'
 
@@ -33,3 +34,7 @@ var $headers = document.querySelectorAll('[data-module="govuk-header"]')
 nodeListForEach($headers, function ($header) {
   new Header($header).init()
 })
+
+// Find first skip link module to enhance.
+var $skipLink = document.querySelector('[data-module="govuk-skip-link"]')
+new SkipLink($skipLink).init()

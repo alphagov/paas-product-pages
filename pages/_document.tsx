@@ -16,7 +16,7 @@ class GovukTemplate extends Document {
         <Head />
         <body className='govuk-template__body'>
           <script nonce='**CSP_NONCE_VAL**' dangerouslySetInnerHTML={{ __html: 'document.body.className = ((document.body.className) ? document.body.className + \' js-enabled\' : \'js-enabled\');' }} />
-          <a href='#main-content' className='govuk-skip-link'>Skip to main content</a>
+          <a href='#main-content' className='govuk-skip-link' data-module="govuk-skip-link">Skip to main content</a>
           <CookieBanner />
           <Header />
           <Main />
