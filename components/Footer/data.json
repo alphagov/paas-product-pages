@@ -2,6 +2,7 @@
   "navigation": [
     {
       "title": "About GOV.UK PaaS",
+      "width": "one-third",
       "columns": null,
       "items": [
         { 
@@ -48,6 +49,7 @@
     },
     {
       "title": "Support",
+      "width": "one-third",
       "columns": null,
       "items": [
         { 
@@ -74,6 +76,7 @@
     },
     {
       "title": "Legal terms",
+      "width": "one-third",
       "columns": null,
       "items": [
         { 

@@ -40,11 +40,10 @@ const Header = () => (
     </div>
     <div className="govuk-header__content">
       {Object.keys(data.navigation).length < 1 ? '' : <>
-      <button type="button" className="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation Menu">Menu</button>
-      <nav>
+      <nav aria-label="Top Level Navigation" className={`govuk-header__navigation ${data.navigationClasses}`}>
+        <button type="button" className="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation Menu">Menu</button>
         <ul id="navigation" 
-          className={`govuk-header__navigation ${data.navigationClasses}`}
-          aria-label="Top Level Navigation"
+          className="govuk-header__navigation-list"
           >
           {data.navigation.map((item, index) => (
             <li key={index} className="govuk-header__navigation-item">

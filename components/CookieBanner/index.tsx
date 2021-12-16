@@ -6,6 +6,7 @@ const CookieBanner = () => (
     data-module="cookie-banner" 
     role="region" 
     aria-describedby="cookie-banner__heading"
+    data-nosnippet
   >
     <div className="cookie-banner__wrapper govuk-width-container">
       <h2 className="govuk-heading-m" id="cookie-banner__heading">Can we store analytics cookies on your device?</h2>
