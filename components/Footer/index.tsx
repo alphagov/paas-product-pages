@@ -10,7 +10,7 @@ const Footer = () => (
      {navigation.length < 1 ? '' :
         <div className="govuk-footer__navigation">
           {navigation.map((column, index) => (
-            <div key={index} className="govuk-footer__section">
+            <div key={index} className={`govuk-footer__section ${column.width ? `govuk-grid-column-${column.width}` : '`govuk-grid-column-full'}`}>
               <h2 className="govuk-footer__heading govuk-heading-m">{column.title}</h2>
                 <ul className={`govuk-footer__list ${column.columns ? `govuk-footer__list--columns-${column.columns}` : ''}`}>
                   {column.items.map((item, index) => (
