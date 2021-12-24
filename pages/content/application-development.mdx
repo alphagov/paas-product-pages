@@ -77,7 +77,7 @@ GOV.UK PaaS also [supports the deployment of Docker images](https://docs.cloud.s
 
 ## Backing services
 
-GOV.UK PaaS provides a number of highly available backing services. Please visit [our marketplace](https://admin.london.cloud.service.gov.uk/marketplace) to view more information about these services.
+GOV.UK PaaS provides a number of highly available backing services. Visit [our marketplace](https://admin.london.cloud.service.gov.uk/marketplace) to view more information about these services.
 
 <table className="govuk-table">
   <thead className="govuk-table__head">
@@ -88,16 +88,24 @@ GOV.UK PaaS provides a number of highly available backing services. Please visit
   </thead>
   <tbody className="govuk-table__body">
     <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Amazon Simple Queue Service</th>
+      <td className="govuk-table__cell"><a href="https://docs.aws.amazon.com/sqs/">Amazon Simple Queue Service (SQS)</a> provides queues through a web service interface</td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">Autoscaler</th>
+      <td className="govuk-table__cell">Apps can be configured to dynamically increase or decrease the number of running instances using <a href="https://admin.london.cloud.service.gov.uk/marketplace/7b1ba1b9-8444-4719-b250-32a91d6cb400">autoscaling</a></td>
+    </tr>
+    <tr className="govuk-table__row">
       <th scope="row" className="govuk-table__cell">CDN-route</th>
       <td className="govuk-table__cell">Proxy traffic from a user controlled domain to an existing Cloud Foundry application or external URL. This allows you to bring your own domain to the platform and have the platform manage your TLS certificates using <a href="https://aws.amazon.com/cloudfront/">AWS Cloudfront</a> + <a href="https://aws.amazon.com/certificate-manager/">AWS Certificate Manager</a></td>
     </tr>
     <tr className="govuk-table__row">
       <th scope="row" className="govuk-table__cell">Elasticsearch</th>
-      <td className="govuk-table__cell"><a href="https://www.elastic.co/products/elasticsearch">A search engine</a> with a full-text search engine, an HTTP web interface and schema-free JSON documents.</td>
+      <td className="govuk-table__cell"><a href="https://www.elastic.co/products/elasticsearch">A search engine</a> with a full-text search engine, an HTTP web interface and schema-free JSON documents</td>
     </tr>
     <tr className="govuk-table__row">
       <th scope="row" className="govuk-table__cell">InfluxDB</th>
-      <td className="govuk-table__cell"><a href="https://www.influxdata.com/products/">A time series database</a>.</td>
+      <td className="govuk-table__cell"><a href="https://www.influxdata.com/products/">A time series database</a></td>
     </tr>
     <tr className="govuk-table__row">
       <th scope="row" className="govuk-table__cell">MySQL</th>
@@ -106,6 +114,10 @@ GOV.UK PaaS provides a number of highly available backing services. Please visit
     <tr className="govuk-table__row">
       <th scope="row" className="govuk-table__cell">Object Store</th>
       <td className="govuk-table__cell">Object storage using <a href="https://aws.amazon.com/s3/">AWS S3</a></td>
+    </tr>
+    <tr className="govuk-table__row">
+      <th scope="row" className="govuk-table__cell">OpenSearch</th>
+      <td className="govuk-table__cell"><a href="https://opensearch.org/">OpenSearch</a> is a search and analytics engine that allows you to store and search data</td>
     </tr>
     <tr className="govuk-table__row">
       <th scope="row" className="govuk-table__cell">PostgreSQL</th>
@@ -126,4 +138,4 @@ In addition to the service we provide, applications can connect to other interne
 
 Applications on GOV.UK PaaS typically have a route to allow [inbound connections via the internet](https://docs.cloud.service.gov.uk/deploying_apps.html#deploying-public-apps).
 
-The platform also supports [private applications](https://docs.cloud.service.gov.uk/deploying_apps.html#deploying-private-apps) (i.e. applications without a public internet route).
+The platform also supports [private applications](https://docs.cloud.service.gov.uk/deploying_apps.html#deploying-private-apps) (applications without a public internet route).
