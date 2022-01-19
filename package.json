@@ -25,7 +25,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rehype-slug": "^5.0.1",
-    "sass": "^1.47.0",
+    "sass": "^1.49.0",
     "standard": "^16.0.4"
   },
   "license": "MIT",
@@ -40,7 +40,7 @@
     "jest": "^27.4.7",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.5",
-    "rollup": "^2.63.0",
+    "rollup": "^2.64.0",
     "rollup-plugin-output-manifest": "^2.0.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
@@ -48,7 +48,7 @@
   },
   "engines": {
     "node": "16.x.x",
-    "npm": ">=7.x.x"
+    "npm": ">=8.x.x"
   },
   "standard": {
     "ignore": [
