@@ -1,12 +1,13 @@
 /* eslint-disable no-var, prefer-const */
-import common from 'govuk-frontend/govuk/common'
-import Button from 'govuk-frontend/govuk/components/button/button'
-import Header from 'govuk-frontend/govuk/components/header/header'
-import SkipLink from 'govuk-frontend/govuk/components/skip-link/skip-link'
+import {
+  Button,
+  Header,
+  SkipLink
+} from 'govuk-frontend'
+
 import Cookies from './cookie-functions'
 import Analytics from './analytics'
 
-var nodeListForEach = common.nodeListForEach
 var cookies = new Cookies()
 var analytics = new Analytics()
 
@@ -26,14 +27,17 @@ if ($cookieSettings) {
 }
 
 var $buttons = document.querySelectorAll('[data-module="govuk-button"]')
-nodeListForEach($buttons, function ($button) {
-  new Button($button).init()
-})
+if ($buttons) {
+  for (var i = 0; i < $buttons.length; i++) {
+    new Button($buttons[i]).init()
+  };
+}
 
-var $headers = document.querySelectorAll('[data-module="govuk-header"]')
-nodeListForEach($headers, function ($header) {
+// there is ever only one header per page
+var $header = document.querySelector('[data-module="govuk-header"]')
+if ($header) {
   new Header($header).init()
-})
+}
 
 // Find first skip link module to enhance.
 var $skipLink = document.querySelector('[data-module="govuk-skip-link"]')
