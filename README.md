@@ -28,4 +28,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Page content is written in Markdown and is located in `pages/content/<filename>.mdx`. 
 The page auto-updates as you edit the file.
 
+## Review static build (production build)
+For production deployment we build all pages as static pages.
+To review the build is good
+
+- build the site (`npm run build`)
+- `cd` into `out` folder and serve the page (`npx serve`)
+- check pages on `localhost:xxxx`
+
+## Deployment to production
+
+On merge to `main` branch, [paas-release-ci pipeline](https://github.com/alphagov/paas-release-ci/blob/main/pipelines/plain_pipelines/paas-product-pages.yml) is triggered, which deploys to production.
+
 
