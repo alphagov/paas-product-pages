@@ -63,19 +63,6 @@ img {
   max-width: 100%;
 }
 
-.tenant-logos {
-  margin-top: govuk-spacing(9);
-  @include govuk-media-query($from: tablet) {
-    grid-template-columns: 1fr 1fr;
-  }
-  display: grid;
-  
-}
-
-.tenant-logos img{
-  width: auto;
-}
-
 // PaaS spelled-out is a long name that GOV.UK Frontend doesn't account for
 // in the header logo + product name 33.33% width, so then name drops below the crown.
 //
