@@ -34,7 +34,7 @@ To review the build is good
 
 - build the site (`npm run build`)
 - `cd` into `out` folder and serve the page (`npx serve`)
-- check pages on `localhost:xxxx`
+- check pages on `localhost:xxxx` (port in output of `npx serve` command).
 
 ## Deployment to production
 
