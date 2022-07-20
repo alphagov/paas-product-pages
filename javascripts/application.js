@@ -13,11 +13,6 @@ if (cookies.hasConsentForAnalytics()) {
   cookies.initAnalytics()
 }
 
-var $cookieBanner = document.querySelector('[data-module="cookie-banner"]')
-if ($cookieBanner) {
-  cookies.initCookieBanner($cookieBanner)
-}
-
 var $cookieSettings = document.querySelector('[data-module="cookie-settings"]')
 if ($cookieSettings) {
   cookies.initCookieSettings($cookieSettings)
