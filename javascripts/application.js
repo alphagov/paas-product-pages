@@ -6,14 +6,11 @@ import {
 } from 'govuk-frontend'
 
 import Cookies from './cookie-functions'
-import Analytics from './analytics'
 
 var cookies = new Cookies()
-var analytics = new Analytics()
 
 if (cookies.hasConsentForAnalytics()) {
   cookies.initAnalytics()
-  analytics.init()
 }
 
 var $cookieBanner = document.querySelector('[data-module="cookie-banner"]')

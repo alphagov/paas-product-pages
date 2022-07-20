@@ -24,10 +24,6 @@ const SectionNavigation = (data) => {
               <a 
                 className="govuk-link" 
                 aria-current={page.path === router.asPath ? 'page' : null}
-                data-track-click="true"
-                data-track-category="Navigation"
-                data-track-action="Side Bar Navigation"
-                data-track-label={page.navLinkText ? page.navLinkText : page.title}
                >
               {page.navLinkText ? page.navLinkText : page.title}
               </a>
