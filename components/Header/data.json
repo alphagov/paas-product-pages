@@ -3,10 +3,6 @@
   "navigationClasses": "govuk-header__navigation--end",
   "navigation": [
     {
-      "href": "/get-started",
-      "text": "Get started"
-    },
-    {
       "href": "/features",
       "text": "Features"
     },
