@@ -6,28 +6,12 @@
       "columns": null,
       "items": [
         { 
-          "text": "Get started", 
-          "href": "/get-started"
-        },
-        { 
           "text": "Features", 
           "href": "/features"
         },
         { 
           "text": "Pricing", 
           "href": "/pricing"
-        },
-        { 
-          "text": "Calculator", 
-          "href": "https://admin.london.cloud.service.gov.uk/calculator"
-        },
-        { 
-          "text": "Marketplace", 
-          "href": "https://admin.london.cloud.service.gov.uk/marketplace"
-        },
-        { 
-          "text": "Roadmap", 
-          "href": "/roadmap"
         },
         { 
           "text": "Information assurance", 
@@ -55,6 +39,10 @@
         { 
           "text": "Contact support", 
           "href": "https://admin.london.cloud.service.gov.uk/support"
+        },
+        {
+          "text": "Support and response times",
+          "href": "/support-and-response-times"
         },
         { 
           "text": "System status", 
