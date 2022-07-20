@@ -9,14 +9,7 @@ import Cookies from './cookie-functions'
 
 var cookies = new Cookies()
 
-if (cookies.hasConsentForAnalytics()) {
-  cookies.initAnalytics()
-}
-
-var $cookieSettings = document.querySelector('[data-module="cookie-settings"]')
-if ($cookieSettings) {
-  cookies.initCookieSettings($cookieSettings)
-}
+cookies.cookieCleanup()
 
 var $buttons = document.querySelectorAll('[data-module="govuk-button"]')
 if ($buttons) {
