@@ -18,11 +18,7 @@ const Masthead = () => {
             <Button 
               href="/get-started" 
               isStartButton 
-              className="masthead__button" 
-              data-track-click="true"
-              data-track-category="Navigation"
-              data-track-action="Button Click"
-              data-track-label="Get ready"
+              className="masthead__button"
               >
                 Create a free trial account
               </Button>
