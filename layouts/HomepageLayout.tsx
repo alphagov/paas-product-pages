@@ -6,7 +6,7 @@ export default function HomePageLayout({ children }) {
   return (
     <>
     <Head>
-      <title>{`Host your service in the Cloud - ${config.siteName}`}</title>
+      <title>{`GOV.UK PaaS is being decommissioned - ${config.siteName}`}</title>
     </Head>
     <main id="main-content" role="main">
       <div className="govuk-width-container">
