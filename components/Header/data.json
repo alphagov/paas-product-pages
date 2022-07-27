@@ -3,18 +3,6 @@
   "navigationClasses": "govuk-header__navigation--end",
   "navigation": [
     {
-      "href": "/get-started",
-      "text": "Get started"
-    },
-    {
-      "href": "/features",
-      "text": "Features"
-    },
-    {
-      "href": "/pricing",
-      "text": "Pricing"
-    },
-    {
       "href": "https://docs.cloud.service.gov.uk/",
       "text": "Documentation"
     },
