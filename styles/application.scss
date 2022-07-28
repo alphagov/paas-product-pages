@@ -14,7 +14,6 @@ $govuk-breakpoints: (
 
 @import "~govuk-frontend/govuk/core/all";
 @import "~govuk-frontend/govuk/objects/all";
-@import "~govuk-frontend/govuk/components/breadcrumbs/index";
 @import "~govuk-frontend/govuk/components/button/index";
 @import "~govuk-frontend/govuk/components/footer/index";
 @import "~govuk-frontend/govuk/components/header/index";
@@ -26,7 +25,6 @@ $govuk-breakpoints: (
 @import "~govuk-frontend/govuk/utilities/all";
 @import "~govuk-frontend/govuk/overrides/all";
 @import "section-navigation";
-@import "cookie-banner";
 
 
 // we only want to style content elements that don't have "govuk" classnames
@@ -131,62 +129,4 @@ blockquote {
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
-//homepage breadcrumb -- inverse
-.app-breadcrumbs--inverse {
-  background-color: $govuk-brand-colour;
-  color: govuk-colour('white');
-  border-bottom: 1px solid rgba(govuk-colour("white"), .25);
-  padding-bottom: govuk-spacing(2);
-  margin-top: -11px;
-  padding-top: govuk-spacing(2);
-  margin-bottom: 0;
-
-  .govuk-breadcrumbs__list {
-    @extend .govuk-width-container;
-  }
-  .govuk-breadcrumbs__list-item{
-    &:before {
-      border-color: govuk-colour('white');
-    }
-
-    &[aria-current=page]{
-      font-weight: 700;
-      color: govuk-colour('white');
-    }
-  }
-
-  .govuk-breadcrumbs__link {
-    color: govuk-colour('white');
-
-    &:hover,
-    &:active {
-      color: govuk-colour('white');
-    }
-
-    &:focus {
-      color:  $govuk-text-colour;
-    }
-  }
-}
-
-
-// no-js cookie setting message
-// js-enabled form
-
-.js-enabled .cookie-settings__no-js {
-  display: none;
-}
-
-.js-enabled .cookie-settings__form-wrapper {
-  display: block;
-}
-
-.cookie-settings__form-wrapper {
-  display: none;
-}
-
-[data-cookie-confirmation="true"] {
-  display: none;
 }
