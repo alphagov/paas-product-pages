@@ -41,7 +41,7 @@ const Header = () => (
     <div className="govuk-header__content">
       {Object.keys(data.navigation).length < 1 ? '' : <>
       <nav aria-label="Top Level Navigation" className={`govuk-header__navigation ${data.navigationClasses}`}>
-        <button type="button" className="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation Menu">Menu</button>
+        <button type="button" className="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation Menu" hidden>Menu</button>
         <ul id="navigation" 
           className="govuk-header__navigation-list"
           >
