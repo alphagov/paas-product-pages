@@ -49,10 +49,6 @@
           "href": "https://status.cloud.service.gov.uk"
         },
         { 
-          "text": "Performance dashboard", 
-          "href": "https://admin.london.cloud.service.gov.uk/performance"
-        },
-        { 
           "text": "Documentation", 
           "href": "https://docs.cloud.service.gov.uk"
         },
