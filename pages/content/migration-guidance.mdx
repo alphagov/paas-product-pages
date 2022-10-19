@@ -1,0 +1,181 @@
+---
+title: "Migration guidance"
+---
+
+## Introduction
+### The purpose of this guidance
+
+Help GOV.UK PaaS tenants plan to move their services to an alternative hosting platform by December 23rd 2023 and to understand how the PaaS team can assist in the migration.
+### What is happening?
+
+The 12th July 2022 Blog post [“Why we’ve decided to decommission GOV.UK PaaS (Platform as a Service)”](https://gds.blog.gov.uk/2022/07/12/why-weve-decided-to-decommission-gov-uk-paas-platform-as-a-service/),  states that [GOV.UK Platform as a Service (PaaS)](https://cloud.service.gov.uk) and the team that supports it is are being decommissioned.
+
+Following an options analysis, the GDS Leadership Team has decided to decommission GOV.UK PaaS. 
+
+[INSERT SOMETHING ABOUT THE WORK THAT INFORMED THE DECISION AND THE DECISION PROCESS ITSELF]
+
+
+
+The decision affects all services hosted on the platform and means that by 23rd December 2023 all services will need to be migrated to an alternate hosting platform.
+
+Any services that are not hosted on another platform by that date will cease to operate and will incur permanent downtime which will impact any users of the services which may be citizen facing. Thereafter we will be permanently deleting all platform and tenant data.
+
+### Timelines for decommissioning GOV.UK PaaS
+
+These are some key milestones for the decommissioning of the platform.
+
+|Milestone                                                                                                                                   |Date                                            |
+|--------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+|Announcement of the decision                                                                                                                |\[INSERT DATE\]                                 |
+|monthly buildpack upgrades                                                                                                                  |regular upgrades, typically monthly             |
+|ad hoc security patches                                                                                                                     |as required within X days of reporting          |
+|Annual platform pentest                                                                                                                     |Q4 of each year                                 |
+|No more trial accounts                                                                                                                      |\[INSERT DATE\]                                 |
+|No more account upgrades to billable                                                                                                        |\[INSERT DATE\]                                 |
+|deprecation date for Redis 3                                                                                                                |2022 Q3                                         |
+|deprecation date for Postgresql 10                                                                                                          |2022 Q4                                         |
+|monthly paas\-announce email to tenants                                                                                                     |regular monthly updates                         |
+|Xmas platform code freeze Dec 2022                                                                                                          |from 2nd week december until the start of 2023  |
+|End of the financial year 2021/2022                                                                                                         |31st March 2023                                 |
+|"GOV\.UK PaaS demise date, the date beyond which services hosted on the platform will cease to operate or respond to requests from the web\.|                                                |
+|The PaaS API will no longer respond to requests\."                                                                                          |23rd December 2023                              |
+|Final bills from \[INSERT DEPARTMENT\]                                                                                                      |2022 Q4                                         |
+|Deletion of tenant data and paas platform datat                                                                                             |2024 Q1                                         |
+|End of financial year 2023/2024                                                                                                             |31st March 2024                                 |
+|final date to pay final bills                                                                                                               |\[INSERT DATE\]                                 |
+
+
+
+let PaaS team know your plans / target date, so that we can plan, match up other tenants, etc
+
+### Supporting your migration
+
+We aim to maintain the service as it has been till the end of December 2023. We encourage you to plan your migration earlier than this date.
+
+[SOMETHING ABOUT THE SHAPE OF THE TEAM, THE FACT THAT WE INTEND TO SUPPORT TENANTS UNTIL THE END OF THE PLATFORM]
+
+We will continue to offer help and advice though our usual channels:
+
+[GOV.UK PaaS Team (support form)](https://admin.london.cloud.service.gov.uk/support/contact-us) for platform tenants who have questions about migration.
+
+x govt slack [#govuk-paas](https://ukgovernmentdigital.slack.com/archives/C33SAH4GJ) channel for tenants using the cross government slack
+
+GDS slack [#paas](https://gds.slack.com/archives/CADHV9267) channel for internal users
+
+
+### Responsibility model
+Tenants will assume more responsibilities for their own infrastructure as follows:
+
+remix the responsibility model old vs new
+
+## Prepare to migrate
+### Audit your services
+
+- consider the relative importance of your services
+- consider the technical effort required to migrate each service to another platform
+- consider if any services can  be retired rather than migrated
+- consider smaller services that may not have an obvious owner owing to changes in the team structure
+
+### Timing and budget
+
+- Do you have the budget to fund the migration in your current settlement?
+- Can you raise a business case for the year 2023/2024?
+- What timeframe do you envisage for the migration?
+- Can you identify a sequence to migrate the services if you have more than one?
+
+### Look at your skill sets
+
+- Do you have the skills to migrate your services available in-house?
+- Do you need to outsource to a delivery partner?
+- Do you need to bring in contractors?
+- Do you need to procure [cloud migration expertise from the Digital Marketplace](https://www.digitalmarketplace.service.gov.uk/g-cloud/search?q=cloud%20migration)?
+
+### Consider your department’s cloud hosting strategy
+
+- understand your department's hosting standards and preferred cloud provider
+- determine if there is a departmental strategy to follow
+- determine if there a departmental hosting platform available in-house
+
+## Decide where to host your services
+There are many possible hosting options however not all of them will necessarily make sense for your service. You should plan to spend time and effort exploring options and evaluating technical solutions. 
+
+Horses for courses.
+
+### Look at existing government guidance
+
+Start by reviewing the existing guidance on the topic of hosting.
+
+|Guidance            |Description                                                                                                 |
+|--------------------|------------------------------------------------------------------------------------------------------------|
+|Government Cloud First|                                                                                                            |
+|Technical code of practice|                                                                                                            |
+|Service Manual      |                                                                                                            |
+|CDDO Guidance       |                                                                                                            |
+|NCSC cloud principles|                                                                                                            |
+|GOV\.UK             |some guidance on this on gov\.uk and seems to overlap with some of the ncsc, tcop and service manual stuff\)|
+|Any department level guidance|e\.g\. the DFE technical guidance\.                                                                         |
+
+
+### Approach
+
+- Keep it as simple as possible and don't over complicate matters
+- Use managed services where you can
+- Use boring technologies that are mature, well documented and that you can get skills for in the marketplace
+- Consider running technical spikes to evaluate alternatives and to inform your decision
+
+## Data migration options
+
+### Use documented PaaS data techniques
+
+Our technical documentation covers a number of topics relevant for migrating services.
+
+There are a number of data sources that may require migration including
+
+- files stored in S3 buckets
+- relational data stored in Postgresql and Mysql
+- times series data stored in influxdb
+- non relational data stored in opensearch
+- cache data in Redis (probably don't migrate the cache but reconstruct on your new platform)
+
+The area a number of relevant resources in out technical documentation 
+
+- conduit
+- use of  pg_dump
+- backups and restores
+- plan upgrades 
+
+
+These documented processes are self service and can be performed by tenants independent of the paas team.
+
+The documentation is mature and tested and allows you to coordinate any system downtime yourselves.
+
+### What to do if you have more complex data migration needs
+
+Some tenants may face challenges using the documented approaches above.
+
+Things that may affect the decision include:
+
+- complex data schemata
+- high availability availability requirements 
+- large databases where export over conduit is too lengthy or unreliable
+
+If you think that your service faces some of these you should [get in contact with the team](https://admin.london.cloud.service.gov.uk/support/contact-us) to discuss further. 
+
+
+
+## Changes you will have to make to your service when migrating
+
+- something about how having 12 factor apps helps when finding a new home
+- you will have to find an alternative to buildpacks to create containers or consider using cloud native buildpacks
+- VCAP Services and binding of apps to services 
+- updating your pipelines
+- updating your domains, cdn and certificates
+- log shipping alternative
+- observability alternatives
+- depending on where you are migrating to you may need to address your security posture depending on your threat model
+
+## Support
+
+- how are you going to support your service longer term?
+- do you need out of hours support?
+- consider how you are going to find alternatives to ssh and conduit
