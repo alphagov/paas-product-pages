@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 
 const Button = (props) => {
   const {
@@ -66,9 +65,9 @@ const Button = (props) => {
       )
     } else {
       button = (
-        <Link href={href}>
-          <a {...linkAttributes} {...commonAttributes}>{children}{iconHtml}</a>
-        </Link>
+        <a href={href} {...linkAttributes} {...commonAttributes}>
+          {children}{iconHtml}
+        </a>
       );
     }
   } else if (el === 'button') {

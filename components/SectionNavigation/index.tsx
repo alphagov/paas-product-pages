@@ -20,19 +20,19 @@ const SectionNavigation = (data) => {
         .map((page) => (  
           <li key={page.path}
             className={`section-navigation__item ${router.asPath === page.path ? 'section-navigation__item--active' : ''}`}>
-            <Link href={page.path}>
-              <a 
-                className="govuk-link" 
-                aria-current={page.path === router.asPath ? 'page' : null}
-               >
+            <Link
+              href={page.path}
+              className="govuk-link"
+              aria-current={page.path === router.asPath ? 'page' : null}>
+
               {page.navLinkText ? page.navLinkText : page.title}
-              </a>
+
             </Link>
           </li>
         ))}
       </ol>
     </nav>
-  )
+  );
 }
 
 
