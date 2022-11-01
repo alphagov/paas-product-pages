@@ -6,7 +6,7 @@ title: "Migrating from GOV.UK PaaS"
 
 ## Last updated
 
-- 1st November 2022 - first published
+- 1 November 2022 - first published
 
 ## Government cloud hosting strategy
 
@@ -18,12 +18,12 @@ Faced with this need for re-investment GDS has decided to [decommission the plat
 
 GDS will not be providing a replacement hosting service.
 
-Tenants should look to their own department, or parent department, and use existing patterns and support available for public cloud hosting services. 
+Tenants should look to their own department, or parent department, and use existing support for public cloud hosting services. 
 
 In deciding where to host their service next, tenants should consider the following principles from the [Central Digital & Data Office (CDDO)](https://www.gov.uk/government/organisations/central-digital-and-data-office/about#responsibilities):
 
 - Tenants should continue to use public cloud services, or internal platforms based on public cloud offerings. These continue to be the platforms of choice for government services.
-- The [Central Digital & Data Office (CDDO)](https://cddo.blog.gov.uk/) has secured Director General level agreement to help share services. Larger departments are prepared to share knowledge, patterns and platforms with the rest of government. If tenants have no existing cloud engineering capability, you could approach the CDDO, via the GOV.UK PaaS team [support form](https://admin.london.cloud.service.gov.uk/support/contact-us), to benefit from the sharing agreements.
+- The [Central Digital & Data Office (CDDO)](https://cddo.blog.gov.uk/) has secured Director General level agreement to help share services. Larger departments are prepared to share knowledge, patterns and platforms with the rest of government. If tenants have no existing cloud engineering capability, you could [approach the CDDO](mailto:soydaner.ulker@digital.cabinet-office.gov.uk) to benefit from the sharing agreements.
 - When selecting a cloud platform, the tenant should assure themselves that:
   - the public sector cloud supplier is regionally appropriate, i.e. that the data will reside in locations suitable for your workload; with GOV.UK PaaS this was predominantly the AWS eu-west-2 (London) region, but some tenancies were hosted in the AWS eu-west-1 (Ireland) region
   - billing processes are clearly defined and understood
@@ -37,7 +37,7 @@ In deciding where to host their service next, tenants should consider the follow
 
 To help GOV.UK PaaS tenants plan to move their services to an alternative hosting platform by 23 December 2023 and understand how the GOV.UK PaaS team can assist in the migration.
 
-### What does this mean for me and my service(s)?
+### What does this mean for my service?
 
 By 23 December 2023 all services hosted on GOV.UK PaaS will need to have migrated to an alternate hosting platform.
 
@@ -47,53 +47,53 @@ All platform and tenant data will be permanently deleted by 28 February 2024.
 
 If you miss the deadline, and you need to migrate your applications, contact us via [the normal support routes](https://admin.london.cloud.service.gov.uk/support). If you contact us before we have deleted all tenant data, we will be able to provide this data. We will not be able to provide access to the applications or their configuration on GOV.UK PaaS.
 
-### Timeline for decommissioning GOV.UK PaaS
+### Key dates
 
 These are some key dates in the lifetime of the platform until decommission.
 
-<table class="govuk-table">
-<thead class="govuk-table__head">
-<tr class="govuk-table__row">
-<th scope="col" class="govuk-table__header">Milestone</th>
-<th scope="col" class="govuk-table__header">Date</th>
-<th scope="col" class="govuk-table__header">What this means for you</th>
+<table className="govuk-table">
+<thead className="govuk-table__head">
+<tr className="govuk-table__row">
+<th scope="col" className="govuk-table__header">Milestone</th>
+<th scope="col" className="govuk-table__header">Date</th>
+<th scope="col" className="govuk-table__header">What this means for you</th>
 </tr>
 </thead>
-<tbody class="govuk-table__body">
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Announcement of the decision to decommission</td>
-<td class="govuk-table__cell">12 July 2022</td>
-<td class="govuk-table__cell">Public notification of the decision to decommission the platform and
+<tbody className="govuk-table__body">
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">Announcement of the decision to decommission</td>
+<td className="govuk-table__cell">12 July 2022</td>
+<td className="govuk-table__cell">Public notification of the decision to decommission the platform and
 the overall timeline to retirement. Potential tenants cannot request a
 90-day trial account for evaluation. Trial tenants cannot request an
 upgrade to a billable account in order to deploy a beta or production
 service.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Festive season code freeze</td>
-<td class="govuk-table__cell">16 December 2022 until 9 January 2023</td>
-<td class="govuk-table__cell">Annual platform freeze over the festive period for non essential
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">Festive season code freeze</td>
+<td className="govuk-table__cell">16 December 2022 until 9 January 2023</td>
+<td className="govuk-table__cell">Annual platform freeze over the festive period for non essential
 engineering. This should not affect you.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Deprecation of PostgreSQL 10 plans</td>
-<td class="govuk-table__cell">7 February 2023</td>
-<td class="govuk-table__cell">From this date we will be deprecating all our PostgreSQL 10 plans.
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">Deprecation of PostgreSQL 10 plans</td>
+<td className="govuk-table__cell">7 February 2023</td>
+<td className="govuk-table__cell">From this date we will be deprecating all our PostgreSQL 10 plans.
 You will no longer be able to create new PostgreSQL 10 databases on
 GOV.UK PaaS. You will need to upgrade any existing plans to ensure
 continuity of operation of your application. This is happening because
 our provider is retiring their Postgres 10 offering.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">End of the financial year</td>
-<td class="govuk-table__cell">31 March 2023</td>
-<td class="govuk-table__cell">After this date you may have additional funds available from your
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">End of the financial year</td>
+<td className="govuk-table__cell">31 March 2023</td>
+<td className="govuk-table__cell">After this date you may have additional funds available from your
 department to help the migration.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Automatic upgrade of PostgreSQL 10 databases to PostgreSQL 14</td>
-<td class="govuk-table__cell">17/04/2023 - 18/07/2022</td>
-<td class="govuk-table__cell">From 17th April and 18th July any PostgreSQL 10 plans will be
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">Automatic upgrade of PostgreSQL 10 databases to PostgreSQL 14</td>
+<td className="govuk-table__cell">17 April 2023 - 18 July 2022</td>
+<td className="govuk-table__cell">From 17 April and 18 July any PostgreSQL 10 plans will be
 automatically upgraded to PostgreSQL 14 by AWS during a maintenance
 window. GOV.UK PaaS has no plans to offer Postgres 14. This change may
 break your application. You are advised to ensure your applications work
@@ -101,52 +101,52 @@ with the versions of the relevant libraries that are compatible with
 PostgreSQL14, if you plan to allow AWS to automatically upgrade your
 database. We will be in touch on this topic regularly.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Deprecation of Redis 3</td>
-<td class="govuk-table__cell">30 June 2023</td>
-<td class="govuk-table__cell">From this date we will be deprecating all our Redis 3 plans. You
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">Deprecation of Redis 3</td>
+<td className="govuk-table__cell">30 June 2023</td>
+<td className="govuk-table__cell">From this date we will be deprecating all our Redis 3 plans. You
 will have to upgrade any existing plans to ensure continuity of
 operation of your application. This is happening because our provider is
 retiring their Redis 3 offering.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Forced upgrade of PostgreSQL 10 databases to PostgreSQL 14</td>
-<td class="govuk-table__cell">18 July 2023</td>
-<td class="govuk-table__cell">From this date AWS will force the upgrade of PostgreSQL 10 databases
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">Forced upgrade of PostgreSQL 10 databases to PostgreSQL 14</td>
+<td className="govuk-table__cell">18 July 2023</td>
+<td className="govuk-table__cell">From this date AWS will force the upgrade of PostgreSQL 10 databases
 to PostgreSQL 14, regardless of maintenance window. This change may
 break your application.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Final bills issued by GDS Business Operations</td>
-<td class="govuk-table__cell">2022 Q4</td>
-<td class="govuk-table__cell">You will receive your final bill.</td>
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">Final bills issued by GDS Business Operations</td>
+<td className="govuk-table__cell">Q4 2022</td>
+<td className="govuk-table__cell">You will receive your final bill.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">GOV.UK PaaS decommission</td>
-<td class="govuk-table__cell">23 December 2023</td>
-<td class="govuk-table__cell">After this date services hosted on the platform will stop operating
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">GOV.UK PaaS decommission</td>
+<td className="govuk-table__cell">23 December 2023</td>
+<td className="govuk-table__cell">After this date services hosted on the platform will stop operating
 or responding to requests from the web. The GOV.UK PaaS API will not
 respond to requests.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Deletion of tenant data and GOV.UK PaaS platform data</td>
-<td class="govuk-table__cell">28 February 2024</td>
-<td class="govuk-table__cell">After this date all tenant and platform data will be destroyed.</td>
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">Deletion of tenant data and GOV.UK PaaS platform data</td>
+<td className="govuk-table__cell">28 February 2024</td>
+<td className="govuk-table__cell">After this date all tenant and platform data will be destroyed.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Deadline to pay final bills</td>
-<td class="govuk-table__cell">31st March 2024</td>
-<td class="govuk-table__cell">You must pay any outstanding bills by this date.</td>
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">Deadline to pay final bills</td>
+<td className="govuk-table__cell">31 March 2024</td>
+<td className="govuk-table__cell">You must pay any outstanding bills by this date.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">End of financial year 2023/2024</td>
-<td class="govuk-table__cell">31 March 2024</td>
-<td class="govuk-table__cell">The end of the financial year</td>
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">End of financial year 2023/2024</td>
+<td className="govuk-table__cell">31 March 2024</td>
+<td className="govuk-table__cell">The end of the financial year</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Deletion of tenant data and paas platform data</td>
-<td class="govuk-table__cell">2024 Q1</td>
-<td class="govuk-table__cell">Your data will be finally deleted</td>
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">Deletion of tenant data and paas platform data</td>
+<td className="govuk-table__cell">Q1 2024</td>
+<td className="govuk-table__cell">Your data will be finally deleted</td>
 </tr>
 </tbody>
 </table>
@@ -155,65 +155,64 @@ respond to requests.</td>
 
 ### Support for GOV.UK PaaS
 
-The GOV.UK PaaS platform will be maintained to the usual standards until decommissioned. This includes monthly buildpack upgrades, security patches, and the annual platform pentest and IT health check. You will receive regular communications from the GOV.UK PaaS team via email.
+GDS will continue to provide a team of site reliability engineers to perform critical platform operations and [timely support](https://team-manual.cloud.service.gov.uk/incident_management/support_manual/)
 
-#### PaaS maintenance schedule
+The GOV.UK PaaS platform will be maintained to the usual standards until the 23 December 2023.
 
-<table class="govuk-table">
-<thead class="govuk-table__head">
-<tr class="govuk-table__row">
-<th scope="col" class="govuk-table__header">Maintenance</th>
-<th scope="col" class="govuk-table__header">Frequency</th>
-<th scope="col" class="govuk-table__header">What this means for you</th>
+<table className="govuk-table">
+<caption className="govuk-table__caption govuk-table__caption--m">PaaS maintenance schedule</caption>
+<thead className="govuk-table__head">
+<tr className="govuk-table__row">
+<th scope="col" className="govuk-table__header">Maintenance</th>
+<th scope="col" className="govuk-table__header">Frequency</th>
+<th scope="col" className="govuk-table__header">What this means for you</th>
 </tr>
 </thead>
-<tbody class="govuk-table__body">
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Monthly buildpack upgrades</td>
-<td class="govuk-table__cell">regular upgrades, typically monthly</td>
-<td class="govuk-table__cell">Regular communication from the GOV.UK PaaS team highlighting any
+<tbody className="govuk-table__body">
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">Monthly buildpack upgrades</td>
+<td className="govuk-table__cell">regular upgrades, typically monthly</td>
+<td className="govuk-table__cell">Regular communication from the GOV.UK PaaS team highlighting any
 major changes to language support, deprecations.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Ad hoc security patches</td>
-<td class="govuk-table__cell">as required within 5 days of reporting</td>
-<td class="govuk-table__cell">The platform will be maintained to our usual standards for security
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">Ad hoc security patches</td>
+<td className="govuk-table__cell">as required within 5 days of reporting</td>
+<td className="govuk-table__cell">The platform will be maintained to our usual standards for security
 patching until it is retired.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Annual platform pentest</td>
-<td class="govuk-table__cell">Q4 of each year</td>
-<td class="govuk-table__cell">The platform will be assured to the usual standards until it is
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">Annual platform pentest</td>
+<td className="govuk-table__cell">Q4 of each year</td>
+<td className="govuk-table__cell">The platform will be assured to the usual standards until it is
 demised. This means annual health checks and remediation of any priority
 findings.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">monthly paas-announce email to tenants</td>
-<td class="govuk-table__cell">regular monthly updates</td>
-<td class="govuk-table__cell">Regular communication from GOV.UK PaaS team highlighting any key
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">monthly paas-announce email to tenants</td>
+<td className="govuk-table__cell">regular monthly updates</td>
+<td className="govuk-table__cell">Regular communication from GOV.UK PaaS team highlighting any key
 milestones or guidance for tenants.</td>
 </tr>
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">PaaS IT Health Check for 2023/2024</td>
-<td class="govuk-table__cell">Q4 2022</td>
-<td class="govuk-table__cell">Annual health check for the coming year to ensure we are
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">PaaS IT Health Check for 2023/2024</td>
+<td className="govuk-table__cell">Q4 2022</td>
+<td className="govuk-table__cell">Annual health check for the coming year to ensure we are
 independently assessed and we remediate any findings</td>
 </tr>
 </tbody>
 </table>
 
+Unless you no longer require your service, it must be migrated before this date.
 
-### Support from the GOV.UK PaaS team during the decommissioning process 
+You will receive regular communications from the GOV.UK PaaS team via email.
 
-We intend to maintain the service as it has been until the end of December 2023. Unless you no longer require your service, it must have been migrated before this date. GDS will continue to provide a team of site reliability engineers to perform critical platform operations and [timely support](https://team-manual.cloud.service.gov.uk/incident_management/support_manual/)
+We offer help and advice though our usual channels:
 
-We will continue to offer help and advice though our usual channels:
+- [GOV.UK PaaS Team (support form)](https://admin.london.cloud.service.gov.uk/support/contact-us) for platform tenants who have questions about migration.
+- [cross government slack #govuk-paas](https://ukgovernmentdigital.slack.com/archives/C33SAH4GJ) channel for tenants using the [cross government slack](https://ukgovernmentdigital.slack.com)
+- GDS slack [#paas](https://gds.slack.com/archives/CADHV9267) channel for internal users
 
-1. [GOV.UK PaaS Team (support form)](https://admin.london.cloud.service.gov.uk/support/contact-us) for platform tenants who have questions about migration.
-
-2. [cross government slack #govuk-paas](https://ukgovernmentdigital.slack.com/archives/C33SAH4GJ) channel for tenants using the [cross government slack](https://ukgovernmentdigital.slack.com)
-
-3. GDS slack [#paas](https://gds.slack.com/archives/CADHV9267) channel for internal users
 
 ### Changing responsibility model
 
@@ -247,24 +246,24 @@ Before tenants migrate their services, there are a number of things to consider.
 Understand all the services that you need to migrate. You could consider:
 
 - The relative importance of your services: which ones are higher priority? Should any be retired instead of migrated?
-- The technical effort required to migrate each service to another platform.
-- Who owns the service? Smaller services may not have an obvious owner due to changes in the team or department structure.
-- The “7 Rs” are commonly used [cloud migration strategies](https://medium.com/@m.arunkumar1983/what-is-7-rs-8d9effbc607e).
+- The technical effort required to migrate each service to another platform
+- Who owns the service? Smaller services may not have an obvious owner due to changes in the team or department structure
+- The “7 Rs” are commonly used [cloud migration strategies](https://medium.com/@m.arunkumar1983/what-is-7-rs-8d9effbc607e)
 
 ### Think about your timing and budget
 
 - Do you have the budget to fund the migration?
 - Can you raise a business case for the year 2023/2024?
 - What is the timeframe for your migration?
-- Are there any events or features that may constraint your migration plan? For example if your service has a - higher number of users in April, you may decide to migrate a month after when it will have less of an impact.
+- Are there any events or features that may constraint your migration plan? For example if your service has a - higher number of users in April, you may decide to migrate a month after when it will have less of an impact
 - Can you identify a sequence to migrate the services if you have more than one?
-- You’ll need to explain to stakeholders that any data migration will incur some downtime. You can avoid this if absolutely necessary (see the Data migration section below).
+- You’ll need to explain to stakeholders that any data migration will incur some downtime. You can avoid this if absolutely necessary (see the Data migration section below)
 
-### Review your skill sets
+### Review your skills
 
 - Do you have the skills to migrate your services available in your department? You will need: 
-  - people with the skills to work with the infrastructure (defined in the DDAT framework as an [infrastructure devops engineer](https://www.gov.uk/guidance/development-operations-devops-engineer) role and also referred to as [Site Reliability Engineering](https://en.wikipedia.org/wiki/Site_reliability_engineering) in the wider technology marketplace), to enable the migration, change your pipelines§
-  - people with the skills to refactor your applications to accommodate the new hosting arrangement (i.e. software developers).
+  - people with the skills to work with the infrastructure (defined in the DDAT framework as an [infrastructure devops engineer](https://www.gov.uk/guidance/development-operations-devops-engineer) role and also referred to as [Site Reliability Engineering](https://en.wikipedia.org/wiki/Site_reliability_engineering) in the wider technology marketplace), to enable the migration, change your pipelines
+  - people with the skills to refactor your applications to accommodate the new hosting arrangement (i.e. software developers)
 - Do you need to outsource to a delivery partner?
 - Do you need to bring in contractors to supplement your team?
 - Do you need to procure [cloud migration expertise from the Digital Marketplace](https://www.digitalmarketplace.service.gov.uk/g-cloud/search?q=cloud%20migration) to assist with the migration?
@@ -296,41 +295,41 @@ You should consider services with higher levels of abstraction than Public Cloud
 - Heroku 
 - Microsoft Azure App Service
 
-These are just some examples rather than endorsements.
+These are just some examples rather than endorsements so ensure that whatever you choose meets the needs of your service.
 
 When making your technology choices, consider not only what is suitable for your team and department, but also what is suitable for each service in turn; not all services will be best placed running on the same technology. 
 
 For example, a static website for documentation could easily be hosted on GitHub Pages, or in an AWS S3 bucket with AWS CloudFront in front; but a complex set of microservices with multiple persistent stores would be better on ECS on Fargate, or even Kubernetes if your team/department has the necessary skills to run it.
 
-### Review existing guidance
+### Review the existing guidance
 
 Here is some of the existing guidance relevant to cloud hosting.
 
-<table class="govuk-table">
-<thead class="govuk-table__head">
-<tr class="govuk-table__row">
-<th scope="col" class="govuk-table__header">Guidance</th>
-<th scope="col" class="govuk-table__header">Description</th>
+<table className="govuk-table">
+<thead className="govuk-table__head">
+<tr className="govuk-table__row">
+<th scope="col" className="govuk-table__header">Guidance</th>
+<th scope="col" className="govuk-table__header">Description</th>
 </tr>
 </thead>
-<tbody class="govuk-table__body">
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">[Government Cloud First
+<tbody className="govuk-table__body">
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">[Government Cloud First
 Policy](https://www.gov.uk/guidance/government-cloud-first-policy)</td>
-<td class="govuk-table__cell">The government introduced a ‘Cloud First’ policy in 2013 for all
+<td className="govuk-table__cell">The government introduced a ‘Cloud First’ policy in 2013 for all
 technology decisions.</td>
 </tr>
 
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">[Technical code of
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">[Technical code of
 practice](https://www.gov.uk/guidance/the-technology-code-of-practice) <br/> [Point 5: Use cloud
 first](https://www.gov.uk/guidance/use-cloud-first)</td>
-<td class="govuk-table__cell">The Technology Code of Practice is a set of criteria to help public
+<td className="govuk-table__cell">The Technology Code of Practice is a set of criteria to help public
 sector organisations design, build and buy technology.</td>
 </tr>
 
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">[Service
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">[Service
 Standard](https://www.gov.uk/service-manual/service-standard)  <br/> [9. Create
 a secure service which protects users’
 privacy](https://www.gov.uk/service-manual/service-standard/point-9-create-a-secure-service)
@@ -342,31 +341,27 @@ service](https://www.gov.uk/service-manual/service-standard/point-14-operate-a-r
 services.</td>
 </tr>
 
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">[Service Manual](https://www.gov.uk/service-manual)
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">[Service Manual](https://www.gov.uk/service-manual)
 [Technology](https://www.gov.uk/service-manual/technology)</td>
-<td class="govuk-table__cell">Helping teams to create and run great public services that meet the
+<td className="govuk-table__cell">Helping teams to create and run great public services that meet the
 Service Standard.</td>
 </tr>
 
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">[CDDO Creating and implementing a cloud hosting
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">[CDDO Creating and implementing a cloud hosting
 strategy](https://www.gov.uk/guidance/creating-and-implementing-a-cloud-hosting-strategy)</td>
-<td class="govuk-table__cell">This guidance outlines how to create and implement a cloud strategy,
+<td className="govuk-table__cell">This guidance outlines how to create and implement a cloud strategy,
 and when to consider a single, hybrid or multi-cloud solution.</td>
 </tr>
 
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">[NCSC cloud security
+<tr className="govuk-table__row">
+<td className="govuk-table__cell">[NCSC cloud security
 guidance](https://www.ncsc.gov.uk/collection/cloud) [Cloud Security
 Principles](https://www.ncsc.gov.uk/collection/cloud/the-cloud-security-principles)</td>
-<td class="govuk-table__cell"></td>
+<td className="govuk-table__cell"></td>
 </tr>
 
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">Any department level guidance</td>
-<td class="govuk-table__cell">e.g. the DFE technical guidance.</td>
-</tr>
 </tbody>
 </table>
 
@@ -374,23 +369,23 @@ Principles](https://www.ncsc.gov.uk/collection/cloud/the-cloud-security-principl
 ### Approach
 
 - Keep it simple
-- Find the largest building blocks you can and consider solutions that take care of the underlying infrastructure, allowing you to focus on the specifics of your service. 
+- Find the largest building blocks you can and consider solutions that take care of the underlying infrastructure, allowing you to focus on the specifics of your service 
 - Use mature, well documented technologies and that you can readily get skills for in the marketplace
 - Consider running some technical spikes to evaluate alternatives and to inform your decision
 
 ## Ongoing support for your service
 
-Once your service is migrated to a new hosting platform you will need to look after it on an ongoing basis for a long time, potentially many years.
+Once your service is migrated to a new hosting platform you will need to look after it on an ongoing basis for a long time, potentially many years
 
 - How is your team going to support your service over the longer term? Will there be a long lived team?
 - Do you need and can you afford to offer out of hours support, including cyber security?
 - Consider how you are going to support debugging of your applications (GOV.UK PaaS permits direct SSH access to containers but other hosting providers may not)
-- Consider how you are going to secure an engineer’s access to backing services to allow you to support your service. 
+- Consider how you are going to secure an engineer’s access to backing services to allow you to support your service 
 - Consider how you are going to patch container vulnerabilities in a timely manner
 
 ## Data migration
 
-Data migration may involve downtime. If you need zero downtime it will not be easy or cheap.
+Data migration may involve downtime. If you need zero downtime it will not be easy or cheap
 
 ### Use documented PaaS data techniques
 
@@ -410,24 +405,6 @@ Some GOV.UK PaaS backing services (PostgreSQL, MySQL, InfluxDB, OpenSearch and R
 - [Using conduit to dump a Postgres database on GOV.UK PaaS](https://docs.cloud.service.gov.uk/deploying_services/postgresql/#paas-to-paas)
 - [Using conduit to dump a MySQL database on GOV.UK PaaS](https://docs.cloud.service.gov.uk/deploying_services/mysql/#paas-to-paas) 
 
-#### S3 file storage
-
-- [GOV.UK PaaS - S3 documentation](https://docs.cloud.service.gov.uk/deploying_services/s3/)
-- [backup using aws s3 sync](https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html)
-- [restore using aws s3 sync](https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html)
-- [Connect to an S3 bucket from outside of the GOV.UK PaaS](https://docs.cloud.service.gov.uk/deploying_services/s3/#connect-to-an-s3-bucket-from-outside-of-the-gov-uk-paas)
-
-
-#### Postgresql relational data
-
-- [backup using pg_dump](https://docs.cloud.service.gov.uk/deploying_services/postgresql/#paas-to-paas)
-- [restore using pg_restore](https://www.postgresql.org/docs/current/app-pgrestore.html)
-
-#### Mysql relational data
-
-- [backup using mysqldump](https://docs.cloud.service.gov.uk/deploying_services/mysql/#non-paas-to-paas)
-- [restore using mysql](https://dev.mysql.com/doc/mysql-backup-excerpt/8.0/en/reloading-sql-format-dumps.html)
-
 #### Influxdb times series data
 
 - [backup using influxdb backup utility](https://docs.influxdata.com/influxdb/v1.8/administration/backup_and_restore/#backup-formats)
@@ -435,17 +412,34 @@ Some GOV.UK PaaS backing services (PostgreSQL, MySQL, InfluxDB, OpenSearch and R
 
 Time series data is often scrapped during migration.
 
+#### Mysql relational data
+
+- [backup using mysqldump](https://docs.cloud.service.gov.uk/deploying_services/mysql/#non-paas-to-paas)
+- [restore using mysql](https://dev.mysql.com/doc/mysql-backup-excerpt/8.0/en/reloading-sql-format-dumps.html)
+
 #### Opensearch non-relational data
 
 OpenSearch is not intended as a persistent data store, and we don’t recommend moving the data you store in it. You should instead rebuild your indices at the destination. 
 
 - [Taking and restoring snapshots in OpenSearch](https://opensearch.org/docs/1.2/opensearch/snapshot-restore/)
 
+#### PostgreSQL relational data
+
+- [backup using pg_dump](https://docs.cloud.service.gov.uk/deploying_services/postgresql/#paas-to-paas)
+- [restore using pg_restore](https://www.postgresql.org/docs/current/app-pgrestore.html)
+
 #### Redis cache data
 
 Redis is not intended as a persistent data store, and we don’t recommend moving the data you store in it. You should instead rebuild your indices at the destination. If you have been using Redis for persistent data, you will need to move it. 
 
 - [GOV.UK PaaS Redis documentation](https://docs.cloud.service.gov.uk/deploying_services/redis/)
+
+#### S3 file storage
+
+- [GOV.UK PaaS - S3 documentation](https://docs.cloud.service.gov.uk/deploying_services/s3/)
+- [backup using aws s3 sync](https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html)
+- [restore using aws s3 sync](https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html)
+- [Connect to an S3 bucket from outside of the GOV.UK PaaS](https://docs.cloud.service.gov.uk/deploying_services/s3/#connect-to-an-s3-bucket-from-outside-of-the-gov-uk-paas)
 
 ### Consider your data migration strategy options
 
@@ -499,6 +493,5 @@ If you have any questions about your migration please contact us via the [GOV.UK
 ---
 ## Feedback
 
-Is this guidance useful?  <a href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk?subject=[migration-guidance]+useful:YES&body=Please tell us why you found the guidance helpful and if anything can be improved">Yes</a>  <a href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk?subject=[migration-guidance]+useful:NO&body=Please tell us why you found the guidance unhelpful and what could be added to improve the guidance"> No</a> or raise a [GitHub issue](https://github.com/alphagov/paas-product-pages/issues/new?title=[Migration+guidance]+-+enter+a+title&body=feedback+for+the+GOV.UK+PaaS+migration+guidance) to give us feedback
-
+Is this guidance useful?  <a class="govuk-button" href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk?subject=[migration-guidance]+useful:YES&body=Please tell us why you found the guidance helpful and if anything can be improved">Yes</a>  <a class="govuk-button" href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk?subject=[migration-guidance]+useful:NO&body=Please tell us why you found the guidance unhelpful and what could be added to improve the guidance"> No</a> or raise a [GitHub issue](https://github.com/alphagov/paas-product-pages/issues/new?title=[Migration+guidance]+-+enter+a+title&body=feedback+for+the+GOV.UK+PaaS+migration+guidance) to give us feedback
 
