@@ -322,7 +322,7 @@ technology decisions.</td>
 
 <tr className="govuk-table__row">
 <td className="govuk-table__cell">[Technical code of
-practice](https://www.gov.uk/guidance/the-technology-code-of-practice) <br/> [Point 5: Use cloud
+practice](https://www.gov.uk/guidance/the-technology-code-of-practice) <br/><br/> [Point 5: Use cloud
 first](https://www.gov.uk/guidance/use-cloud-first)</td>
 <td className="govuk-table__cell">The Technology Code of Practice is a set of criteria to help public
 sector organisations design, build and buy technology.</td>
@@ -330,12 +330,12 @@ sector organisations design, build and buy technology.</td>
 
 <tr className="govuk-table__row">
 <td className="govuk-table__cell">[Service
-Standard](https://www.gov.uk/service-manual/service-standard)  <br/> [9. Create
+Standard](https://www.gov.uk/service-manual/service-standard)  <br/><br/> [9. Create
 a secure service which protects users’
 privacy](https://www.gov.uk/service-manual/service-standard/point-9-create-a-secure-service)
- <br/> [11. Choose the right tools and
+ <br/><br/> [11. Choose the right tools and
 technology](https://www.gov.uk/service-manual/service-standard/point-11-choose-the-right-tools-and-technology)
- <br/> [14. Operate a reliable
+ <br/><br/> [14. Operate a reliable
 service](https://www.gov.uk/service-manual/service-standard/point-14-operate-a-reliable-service)</td>
 <td class="govuk-table__cell">The Service Standard helps teams to create and run great public
 services.</td>
@@ -343,7 +343,7 @@ services.</td>
 
 <tr className="govuk-table__row">
 <td className="govuk-table__cell">[Service Manual](https://www.gov.uk/service-manual)
-[Technology](https://www.gov.uk/service-manual/technology)</td>
+<br/><br/> [Technology](https://www.gov.uk/service-manual/technology)</td>
 <td className="govuk-table__cell">Helping teams to create and run great public services that meet the
 Service Standard.</td>
 </tr>
@@ -379,7 +379,7 @@ Once your service is migrated to a new hosting platform you will need to look af
 
 - How is your team going to support your service over the longer term? Will there be a long lived team?
 - Do you need and can you afford to offer out of hours support, including cyber security?
-- Consider how you are going to support debugging of your applications (GOV.UK PaaS permits direct SSH access to containers but other hosting providers may not)
+- Consider how you are going to support debugging of your applications (GOV.UK PaaS permits [direct SSH access to containers](https://docs.cloud.service.gov.uk/managing_apps.html) but other hosting providers may not)
 - Consider how you are going to secure an engineer’s access to backing services to allow you to support your service 
 - Consider how you are going to patch container vulnerabilities in a timely manner
 
@@ -401,23 +401,23 @@ Some GOV.UK PaaS backing services (PostgreSQL, MySQL, InfluxDB, OpenSearch and R
 
 [Conduit](https://docs.cloud.service.gov.uk/guidance.html#using-the-conduit-plugin) lets you connect to your remote backing service instances from your local system. This allows you to use the standard tool for your backing service, for example, psql for PostgreSQL or mysql for MySQL CLI tools to make backups and interrogate your backing services.
 
-- [conduit plugin](https://docs.cloud.service.gov.uk/guidance.html#using-the-conduit-plugin)
-- [Using conduit to dump a Postgres database on GOV.UK PaaS](https://docs.cloud.service.gov.uk/deploying_services/postgresql/#paas-to-paas)
-- [Using conduit to dump a MySQL database on GOV.UK PaaS](https://docs.cloud.service.gov.uk/deploying_services/mysql/#paas-to-paas) 
+- [Conduit plugin](https://docs.cloud.service.gov.uk/guidance.html#using-the-conduit-plugin)
+- [Using Conduit to dump a Postgres database on GOV.UK PaaS](https://docs.cloud.service.gov.uk/deploying_services/postgresql/#paas-to-paas)
+- [Using Conduit to dump a MySQL database on GOV.UK PaaS](https://docs.cloud.service.gov.uk/deploying_services/mysql/#paas-to-paas) 
 
-#### Influxdb times series data
+#### InfluxDB times series data
 
-- [backup using influxdb backup utility](https://docs.influxdata.com/influxdb/v1.8/administration/backup_and_restore/#backup-formats)
-- [restore using influxdb restore utility](https://docs.influxdata.com/influxdb/v1.8/administration/backup_and_restore/#restore-data)
+- [backup using InfluxDB backup utility](https://docs.influxdata.com/influxdb/v1.8/administration/backup_and_restore/#backup-formats)
+- [restore using InfluxDB restore utility](https://docs.influxdata.com/influxdb/v1.8/administration/backup_and_restore/#restore-data)
 
 Time series data is often scrapped during migration.
 
-#### Mysql relational data
+#### MySQL relational data
 
 - [backup using mysqldump](https://docs.cloud.service.gov.uk/deploying_services/mysql/#non-paas-to-paas)
 - [restore using mysql](https://dev.mysql.com/doc/mysql-backup-excerpt/8.0/en/reloading-sql-format-dumps.html)
 
-#### Opensearch non-relational data
+#### OpenSearch non-relational data
 
 OpenSearch is not intended as a persistent data store, and we don’t recommend moving the data you store in it. You should instead rebuild your indices at the destination. 
 
@@ -493,5 +493,5 @@ If you have any questions about your migration please contact us via the [GOV.UK
 ---
 ## Feedback
 
-Is this guidance useful?  <a class="govuk-button" href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk?subject=[migration-guidance]+useful:YES&body=Please tell us why you found the guidance helpful and if anything can be improved">Yes</a>  <a class="govuk-button" href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk?subject=[migration-guidance]+useful:NO&body=Please tell us why you found the guidance unhelpful and what could be added to improve the guidance"> No</a> or raise a [GitHub issue](https://github.com/alphagov/paas-product-pages/issues/new?title=[Migration+guidance]+-+enter+a+title&body=feedback+for+the+GOV.UK+PaaS+migration+guidance) to give us feedback
+Please let us know if this guidance is <a href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk?subject=[migration-guidance]+useful:yes&body=Please tell us why you found the guidance helpful and if anything can be improved">useful</a> or <a href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk?subject=[migration-guidance]+useful:no&body=Please tell us why you found the guidance unhelpful and what could be added to improve the guidance">not useful</a> or raise a [GitHub issue](https://github.com/alphagov/paas-product-pages/issues/new?title=[Migration+guidance]+-+enter+a+title&body=feedback+for+the+GOV.UK+PaaS+migration+guidance) to give us feedback
 
