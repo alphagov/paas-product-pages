@@ -23,7 +23,7 @@
     "postcss-nested": "^6.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rehype-slug": "^5.0.1",
+    "rehype-slug": "^5.1.0",
     "sass": "^1.55.0",
     "standard": "^17.0.0"
   },
