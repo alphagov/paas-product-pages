@@ -37,6 +37,10 @@
       "columns": null,
       "items": [
         { 
+          "text": "Migrating from GOV.UK PaaS", 
+          "href": "/migration-guidance"
+        },
+        { 
           "text": "Contact support", 
           "href": "https://admin.london.cloud.service.gov.uk/support"
         },
