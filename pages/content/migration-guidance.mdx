@@ -92,10 +92,8 @@ department to help the migration.</td>
 </tr>
 <tr className="govuk-table__row">
 <td className="govuk-table__cell">Automatic upgrade of PostgreSQL 10 databases to PostgreSQL 14</td>
-<td className="govuk-table__cell">17 April 2023 - 18 July 2022</td>
-<td className="govuk-table__cell">From 17 April and 18 July any PostgreSQL 10 plans will be
-automatically upgraded to PostgreSQL 14 by AWS during a maintenance
-window. GOV.UK PaaS has no plans to offer Postgres 14. This change may
+<td className="govuk-table__cell">17 April 2022 - 18 July 2022</td>
+<td className="govuk-table__cell">Between 17 April and 18 July, AWS will forcibly upgrade any PostgreSQL 10 databases to PostgreSQL 14 during a maintenance window. GOV.UK PaaS has no plans to support PostgreSQL 14 through the marketplace using `cf create-service`. Any databases forcibly upgraded by AWS will still be functional, but you will not be able to manage them through Cloud Foundry, other than to delete them or connect via Conduit. We recommend upgrading your PostgreSQL 10 databases to at least PostgreSQL 11 before 17 April if you expect to be with us by that point.This change may
 break your application. You are advised to ensure your applications work
 with the versions of the relevant libraries that are compatible with
 PostgreSQL14, if you plan to allow AWS to automatically upgrade your
