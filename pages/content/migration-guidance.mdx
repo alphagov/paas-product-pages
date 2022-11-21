@@ -459,6 +459,32 @@ We recommend you make a small number of attempts to export a dump of your databa
 
 If you think that your service will face issues migrating data using the documented approaches you should [get in contact with the team](https://admin.london.cloud.service.gov.uk/support/contact-us) using our support form to discuss your needs further. 
 
+## PaaS CDN Migration
+
+If you are migrating from a Cloud Foundry CDN route, be aware that this is implemented as an AWS Cloudfront distribution behind the scenes.
+
+This can create an issue if you are migrating to a different Cloudfront distribution. You will receive a 'CNAMEAlreadyExists' error if you try to set up the new Cloudfront distribution before the DNS cutover.
+
+AWS documents (how to resolve a CNameAlreadyExists error)[https://aws.amazon.com/premiumsupport/knowledge-center/resolve-cnamealreadyexists-error/] in their documentation.
+
+This means you will need to remove the domain from your cdn-route service in Cloud Foundry before you can add it to your new AWS Cloudfront distribution.
+
+This can be acheived in Cloud Foundry by removing the cdn-route service. E.g.
+
+```
+cf delete-service my-cdn-route
+```
+
+or by updating the service and removing the domain you are trying to cutover (if you have multiple domains):
+
+```
+cf update-service my-cdn-route -c '{"domain": "<remaining domains>"}'
+```
+
+This can create downtime for your application.
+
+In order to avoid downtime you would need to cutover your domain to something other than Cloudfront for a short time or use the wildcard approach mentioned on the link above.
+
 ## Changes to your service when migrating
 
 You will have to make some changes to the source code of your service, its supporting stack and pipelines to allow it to migrate to an alternative hosting provider.
