@@ -475,7 +475,7 @@ This can be acheived in Cloud Foundry by removing the cdn-route service. E.g.
 cf delete-service my-cdn-route
 ```
 
-or by updating the service and removing the domain you are trying to cutover (if you have multiple domains):
+or update the service to remove the domain you are migrating (if you have multiple domains):
 
 ```
 cf update-service my-cdn-route -c '{"domain": "<remaining domains>"}'
