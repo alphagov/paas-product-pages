@@ -481,9 +481,9 @@ or by updating the service and removing the domain you are trying to cutover (if
 cf update-service my-cdn-route -c '{"domain": "<remaining domains>"}'
 ```
 
-This can create downtime for your application.
+Migrating a domain to AWS Cloudfront can create downtime for your application.
 
-In order to avoid downtime you would need to cutover your domain to something other than Cloudfront for a short time or use the wildcard approach mentioned on the link above.
+To avoid downtime you can migrate your domain to something other than AWS Cloudfront for a short time or use the (wildcard approach provided by AWS)[https://aws.amazon.com/premiumsupport/knowledge-center/resolve-cnamealreadyexists-error/].
 
 ## Changes to your service when migrating
 
