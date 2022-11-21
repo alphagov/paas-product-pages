@@ -461,15 +461,11 @@ If you think that your service will face issues migrating data using the documen
 
 ## PaaS CDN Migration
 
-If you are migrating from a Cloud Foundry CDN route, be aware that this is implemented as an AWS Cloudfront distribution behind the scenes.
+We implement Cloud Foundry CDN routes as an AWS Cloudfront distribution behind the scenes.
 
-This can create an issue if you are migrating to a different Cloudfront distribution. You will receive a 'CNAMEAlreadyExists' error if you try to set up the new Cloudfront distribution before the DNS cutover.
+If you are migrating from a Cloud Foundry CDN route, you will need to remove the domain from your cdn-route service before you can add it to your new AWS Cloudfront distribution. If you don't do this, you will receive a 'CNAMEAlreadyExists' error. (AWS documents this issue)[https://aws.amazon.com/premiumsupport/knowledge-center/resolve-cnamealreadyexists-error/].
 
-AWS documents (how to resolve a CNameAlreadyExists error)[https://aws.amazon.com/premiumsupport/knowledge-center/resolve-cnamealreadyexists-error/] in their documentation.
-
-This means you will need to remove the domain from your cdn-route service in Cloud Foundry before you can add it to your new AWS Cloudfront distribution.
-
-This can be acheived in Cloud Foundry by removing the cdn-route service. E.g.
+You can either remove the cdn-route service:
 
 ```
 cf delete-service my-cdn-route
