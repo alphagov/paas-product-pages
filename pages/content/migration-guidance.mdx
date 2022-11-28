@@ -477,7 +477,7 @@ or update the service to remove the domain you are migrating (if you have multip
 cf update-service my-cdn-route -c '{"domain": "<remaining domains>"}'
 ```
 
-Removing the domain and re-adding it to your new distribution will cause your website to go down. Unfortunately cloudfront changes can take 5-20 mins to apply changes. AWS support can cutover your domain instantly, however you will still get a small amount downtime as you cutover the DNS yourself.
+Removing the domain and re-adding it to your new AWS Cloudfront Distribution will cause your website to go down. Unfortunately changes to AWS Cloudfront can take 5-20 mins to apply. AWS support can cutover your domain instantly, however you will still get a small amount downtime as you cutover the DNS yourself.
 
 To avoid downtime you can migrate your domain to something other than AWS Cloudfront for a short time or use the (wildcard approach provided by AWS)[https://aws.amazon.com/premiumsupport/knowledge-center/resolve-cnamealreadyexists-error/].
 
