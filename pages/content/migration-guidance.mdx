@@ -463,7 +463,7 @@ If you think that your service will face issues migrating data using the documen
 
 We implement Cloud Foundry CDN routes as AWS Cloudfront distributions behind the scenes.
 
-If you are migrating from a Cloud Foundry CDN route, you will need to remove the domain from your cdn-route service before you can add it to your new AWS Cloudfront distribution. If you don't do this, you will receive a 'CNAMEAlreadyExists' error. (AWS documents this issue)[https://aws.amazon.com/premiumsupport/knowledge-center/resolve-cnamealreadyexists-error/].
+If you are migrating from a Cloud Foundry CDN route, you will need to remove the domain from your cdn-route service before you can add it to your new AWS Cloudfront distribution. If you don't do this, you will receive a 'CNAMEAlreadyExists' error. [AWS documents this issue](https://aws.amazon.com/premiumsupport/knowledge-center/resolve-cnamealreadyexists-error/).
 
 You can either remove the cdn-route service:
 
@@ -481,7 +481,7 @@ Removing the domain and re-adding it to your new AWS Cloudfront Distribution wil
 
 AWS support can transfer your domain instantly between AWS Cloudfront Distributions, however you will still get a small amount downtime as you cutover the DNS yourself. This requires some coordination and prerequisite work with AWS support and will require contacting us on support to acquire your current Distribution ID.
 
-To avoid downtime you can migrate your domain to something other than AWS Cloudfront for a short time or use the (wildcard approach provided by AWS)[https://aws.amazon.com/premiumsupport/knowledge-center/resolve-cnamealreadyexists-error/].
+To avoid downtime you can migrate your domain to something other than AWS Cloudfront for a short time or use the [wildcard approach provided by AWS](https://aws.amazon.com/premiumsupport/knowledge-center/resolve-cnamealreadyexists-error/).
 
 ## Changes to your service when migrating
 
