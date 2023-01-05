@@ -479,7 +479,7 @@ cf update-service my-cdn-route -c '{"domain": "<remaining domains>"}'
 
 Removing the domain and re-adding it to your new AWS Cloudfront Distribution will cause your website to go down. Unfortunately changes to AWS Cloudfront can take between 5 and 20 minutes to apply.
 
-AWS support can transfer your domain instantly between AWS Cloudfront Distributions, however you will still get a small amount downtime as you cutover the DNS yourself. This requires some coordination and prerequisite work with AWS support and will require contacting us on support to acquire your current Distribution ID.
+AWS support can transfer your domain instantly between AWS Cloudfront Distributions, however you will still get a small amount downtime as you cutover the DNS yourself. This requires some coordination and prerequisite work with AWS support and will require you to [discover your current Distribution ID](https://docs.cloud.service.gov.uk/deploying_services/use_a_custom_domain/#view-the-service-configuration).
 
 To avoid downtime you can migrate your domain to something other than AWS Cloudfront for a short time or use the [wildcard approach provided by AWS](https://aws.amazon.com/premiumsupport/knowledge-center/resolve-cnamealreadyexists-error/).
 
