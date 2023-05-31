@@ -25,7 +25,7 @@
     "react-dom": "^18.2.0",
     "rehype-slug": "^5.1.0",
     "sass": "^1.62.1",
-    "standard": "^17.0.0"
+    "standard": "^17.1.0"
   },
   "license": "MIT",
   "devDependencies": {
