@@ -5,12 +5,6 @@ import {
   SkipLink
 } from 'govuk-frontend'
 
-import Cookies from './cookie-functions'
-
-var cookies = new Cookies()
-
-cookies.cookieCleanup()
-
 var $buttons = document.querySelectorAll('[data-module="govuk-button"]')
 if ($buttons) {
   for (var i = 0; i < $buttons.length; i++) {
