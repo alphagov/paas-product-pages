@@ -3,28 +3,22 @@ title: "Sign in to GOV.UK PaaS"
 ---
 import Button from '@components/Button'
 
-<form>
-  <div className="govuk-form-group">
-    <fieldset className="govuk-fieldset">
-      <legend className="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h2 className="govuk-fieldset__heading">Choose your region</h2>
-      </legend>
-      <div className="govuk-radios">
-        <div className="govuk-radios__item">
-          <input className="govuk-radios__input" id="region-london" name="region" type="radio" value="london" defaultChecked={true} aria-describedby="region-london-hint" />
-          <label className="govuk-label govuk-radios__label govuk-label--s" htmlFor="region-london">London</label>
-          <span id="region-london-hint" className="govuk-hint govuk-radios__hint">Apps without a custom domain end with <code>london.cloudapps.digital</code>.</span>
-        </div>
-        <div className="govuk-radios__item">
-          <input className="govuk-radios__input" id="region-ireland" name="region" type="radio" value="ireland" aria-describedby="region-ireland-hint" />
-          <label className="govuk-label govuk-radios__label govuk-label--s" htmlFor="region-ireland">Ireland</label>
-          <span id="region-ireland-item-hint" className="govuk-hint govuk-radios__hint"> Apps without a custom domain end with <code>cloudapps.digital</code>.</span>
-        </div>
-      </div>
-    </fieldset>
+<h2 className="govuk-heading-l">Choose your region</h2>
+
+<div className="govuk-grid-row govuk-!-margin-bottom-7">
+  <div className="govuk-grid-column-one-half">
+    <h3 className="govuk-heading-m">London</h3>
+    <p className="govuk-body">
+    <a href="https://login.london.cloud.service.gov.uk" className="govuk-link govuk-link--no-visited-state">Apps with a app domain ending in <i>london.cloudapps.digital</i>.</a>
+    </p>
   </div>
-  <Button element="input">Continue</Button>
-</form>
+  <div className="govuk-grid-column-one-half">
+    <h3 className="govuk-heading-m">Ireland</h3>
+    <p className="govuk-body">
+    <a href="https://login.cloud.service.gov.uk" className="govuk-link govuk-link--no-visited-state">Apps with a app domain ending in <i>cloudapps.digital</i>.</a>
+    </p>
+  </div>
+</div>
 
 ## Use the Command Line
 
