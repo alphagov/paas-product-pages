@@ -1,7 +1,0 @@
----
-applications:
-  - name: paas-product-pages
-    buildpack: nginx_buildpack
-    memory: 256M
-    instances: 2
-    stack: cflinuxfs3

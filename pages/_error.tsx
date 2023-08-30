@@ -4,8 +4,7 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import matter from 'gray-matter'
 import Button from '@components/Button'
-import { GridRow, GridColumn } from '@components/GridLayout'
-import HomePageLayout from '../layouts/HomepageLayout'
+import ContentPageLayout from '../layouts/ContentPageLayout'
 
 // prevent NextJS from including all their scripts
 // as we're exporting these as static HTML pages
@@ -14,21 +13,19 @@ export const config = {
 }
 
 const components = {
-  Button,
-  GridColumn,
-  GridRow
+  Button
 }
 
-export default function homePage ({ source }) {
+export default function contentPage ({ source, frontMatter, siblings }) {
   return (
-    <HomePageLayout>
+    <ContentPageLayout meta={frontMatter} siblings={siblings}>
       <MDXRemote {...source} components={components} />
-    </HomePageLayout>
+    </ContentPageLayout>
   )
 }
 
 export const getStaticProps = async () => {
-  const pageFilePath = path.join('pages', 'content', 'index.mdx')
+  const pageFilePath = path.join('pages', 'content', 'error404.mdx')
   const source = fs.readFileSync(pageFilePath)
   const { content, data } = matter(source)
 

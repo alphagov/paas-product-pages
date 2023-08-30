@@ -7,12 +7,11 @@
     "rollup:build": "rollup -c",
     "rollup:watch": "rollup -c -w",
     "local": "npm-run-all rollup:build --parallel dev rollup:watch",
-    "build": "rollup -c && next build && next export",
+    "build": "rollup -c && next build && mkdir out/.well-known && cp out/security.txt.html out/.well-known/",
     "start": "next start",
     "test": "npm run lint && jest",
     "lint": "standard",
-    "lint:fix": "standard --fix",
-    "nginx:local": "docker run --rm -it -v $PWD:/etc/nginx -p 8080:8080 nginx bash -c 'cp /etc/nginx/nginx.conf /tmp/nginx.old && sed -i 's/{{port}}/8080/' /etc/nginx/nginx.conf && nginx ; mv /tmp/nginx.old /etc/nginx/nginx.conf'"
+    "lint:fix": "standard --fix"
   },
   "dependencies": {
     "@jsdevtools/rehype-toc": "^3.0.2",
