@@ -10,7 +10,7 @@ import rehypeSlug from 'rehype-slug'
 
 const toc = require('@jsdevtools/rehype-toc')
 
-// prevent NextJS from incluidng all their scripts
+// prevent NextJS from including all their scripts
 // as we're exporting these as static HTML pages
 export const config = {
   unstable_runtimeJS: false

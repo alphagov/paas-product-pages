@@ -7,7 +7,6 @@ applications:
 
     routes:
       - route: cloud.service.gov.uk
-      - route: paas-product-page.cloudapps.digital
       - route: paas-product-page-redirect.cloudapps.digital
       - route: paas-product-pages-redirect.cloudapps.digital
 
