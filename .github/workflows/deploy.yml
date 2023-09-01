@@ -27,6 +27,13 @@ jobs:
         with:
           node-version-file: "package.json"
 
+      - name: Install CloudFoundry CLI
+        run: |
+          cd "${{runner.temp}}"
+          curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=${{env.CF_CLI_VERSION}}" | tar -zx -C /usr/local/bin
+        env:
+          CF_CLI_VERSION: 8.7.1
+
       - name: Install Node dependencies
         run: npm ci
 
@@ -58,6 +65,7 @@ jobs:
           cd paas-product-pages/redirect
           cf cancel-deployment paas-product-pages-redirect || true
           cf push paas-product-pages-redirect --strategy=rolling
+          cf map-route paas-product-pages-redirect ${{env.CF_SYSTEM_DOMAIN}}
 
         env:
           CF_USER: ${{secrets.CF_USER}}
