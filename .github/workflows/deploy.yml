@@ -62,7 +62,7 @@ jobs:
             -o "${{env.CF_ORG}}" \
             -s "${{env.CF_SPACE}}"
           
-          cd paas-product-pages/redirect
+          cd redirect
           cf cancel-deployment paas-product-pages-redirect || true
           cf push paas-product-pages-redirect --strategy=rolling
           cf map-route paas-product-pages-redirect ${{env.CF_SYSTEM_DOMAIN}}
