@@ -338,7 +338,7 @@ privacy](https://www.gov.uk/service-manual/service-standard/point-9-create-a-sec
 technology](https://www.gov.uk/service-manual/service-standard/point-11-choose-the-right-tools-and-technology)
  <br/><br/> [14. Operate a reliable
 service](https://www.gov.uk/service-manual/service-standard/point-14-operate-a-reliable-service)</td>
-<td class="govuk-table__cell">The Service Standard helps teams to create and run great public
+<td className="govuk-table__cell">The Service Standard helps teams to create and run great public
 services.</td>
 </tr>
 
@@ -566,7 +566,7 @@ When migrating from GOV.UK PaaS to alternate hosting the last step is to finalis
 
 Once your service has been migrated to another cloud hosting provider you should complete the following tasks:
 
-  <ol class="govuk-list govuk-list--number">
+  <ol className="govuk-list govuk-list--number">
   <li>stop all running applications hosted on the platform using [`cf stop <APP_NAME>`](https://cli.cloudfoundry.org/en-US/v8/stop.html)</li>
   <li>delete all stopped applications using [`cf delete <APP_NAME>`](https://cli.cloudfoundry.org/en-US/v8/delete.html)</li>
   <li>remove all objects from your S3 buckets, these must be empty before deletion. See [how to connect to an S3 bucket from outside the paas ](https://docs.cloud.service.gov.uk/deploying_services/s3/#connect-to-an-s3-bucket-from-outside-of-the-gov-uk-paas) for instructions on how to get credentials for use with the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) and  [Delete an S3 bucket](https://docs.cloud.service.gov.uk/deploying_services/s3/#delete-an-s3-bucket)</li>
@@ -578,7 +578,7 @@ Once your service has been migrated to another cloud hosting provider you should
 This will prevent your account accruing any more charges.
 
 The GOV.UK PaaS team will then:
-<ol class="govuk-list govuk-list--number">
+<ol className="govuk-list govuk-list--number">
 <li>remove any user access to the Cloud Foundry organisation</li>
 <li>set the Cloud Foundry organisation to ‘suspended’ meaning that it is no longer usable</li> 
 <li>generate the final bill</li> 
@@ -586,7 +586,7 @@ The GOV.UK PaaS team will then:
 </ol>
 
 If you notify us that one of your services is decommissioned but the PaaS team discovers that you still have running apps and backing services, we will:
-<ol class="govuk-list govuk-list--number">
+<ol className="govuk-list govuk-list--number">
 <li>send you a reminder to delete the apps and backing services</li>
 <li>wait a week and if you still have running apps we will stop the apps and send another reminder to delete the apps and services</li>
 <li>wait a week and unless you have notified us otherwise we will delete the apps and the backing services</li>
