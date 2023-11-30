@@ -1,46 +1,10 @@
 import * as React from 'react'
-import data from './data.json'
-
-const navigation = data.navigation
-const meta = data.meta
 
 const Footer = () => (
   <footer className="govuk-footer " role="contentinfo">
     <div className="govuk-width-container ">
-     {navigation.length < 1 ? '' :
-        <div className="govuk-footer__navigation">
-          {navigation.map((column, index) => (
-            <div key={index} className={`govuk-footer__section ${column.width ? `govuk-grid-column-${column.width}` : '`govuk-grid-column-full'}`}>
-              <h2 className="govuk-footer__heading govuk-heading-m">{column.title}</h2>
-                <ul className={`govuk-footer__list ${column.columns ? `govuk-footer__list--columns-${column.columns}` : ''}`}>
-                  {column.items.map((item, index) => (
-                    <li key={index} className="govuk-footer__list-item">
-                      <a className="govuk-footer__link" href={item.href}>
-                        {item.text}
-                      </a>
-                  </li>
-                  ))}
-                </ul>
-            </div>
-          ))}
-        </div>
-      }
-      <hr className="govuk-footer__section-break"></hr>
       <div className="govuk-footer__meta">
         <div className="govuk-footer__meta-item govuk-footer__meta-item--grow">
-          {meta.items.length < 1 ? '' : <>
-            <h2 className="govuk-visually-hidden">{meta.visuallyHiddenTitle}</h2>
-            <ul className="govuk-footer__inline-list">
-              {meta.items.map((item, index) => (
-                <li key={index} className="govuk-footer__inline-list-item">
-                  <a className="govuk-footer__link" href={item.href}>
-                    {item.text}
-                  </a> 
-                </li>
-              ))}
-            </ul>
-          </>
-          }
           <div className="govuk-footer__meta-custom">
             Built by the <a href="https://www.gov.uk/government/organisations/government-digital-service" className="govuk-footer__link">Government Digital Service</a>
           </div>
