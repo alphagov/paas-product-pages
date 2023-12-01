@@ -1,5 +1,4 @@
 import * as React from 'react'
-import data from './data.json'
 
 const Header = () => (
 <header className="govuk-header " role="banner" data-module="govuk-header">
@@ -20,30 +19,10 @@ const Header = () => (
         </svg>{' '}
           {' '}
         <span className="govuk-header__product-name">
-          {data.productName}
+          Platform as a Service
         </span>
+        <strong className="govuk-tag">decommissioned</strong>
       </a>
-    </div>
-    <div className="govuk-header__content">
-      {Object.keys(data.navigation).length < 1 ? '' : <>
-      <nav aria-label="Top Level Navigation" className={`govuk-header__navigation ${data.navigationClasses}`}>
-        <button type="button" className="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation Menu" hidden>Menu</button>
-        <ul id="navigation" 
-          className="govuk-header__navigation-list"
-          >
-          {data.navigation.map((item, index) => (
-            <li key={index} className="govuk-header__navigation-item">
-              <a 
-                className="govuk-header__link" 
-                href={item.href}
-                >
-                {item.text}
-              </a> 
-            </li>
-          ))}
-        </ul>
-      </nav>
-      </>}
     </div>
   </div>
 </header>
