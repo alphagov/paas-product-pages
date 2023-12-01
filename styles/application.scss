@@ -21,6 +21,7 @@ $govuk-breakpoints: (
 @import "~govuk-frontend/dist/govuk/components/radios/index";
 @import "~govuk-frontend/dist/govuk/components/skip-link/index";
 @import "~govuk-frontend/dist/govuk/components/table/index";
+@import "~govuk-frontend/dist/govuk/components/tag/index";
 @import "~govuk-frontend/dist/govuk/utilities/all";
 @import "~govuk-frontend/dist/govuk/overrides/all";
 @import "section-navigation";
@@ -59,6 +60,10 @@ img {
   max-width: 100%;
 }
 
+.govuk-header__product-name {
+  margin-right: 10px;
+}
+
 // PaaS spelled-out is a long name that GOV.UK Frontend doesn't account for
 // in the header logo + product name 33.33% width, so then name drops below the crown.
 //
@@ -70,7 +75,6 @@ img {
   .govuk-header__logo {
     width: auto;
   }
-
   .govuk-header__content {
     width: auto;
     padding-left: 0;
