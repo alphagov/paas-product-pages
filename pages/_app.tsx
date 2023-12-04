@@ -14,7 +14,8 @@ export default function ProductPages ({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="/assets/images/govuk-icon-180.png" />
         <link rel="manifest" href="/assets/manifest.json" />
         <meta property='og:image' content='/assets/images/govuk-opengraph-image.png' />
-        <meta name='description' content='GOV.UK Platform as a Service is being decommissioned' />
+        <meta name='description' content='GOV.UK Platform as a Service is now decommissioned' />
+        <meta name="robots" content="noindex" />
       </Head>
       <Component {...pageProps} />
     </>
