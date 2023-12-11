@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@jsdevtools/rehype-toc": "^3.0.2",
-    "govuk-frontend": "^4.7.0",
+    "govuk-frontend": "^5.0.0",
     "gray-matter": "^4.0.3",
     "next": "^14.0.4",
     "next-mdx-remote": "^4.4.1",
