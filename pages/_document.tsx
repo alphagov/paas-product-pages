@@ -17,12 +17,12 @@ class GovukTemplate extends Document {
         <link href={`/assets/styles/${styleSheetHash['application.css']}`} rel='stylesheet' />
         </Head>
         <body className='govuk-template__body'>
-          <script dangerouslySetInnerHTML={{ __html: 'document.body.className = ((document.body.className) ? document.body.className + \' js-enabled\' : \'js-enabled\');' }} />
+          <script dangerouslySetInnerHTML={{ __html: 'document.body.className += \' js-enabled\' + (\'noModule\' in HTMLScriptElement.prototype ? \' govuk-frontend-supported\' : \'\');' }} />
           <a href='#main-content' className='govuk-skip-link' data-module="govuk-skip-link">Skip to main content</a>
           <Header />
           <Main />
           <Footer />
-          <script type='text/javascript' src={`/assets/javascript/${javascriptHash['application.js']}`} />
+          <script type='module' src={`/assets/javascript/${javascriptHash['application.js']}`} />
           <NextScript />
         </body>
       </Html>
