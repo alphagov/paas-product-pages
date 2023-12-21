@@ -21,6 +21,7 @@ $govuk-breakpoints: (
 @import "~govuk-frontend/dist/govuk/components/radios/index";
 @import "~govuk-frontend/dist/govuk/components/skip-link/index";
 @import "~govuk-frontend/dist/govuk/components/table/index";
+@import "~govuk-frontend/dist/govuk/components/tag/index";
 @import "~govuk-frontend/dist/govuk/utilities/all";
 @import "~govuk-frontend/dist/govuk/overrides/all";
 @import "section-navigation";
@@ -57,6 +58,10 @@ img {
   display: block;
   width:100%;
   max-width: 100%;
+}
+
+.govuk-header__product-name {
+  margin-right: 10px;
 }
 
 // PaaS spelled-out is a long name that GOV.UK Frontend doesn't account for

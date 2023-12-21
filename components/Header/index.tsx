@@ -22,6 +22,7 @@ const Header = () => (
         <span className="govuk-header__product-name">
           {data.productName}
         </span>
+        <strong className="govuk-tag">decommissioned</strong>
       </a>
     </div>
     <div className="govuk-header__content">
