@@ -2,8 +2,42 @@ version: 2
 updates:
 - package-ecosystem: npm
   directory: "/"
+  groups:
+    test-and-lint:
+      patterns:
+        - 'vitest'
+        - 'jsdom'
+        - '@testing-library/*'
+        - 'standard'
+
+    rollup:
+      patterns:
+        - '@rollup/*'
+        - 'rollup'
+        - 'rollup-*'
+    
+    react:
+      patterns:
+        - 'react'
+        - 'react-dom'
+        - '@types/react'
+
+    sass-and-post:
+      patterns:
+        - 'sass'
+        - 'postcss'
+        - 'postcss-nested'
+
+    next-build:
+      patterns:
+        - 'next'
+        - 'next-mdx-remote'
+        - '@jsdevtools/rehype-toc'
+        - 'gray-matter'
+        - 'rehype-slug'
+
   schedule:
-    interval: daily
+    interval: weekly
     time: "03:00"
   open-pull-requests-limit: 10
 - package-ecosystem: github-actions
