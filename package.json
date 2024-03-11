@@ -35,7 +35,7 @@
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@types/node": "^20.11.20",
-    "@types/react": "^18.2.63",
+    "@types/react": "^18.2.64",
     "jsdom": "^24.0.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.35",
