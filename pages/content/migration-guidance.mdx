@@ -560,6 +560,8 @@ You will need to reconfigure your uptime monitoring to monitor your application.
 
 You will need to find other means to implement your preferred observability tools to collect metrics and raise alerts to support staff. Tenants are using tools such as prometheus, alertmanager, grafana, sentry pagerduty.
 
+## Get more up to
+
 ## Finalise your GOV.UK PaaS account
 
 When migrating from GOV.UK PaaS to alternate hosting the last step is to finalise your usage of the platform and reduce your spend on the account to zero before paying the final bill. 
@@ -571,7 +573,7 @@ Once your service has been migrated to another cloud hosting provider you should
   <li>delete all stopped applications using [`cf delete <APP_NAME>`](https://cli.cloudfoundry.org/en-US/v8/delete.html)</li>
   <li>remove all objects from your S3 buckets, these must be empty before deletion. See [how to connect to an S3 bucket from outside the paas ](https://docs.cloud.service.gov.uk/deploying_services/s3/#connect-to-an-s3-bucket-from-outside-of-the-gov-uk-paas) for instructions on how to get credentials for use with the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) and  [Delete an S3 bucket](https://docs.cloud.service.gov.uk/deploying_services/s3/#delete-an-s3-bucket)</li>
   <li>delete all backing services and user provided services using [`cf delete-service`](https://cli.cloudfoundry.org/en-US/v8/delete-service.html). For example to delete a postgresql backing service see [Delete a PostgreSql service](https://docs.cloud.service.gov.uk/deploying_services/postgresql/#delete-a-postgresql-service)</li>
-  <li>notify the GOV.UK PaaS team using the [support form](https://admin.london.cloud.service.gov.uk/support/contact-us) to tell us that you have removed all your apps and services from the organisation and that you want to receive a final bill. Please specify the name of the Cloud Foundry organisation that you wish to decommission, the name of the service and the date the service is decommissioned </li>
+  <li>notify the GOV.UK PaaS team using the [support form](https://admin.london.cloud.service.gov.uk/support/contact-us) to tell us that you have removed all your apps and services from the organisation/space and that you want to receive a final bill. Please specify the name of the Cloud Foundry organisation that you wish to decommission, the name of the service and the date the service is decommissioned (You can also notify us of any spaces you have decommissioned. We'll check on our side if there's any leftover services.)</li>
 </ol>
 
 
