@@ -42,7 +42,7 @@
     "rollup": "^4.22.4",
     "rollup-plugin-output-manifest": "^2.0.0",
     "rollup-plugin-postcss": "^4.0.2",
-    "typescript": "^5.4.3",
+    "typescript": "^5.8.2",
     "vitest": "^1.4.0"
   },
   "engines": {
